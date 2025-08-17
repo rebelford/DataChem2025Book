@@ -1,0 +1,1437 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Virtual Screening &#8212; Data Chemistry 2025</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/oldcustom.css?v=e52fa269" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=ba2d5b83" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/modules/09-CADDD/09-1-virtual-screening';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Module 10: Supervised ML" href="../10-Machine-Learning/README.html" />
+    <link rel="prev" title="Module 9: Computer-Aided Drug Discovery and Design" href="README.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Data Chemistry 2025 - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Data Chemistry 2025 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    2025 Data Chemistry OLCC
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-OLCC-Primer/README.html">Module 1: OLCC Primer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-1-OLCC-Primer.html">1.1 OLCC Primer</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-2-python-basics.html">1.2 Python Basics</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-3-python-intermediate.html">1.3 Python Intermediate</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Introduction/README.html">Module 2: Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Introduction/02-1-PubChemDataTypes.html">PubChem Training Course</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../02-Introduction/02-2-PUG-REST-activity.html">Getting Molecular Properties through PubChem’s PUG REST Web Interface</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Public-Chemical-Databases/README.html">Module 3: Public Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Public-Chemical-Databases/03-01-Survey-Public-Chemical-Databases.html">Public Compound Databases</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-Chemical-Representations/README.html">Module 4: Chemical Representations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-01-introduction_chemical_representations.html">Chemical Representations and Introduction to RDKit</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-02-PubChem3D_update.html">PubChem3D</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-03-Substructure_Searching_with_SMARTS.html">Substructure Searching with SMARTS</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05-Searching-Chemical-Databases/README.html">Module 5: Searching Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-01-Exploring-PubChem.html">Exploring PubChem</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-02-structure-inputs.html">Chemical Structure Inputs for PUG-REST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-03-list-conversion.html">Intercoversion between PubChem records.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06-BioAssay/README.html">Module 6: BioAssays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-1-Bioactivity_Primer.html">PubChem Bioactivity Primer</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-2-eda-protein1.html">Exploratory Data Analysis 1: <br/><br/> Concordance of Thyroid Hormone Receptor Activity in Rats and Humans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-3-eda-pathway.html">Exploratory Data Analysis 2:<br/><br/>Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-QSAR-QSPR/README.html">Module 7: Quantitative Structure Property Reationships</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-QSAR-QSPR/07-01-QSPR.html">Molecular Descriptors</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Molecular-Similarity/README.html">Module 8: Molecular Similarity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-1-MolSimularity.html">Fingerprint Generation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-2-MolSimularity.html">What is a bit vector?</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-3-MolSimularity.html">Objectives</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Module 9: Computer-Aided Drug Discovery and Design</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Virtual Screening</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10-Machine-Learning/README.html">Module 10: Supervised ML</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10-Machine-Learning/10-01-supervised-ML.html">Machine Learning Basics</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendices/README.html">Appendices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../appendices/Pandas.html">Introduction to Pandas</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/DivCHED-CCCE/DataChemistry2025OLCC/master?urlpath=lab/tree/docs/content/modules/09-CADDD/09-1-virtual-screening.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://nanohub.org/tools/datachemolcc/hub/user-redirect/git-pull?repo=https%3A//github.com/DivCHED-CCCE/DataChemistry2025OLCC&urlpath=lab/tree/DataChemistry2025OLCC/docs/content/modules/09-CADDD/09-1-virtual-screening.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DivCHED-CCCE/DataChemistry2025OLCC/blob/master/docs/content/modules/09-CADDD/09-1-virtual-screening.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC/issues/new?title=Issue%20on%20page%20%2Fcontent/modules/09-CADDD/09-1-virtual-screening.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/modules/09-CADDD/09-1-virtual-screening.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Virtual Screening</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-known-ligands-from-a-file">1. Read known ligands from a file.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similarity-search-against-pubchem">2. Similarity Search against PubChem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exclude-the-query-compounds-from-the-hits">3. Exclude the query compounds from the hits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-out-non-drug-like-compounds">4. Filtering out non-drug-like compounds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-the-structures-of-the-top-10-compounds">5. Draw the structures of the top 10 compounds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-unique-compounds-in-terms-of-connectivity-smiles">6. Extract unique compounds in terms of connectivity SMILES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-molecules-in-files">7. Saving molecules in files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1">Step 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2">Step 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3">Step 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4">Step 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5">Step 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6">Step 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7">Step 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8">Step 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-9">Step 9</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="virtual-screening">
+<h1>Virtual Screening<a class="headerlink" href="#virtual-screening" title="Link to this heading">#</a></h1>
+<p><strong>This module is under construction</strong></p>
+<div class="alert alert-block alert-info">
+<Strong>Objectives</strong>
+<ul class="simple">
+<li><p>Perform virtual screening against PubChem using ligand-based approach</p></li>
+<li><p>Apply filters to prioritize virtual screening hit list.</p></li>
+<li><p>Learn how to use pandas’ data frame.</p></li>
+</ul>
+<p>In this notebook, we perform virtual screening against PubChem using a set of known ligands for muscle glycogen phosphorylase.  Compound filters will be applied to identify drug-like compounds and unique structures in terms of connectivity SMILES (no stereochemistry encoded) will be selected to remove redundant structures.  For some top-ranked compounds in the list, their binding mode will be predicted using machine learning (which will be covered in Module 10: Supervised machine learning).</p>
+<section id="read-known-ligands-from-a-file">
+<h2>1. Read known ligands from a file.<a class="headerlink" href="#read-known-ligands-from-a-file" title="Link to this heading">#</a></h2>
+<p>As a starting point, let’s download a set of known ligands against muscle glycogen phosphorylase.  These data are obtained from the DUD-E (Directory of Useful Decoys, Enhanced) data sets (http://dude.docking.org/), which contain known actives and inactives for 102 protein targets.  The DUD-E sets are widely used in benchmarking studies that compare the performance of different virtual screening approaches (https://doi.org/10.1021/jm300687e).</p>
+<p>Go to the DUD-E target page (http://dude.docking.org/targets) and find muscle glycogen phosphorylase (Target Name: PYGM, PDB ID: 1c8k) from the target list.  Clicking the target name “PYGM” directs you to the page that lists various files (http://dude.docking.org/targets/pygm).  Download file “<strong>actives_final.ism</strong>”, which contains the SMILES strings of known actives.  Rename the file name as “<strong>pygm_1c8k_actives.ism</strong>”.  [Open the file in a text viewer/editor to check the format of this file].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;smiles&#39;</span><span class="p">,</span><span class="s1">&#39;DUD-E ID&#39;</span><span class="p">,</span> <span class="s1">&#39;CHEMBL_ID&#39;</span><span class="p">]</span>
+<span class="n">df_act</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://dude.docking.org/targets/pygm/actives_final.ism&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">colnames</span><span class="p">)</span>
+<span class="n">df_act</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_act</span><span class="p">))</span>    <span class="c1"># Show how many structures are in the &quot;data frame&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="similarity-search-against-pubchem">
+<h2>2. Similarity Search against PubChem<a class="headerlink" href="#similarity-search-against-pubchem" title="Link to this heading">#</a></h2>
+<p>Now, let’s perform similarity search against PubChem using each known active compound as a query.  There are a few things to mention in this step:</p>
+<ul class="simple">
+<li><p>The SMILES were obtained from the DUD-E database. Since there are multiple ways to generate SMILES, PubChem will run an algorithm to convert the SMILES in the query to the SMILES in the PubChem database.</p></li>
+<li><p>The SMILES string is available for each query compound. This string will be used to specify the input structure, so HTTP POST should be used.  (Please review lecture02-structure-inputs.ipynb)</p></li>
+<li><p>During PubChem’s similarity search, molecular similarity is evaluated using the <strong>PubChem fingerprints</strong> and <strong>Tanimoto</strong> coefficient.  By default, similarity search will return compounds with Tanimoto scores of <strong>0.9 or higher</strong>.  While we will use the default threshold in this practice, it is noteworthy that it is adjustable.  If you use a higher threshold (e.g., 0.99), you will get a fewer hits, which are too similar to the query compounds.  If you use a lower threshold (e.g., 0.88), you will get more hits, but they will include more false positives.</p></li>
+<li><p>PubChem’s similarity search does <strong>not</strong> return the similarity scores between the query and hit compounds.  Only the hit compound list is returned, which makes it difficult to rank the hit compounds for compound selection.  To address this issue, for each hit compound, we compute <strong>the number of query compounds that returned that compound as a hit.</strong>  [Because we are using multiple query compounds for similarity search, it is possible for different query compounds to return the same compound as a hit.  That is, the hit compound may be similar to multiple query compounds.  The underlying assumption is that hit compounds returned multiple times from different queries are more likely to be active than those returned only once from a single query.]</p></li>
+<li><p>Add “time.sleep()” to avoid overloading PubChem servers and getting blocked.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles_act</span> <span class="o">=</span> <span class="n">df_act</span><span class="o">.</span><span class="n">smiles</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: </span>
+<span class="c1"># This code block may take a while to run, as it queries PubChem for each structure.</span>
+<span class="c1"># It took about 2 minutes in testing</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">prolog</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug&quot;</span>
+
+<span class="n">cids_hit</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">mysmiles</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">smiles_act</span><span class="p">)</span> <span class="p">:</span>
+    
+    <span class="n">mydata</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;smiles&#39;</span> <span class="p">:</span> <span class="n">mysmiles</span> <span class="p">}</span>
+    
+    <span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/fastsimilarity_2d/smiles/cids/txt&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mydata</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span> <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span> <span class="p">)</span> <span class="p">:</span>
+        <span class="n">cids</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">cids</span> <span class="o">=</span> <span class="p">[</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cids</span> <span class="p">]</span>    <span class="c1"># Convert CIDs from string to integer.</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error at&quot;</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">df_act</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;CHEMBL_ID&#39;</span><span class="p">],</span> <span class="n">mysmiles</span> <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">mycid</span> <span class="ow">in</span> <span class="n">cids</span><span class="p">:</span>
+        <span class="n">cids_hit</span><span class="p">[</span><span class="n">mycid</span><span class="p">]</span> <span class="o">=</span> <span class="n">cids_hit</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">mycid</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">cids_hit</span><span class="p">)</span>    <span class="c1"># Show the number of compounds returned from any query.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above code cells, the returned hits are stored in a dictionary, along with the number of times they are returned.  Let’s print the top 10 compounds that are returned the most number of times from the search.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_by_freq</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">cids_hit</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">]</span>
+<span class="n">sorted_by_freq</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sorted_by_freq</span><span class="p">)</span> <span class="p">:</span>
+
+    <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="mi">10</span> <span class="p">:</span> 
+        <span class="k">break</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="c1"># Print (frequency, CID)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exclude-the-query-compounds-from-the-hits">
+<h2>3. Exclude the query compounds from the hits<a class="headerlink" href="#exclude-the-query-compounds-from-the-hits" title="Link to this heading">#</a></h2>
+<p>In the previous step, we repeated similarity searches using multiple query molecules.  This may result in a query molecule being returned as a hit from similarity search using another query molecule.  Therefore, we want to check if the hit compound list has any query compounds and if any, we want to remove them.  Below, we search PubChem for compounds identical to the query molecules and remove them from the hit compound list.<p>
+Note that the identity_type parameter in the PUG-REST request is set to “<strong>same_connectivity</strong>”, which will return compounds with the same connectivity with the query molecule (ignoring stereochemistry and isotope information).  The default for this parameter is “same_stereo_isotope”, which returns compounds with the same stereochemistry AND isotope information.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code cell make take some time to run, as it queries PubChem for each structure.</span>
+<span class="c1"># It took about 1 minute in testing</span>
+
+<span class="n">cids_query</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">mysmiles</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">smiles_act</span><span class="p">)</span> <span class="p">:</span>
+    
+    <span class="n">mydata</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;smiles&#39;</span> <span class="p">:</span> <span class="n">mysmiles</span> <span class="p">}</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/fastidentity/smiles/cids/txt?identity_type=same_connectivity&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mydata</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span> <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span> <span class="p">)</span> <span class="p">:</span>
+        <span class="n">cids</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">cids</span> <span class="o">=</span> <span class="p">[</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cids</span><span class="p">]</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error at&quot;</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">df_COX2_act</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;CHEMBL_ID&#39;</span><span class="p">],</span> <span class="n">mysmiles</span> <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+       
+    <span class="k">for</span> <span class="n">mycid</span> <span class="ow">in</span> <span class="n">cids</span><span class="p">:</span>
+        <span class="n">cids_query</span><span class="p">[</span><span class="n">mycid</span><span class="p">]</span> <span class="o">=</span> <span class="n">cids_query</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">mycid</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">cids_query</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>    <span class="c1"># Show the number of CIDs that represent the query compounds.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now remove the query compounds from the hit list (if they are found in the list)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">mycid</span> <span class="ow">in</span> <span class="n">cids_query</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">:</span>
+    
+    <span class="n">cids_hit</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">mycid</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">cids_hit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print the top 10 compounds in the current hit list and compare them with the old ones.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_by_freq</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">cids_hit</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">]</span>
+<span class="n">sorted_by_freq</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sorted_by_freq</span><span class="p">)</span> <span class="p">:</span>
+    
+    <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="mi">10</span> <span class="p">:</span> 
+        <span class="k">break</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>    <span class="c1"># Print (frequency, CID)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<Strong>Check Your Understanding</strong>
+<ul class="simple">
+<li><p>How many molecules were returned from the original query?</p></li>
+<li><p>How many molecules were returned were the query compounds?</p></li>
+<li><p>Does the number of molecules in len(cids_hits) confirm you have removed the query compounds from the original list?</p></li>
+<li><p>Have the top 10 compounds in hit list changed? Does this confirm you have removed the query compounds from the original list?</p></li>
+</ul>
+</section>
+<section id="filtering-out-non-drug-like-compounds">
+<h2>4. Filtering out non-drug-like compounds<a class="headerlink" href="#filtering-out-non-drug-like-compounds" title="Link to this heading">#</a></h2>
+<p>We want to identify problematic compounds to exclude from virtual screening. These are molecules that are not absorbed well and may not be good for an orally administered drug.</p>
+<p>A team at Pfizer led by Christopher Lipinski evaluated 2245 compounds that reached phase II clinical trials and determined most orally administered drugs are relatively small and moderately lipophilic. This lead to the <a href ="https://pubmed.ncbi.nlm.nih.gov/11259830/">”Rule of 5” for “drug-likeness”</a> and helps determine whether a molecule has good solubility and permeability. The team suggests that a good lead follow has characteristics based on the number 5:</p>
+<ul class="simple">
+<li><p>Molecular weight &lt; 500</p></li>
+<li><p>no more than 5 hydrogen bond donors</p></li>
+<li><p>no more than 10 hydrogen bond acceptors</p></li>
+<li><p>a calculated octanol-water partician coefficent (XLogP) &lt;5</p></li>
+</ul>
+<p>In this step, non-drug-like compounds are filtered out from the list using these criteria.  To do that, these four molecular properties are downloaded from PubChem and stored in CSV.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code cell may take a while to run, as it queries PubChem for each structure.</span>
+<span class="c1"># It took about 4 minutes in testing</span>
+
+<span class="n">chunk_size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">cids_hit</span><span class="p">)</span> <span class="o">%</span> <span class="n">chunk_size</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">:</span>
+    <span class="n">num_chunks</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cids_hit</span><span class="p">)</span> <span class="o">//</span> <span class="n">chunk_size</span> 
+<span class="k">else</span> <span class="p">:</span>
+    <span class="n">num_chunks</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cids_hit</span><span class="p">)</span> <span class="o">//</span> <span class="n">chunk_size</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">cids_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cids_hit</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Number of chunks:&quot;</span><span class="p">,</span> <span class="n">num_chunks</span> <span class="p">)</span>
+
+<span class="n">csv</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>   <span class="c1">#sets a variable called csv to save the comma separated output</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_chunks</span><span class="p">)</span> <span class="p">:</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    
+    <span class="n">idx1</span> <span class="o">=</span> <span class="n">chunk_size</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="n">idx2</span> <span class="o">=</span> <span class="n">chunk_size</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">cids_str</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cids_list</span><span class="p">[</span><span class="n">idx1</span><span class="p">:</span><span class="n">idx2</span><span class="p">]</span> <span class="p">])</span> <span class="c1"># build pug input for chunks of data</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">cids_str</span> <span class="o">+</span> <span class="s2">&quot;/property/HBondDonorCount,HBondAcceptorCount,MolecularWeight,XLogP,ConnectivitySMILES,SMILES/csv&quot;</span>
+    
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">:</span> <span class="c1"># if this is the first request, store result in empty csv variable</span>
+        <span class="n">csv</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span> 
+    <span class="k">else</span> <span class="p">:</span>          <span class="c1"># if this is a subsequent request, add the request to the csv variable adding a new line between chunks</span>
+        <span class="n">csv</span> <span class="o">=</span> <span class="n">csv</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> 
+      
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1">#print(csv)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Downloaded data (in CSV) are loaded into a pandas data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">StringIO</span>
+
+<span class="n">csv_file</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">csv</span><span class="p">)</span>
+
+<span class="n">df_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+
+<span class="n">df_raw</span><span class="o">.</span><span class="n">shape</span>    <span class="c1"># Show the shape (dimension) of the data frame</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_raw</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>    <span class="c1"># Show the first 5 rows of the data frame</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that some compounds do not have computed XLogP values (because XLogP algorithm cannot handle inorganic compounds, salts, and mixtures) and we want to remove them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_raw</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>    <span class="c1"># Check if there are any NULL values.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df_raw</span><span class="p">)</span>    <span class="c1"># Check the number of rows (which is equals to the number of CIDs)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For convenience, add the information contained in the <strong>cids_hit</strong> dictionary to this data frame</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First load the cids_hit dictionary into a data frame.</span>
+<span class="n">df_freq</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="n">cids_hit</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;CID&#39;</span><span class="p">,</span><span class="s1">&#39;HitFreq&#39;</span><span class="p">])</span>
+<span class="n">df_freq</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Double-check if the data are loaded correctly</span>
+<span class="c1"># Compare the data with those from Cell [12]</span>
+<span class="n">df_freq</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;HitFreq&#39;</span><span class="p">,</span> <span class="s1">&#39;CID&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new data frame called &quot;df&quot; by joining the df and df_freq data frames</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df_raw</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df_freq</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;CID&#39;</span><span class="p">),</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;CID&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;HitFreq&#39;</span><span class="p">,</span> <span class="s1">&#39;CID&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now identify and remove those compounds that satisfy all criteria of Lipinski’s rule of five.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;HBondDonorCount&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">5</span> <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;HBondAcceptorCount&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;MolecularWeight&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">500</span> <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;XLogP&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;HBondDonorCount&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&amp;</span>
+         <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;HBondAcceptorCount&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="p">)</span> <span class="o">&amp;</span>
+         <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;MolecularWeight&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">500</span> <span class="p">)</span> <span class="o">&amp;</span>
+         <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;XLogP&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="p">)</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>    <span class="c1"># Check if there are any NULL values.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<Strong>Check Your Understanding</strong>
+<ul class="simple">
+<li><p>How many molecules were in the raw dataset of molecules that had Tanimoto Similarity of 0.9?</p></li>
+<li><p>How many molecules were removed because they didn’t follow the Rule of 5?</p></li>
+<li><p>How were null values treated in the applying the Rule of 5?</p></li>
+</ul>
+</section>
+<section id="draw-the-structures-of-the-top-10-compounds">
+<h2>5. Draw the structures of the top 10 compounds<a class="headerlink" href="#draw-the-structures-of-the-top-10-compounds" title="Link to this heading">#</a></h2>
+<p>Let’s check the structure of the top 10 compounds in the hit list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cids_top</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;HitFreq&#39;</span><span class="p">,</span> <span class="s1">&#39;CID&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">CID</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">Draw</span>
+
+<span class="n">mols</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">mycid</span> <span class="ow">in</span> <span class="n">cids_top</span> <span class="p">:</span>
+    
+    <span class="n">mysmiles</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="o">.</span><span class="n">CID</span><span class="o">==</span><span class="n">mycid</span> <span class="p">]</span><span class="o">.</span><span class="n">SMILES</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    
+    <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span> <span class="n">mysmiles</span> <span class="p">)</span>
+    <span class="n">Chem</span><span class="o">.</span><span class="n">FindPotentialStereoBonds</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>    <span class="c1"># Identify potential stereo bonds!</span>
+    <span class="n">mols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+<span class="n">mylegends</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;CID &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cids_top</span> <span class="p">]</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="n">legends</span><span class="o">=</span><span class="n">mylegends</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>An important observation from these images is that the hit list contains multiple compounds with the same connectivity.  For example, CIDs 93077065 and 93077064 are stereoisomers of each other and CID 53013349 has the same connectivity as the two CIDs, but with its stereocenter being unspecified. When performing a screening with limited resources in the early stage of drug discovery, you may want to test as diverse molecules as possible, avoiding testing too similar structures.</p>
+<p>To do so, let’s look into PubChem’s Connectivity SMILES strings, which do not encode the stereochemisry and isotope information.  Chemicals with the same connectivity but with different stereochemistry/isotopes should have the same connectivity SMILES.  In the next section, we select unique compounds in terms of connectivity SMILES to reduce the number of compounds to screen.</p>
+</section>
+<section id="extract-unique-compounds-in-terms-of-connectivity-smiles">
+<h2>6. Extract unique compounds in terms of connectivity SMILES<a class="headerlink" href="#extract-unique-compounds-in-terms-of-connectivity-smiles" title="Link to this heading">#</a></h2>
+<p>The next few cells show how to get unique values within a column (in this case, unique connectivity SMILES).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show the number of rows in the data frame</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show the number of unique structures in the data frame</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">ConnectivitySMILES</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get unique structures</span>
+<span class="n">connectivity_smiles</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">ConnectivitySMILES</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show all the entries for the first unique structure</span>
+<span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="o">.</span><span class="n">ConnectivitySMILES</span> <span class="o">==</span> <span class="n">connectivity_smiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show all the entries for the second unique structure</span>
+<span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="o">.</span><span class="n">ConnectivitySMILES</span> <span class="o">==</span> <span class="n">connectivity_smiles</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show all the stereoisomers for the first unique structure</span>
+<span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="o">.</span><span class="n">ConnectivitySMILES</span> <span class="o">==</span> <span class="n">connectivity_smiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">]</span><span class="o">.</span><span class="n">SMILES</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s generate a list of unique compounds in terms of connectivity SMILES.  If multiple compounds have the same connectivity SMILES, the one that appears very first will be included in the unique compound list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx_to_include</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">mysmiles</span> <span class="ow">in</span> <span class="n">connectivity_smiles</span> <span class="p">:</span>
+
+    <span class="n">myidx</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="o">.</span><span class="n">ConnectivitySMILES</span> <span class="o">==</span> <span class="n">mysmiles</span> <span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_list</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="n">idx_to_include</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">myidx</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">idx_to_include</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new column &#39;Include&#39; </span>
+<span class="c1"># All values initialized to 0 (not include)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Include&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Include&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="c1"># Show the total number of included compounds, should be 0 now</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now the &quot;Include&quot; column&#39;s value is modified if the record is in the idx_to_include list.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx_to_include</span><span class="p">,</span><span class="s1">&#39;Include&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Set &quot;Include&quot; to 1 for the selected records</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Include&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="c1"># Show the total number of included compounds, should be equal to the number of unique structures</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;CID&#39;</span><span class="p">,</span><span class="s1">&#39;Include&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="c1"># Show the first 15 rows of the &quot;CID&quot; and &quot;Include&quot; columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now draw the top 10 unique compounds (in terms of connectivity SMILES). Note the, the structure figures are drawn using isomeric SMILES, but connectivity SMILES strings could be used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cids_top</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Include&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;HitFreq&#39;</span><span class="p">,</span> <span class="s1">&#39;CID&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">CID</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mols</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">mycid</span> <span class="ow">in</span> <span class="n">cids_top</span> <span class="p">:</span>
+    
+    <span class="n">mysmiles</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="o">.</span><span class="n">CID</span><span class="o">==</span><span class="n">mycid</span> <span class="p">]</span><span class="o">.</span><span class="n">SMILES</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    
+    <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span> <span class="n">mysmiles</span> <span class="p">)</span>
+    <span class="n">Chem</span><span class="o">.</span><span class="n">FindPotentialStereoBonds</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>    <span class="c1"># Identify potential stereo bonds!</span>
+    <span class="n">mols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+<span class="n">mylegends</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;CID &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cids_top</span> <span class="p">]</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="n">legends</span><span class="o">=</span><span class="n">mylegends</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<Strong>Check Your Understanding</strong>
+<ul class="simple">
+<li><p>Recall from cell [46] that row 15 CID 70155849 is an isomer of row 3. In Cell [55] how do you know this was excluded because it was an isomer?</p></li>
+<li><p>Previously we showed CIDs 93077065 and 93077064 are stereoisomers of each other and CID 53013349 has the same connectivity as the two CIDs, but with its stereocenter being unspecified. All three were in our original display of the top 10 unique molecules. Which of these are in our new list?</p></li>
+</ul>
+</section>
+<section id="saving-molecules-in-files">
+<h2>7. Saving molecules in files<a class="headerlink" href="#saving-molecules-in-files" title="Link to this heading">#</a></h2>
+<p>Now save the molecules in the cids_top list in files, which will be used in molecular docking experiments.  For simplicity, we will use only the <strong>top 3</strong> compounds in the list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">AllChem</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">mycid</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span> <span class="n">cids_top</span> <span class="p">)</span> <span class="p">:</span>
+
+    <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">:</span>
+        <span class="k">break</span>
+        
+    <span class="n">mysmiles</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;CID&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">mycid</span> <span class="p">]</span><span class="o">.</span><span class="n">SMILES</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+    <span class="n">mymol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">mysmiles</span><span class="p">)</span>
+    <span class="n">mymol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">AddHs</span><span class="p">(</span><span class="n">mymol</span><span class="p">)</span>
+    <span class="n">AllChem</span><span class="o">.</span><span class="n">EmbedMolecule</span><span class="p">(</span><span class="n">mymol</span><span class="p">)</span>
+    <span class="n">AllChem</span><span class="o">.</span><span class="n">MMFFOptimizeMolecule</span><span class="p">(</span><span class="n">mymol</span><span class="p">)</span>
+
+    <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;pygm_lig&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mycid</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.mol&quot;</span>
+    <span class="n">Chem</span><span class="o">.</span><span class="n">MolToMolFile</span><span class="p">(</span><span class="n">mymol</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To save all data in the <strong>df</strong> data frame (in CSV)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;pygm_df.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-success">
+<center><H1>Homework</H1></center><p>In this activity you used filtered by Lipinski’s Rule of Five(Ro5) and saved those molecules in pygm_df.csv. The Ro5 focuses on drug-likeness helping to identify favorable properties for oral bioavailability which is important in the later stages of the drug development pipeline.</p>
+<p>If we are interested in creating a list of molecues that are potentially interesting in the early phases of drug discovery, there is another set of rules that emphasizes “lead-likeness”. Leads are molecules that serve as a starting point modify and create drugs for testing.</p>
+<p>Miles Congreve proposed the <a href="https://pubmed.ncbi.nlm.nih.gov/14554012/">”Rule of 3”</a> to create a list of lead like filters rather than drug like filters.</p>
+<p>Congreve’s rule of 3</p>
+<ul class="simple">
+<li><p>The number of hydrogen bond donors ≤3</p></li>
+<li><p>The number of hydrogen bond acceptors ≤ 3</p></li>
+<li><p>Molecular weight &lt; 300</p></li>
+<li><p>XlogP ≤ 3</p></li>
+</ul>
+<section id="step-1">
+<h3>Step 1<a class="headerlink" href="#step-1" title="Link to this heading">#</a></h3>
+<p>Load the actives_final.ism for cyclooxygenase-2 (Target Name: PGH2, PDB ID: 3ln1) from the DUD-E database into a pandas DataFrame called df_COX2_act. After loading the data, show the following information:</p>
+<ul class="simple">
+<li><p>the number of rows of the data frame</p></li>
+<li><p>the first five rows of the data frame</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2">
+<h3>Step 2<a class="headerlink" href="#step-2" title="Link to this heading">#</a></h3>
+<p>Perform similarity search using each of the isomeric SMILES contained in the loaded data frame.</p>
+<ul class="simple">
+<li><p>As we did for PYGM ligands in this notebook, track the number of times a particular hit is returned from multiple queries, using a dictionary named cids_hit (CIDs as keys and the frequencies as values). This information will be used to rank the hit compounds.</p></li>
+<li><p>Make sure that the CIDs are recognized as integers when they are used as keys in the dictionary.</p></li>
+<li><p>Print the total number of hits returned from this step (which is the same as the number of CIDs in <strong>cids_hit</strong>).</p></li>
+<li><p>Add time.sleep() to avoid overloading PubChem servers.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3">
+<h3>Step 3<a class="headerlink" href="#step-3" title="Link to this heading">#</a></h3>
+<p>The hit list from the above step may contain the query compounds themselves. Get the CIDs of the query compounds through idenitity search and remove them from the hit list.</p>
+<ul class="simple">
+<li><p>Set the optional parameter “identity_type” to “same_connectivity”.</p></li>
+<li><p>Add time.sleep() to avoid overloading PubChem servers.</p></li>
+<li><p>Print the number of CIDs corresponding to the query compounds.</p></li>
+<li><p>Print the number of the remaining hit compounds, after removing the query compounds from the hit list.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-4">
+<h3>Step 4<a class="headerlink" href="#step-4" title="Link to this heading">#</a></h3>
+<p>Download the hydrogen donor and acceptor counts, molecular weights, XlogP, and connectivity and isomeric SMILES for each compound in cids_hit. Load the downloaded data into a new data frame called df_COX2_raw. Print the size (or dimension) of the data frame using .shape.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-5">
+<h3>Step 5<a class="headerlink" href="#step-5" title="Link to this heading">#</a></h3>
+<p>Create a new data frame called df_COX2_combined, which combines the data stored in cids_hit and df_COX2_raw.</p>
+<ul class="simple">
+<li><p>First load the frequency data into a new data frame called df_COX2_freq</p></li>
+<li><p>Join df_COX2_raw and df_COX2_freq into df_COX2_combined</p></li>
+<li><p>Print the shape (dimension) of df_COX2_combined</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-6">
+<h3>Step 6<a class="headerlink" href="#step-6" title="Link to this heading">#</a></h3>
+<p>Remove from df_COX2_combined <strong>all</strong> compounds that violate <strong>any</strong> criterion of Congreve’s rule of 3 and show the number of remaining compounds.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-7">
+<h3>Step 7<a class="headerlink" href="#step-7" title="Link to this heading">#</a></h3>
+<p>Get the unique connectivity SMILES strings from the df_COX2_combined. Add to df_COX2_combined a column named ‘Include’, which contains a flag set to 1 for the lowest CID associated with each unique CID and set to 0 for other CIDs. Show the number of compounds for which this flag is set to 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-8">
+<h3>Step 8<a class="headerlink" href="#step-8" title="Link to this heading">#</a></h3>
+<p>Among those with the “Include” flag set to 1, identify the top 10 compounds that were returned from the largest number of query compounds.</p>
+<ul class="simple">
+<li><p>Sort the data frame by the number of times returned (in descending order) and then by CID (in ascending order)</p></li>
+<li><p>For each of the 10 compounds, print its CID, isomeric SMILES, and the number of times it was returned.</p></li>
+<li><p>For each of the 10 compounds, draw its structure (using isomeric SMILES).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-9">
+<h3>Step 9<a class="headerlink" href="#step-9" title="Link to this heading">#</a></h3>
+<p>Now save the <strong>top 3</strong> compounds with CID and SMILES in a file called COX2_congreve.csv.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "datachem"
+        },
+        kernelOptions: {
+            name: "datachem",
+            path: "./content/modules/09-CADDD"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'datachem'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="README.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 9: Computer-Aided Drug Discovery and Design</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../10-Machine-Learning/README.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 10: Supervised ML</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-known-ligands-from-a-file">1. Read known ligands from a file.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similarity-search-against-pubchem">2. Similarity Search against PubChem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exclude-the-query-compounds-from-the-hits">3. Exclude the query compounds from the hits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-out-non-drug-like-compounds">4. Filtering out non-drug-like compounds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-the-structures-of-the-top-10-compounds">5. Draw the structures of the top 10 compounds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-unique-compounds-in-terms-of-connectivity-smiles">6. Extract unique compounds in terms of connectivity SMILES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-molecules-in-files">7. Saving molecules in files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1">Step 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2">Step 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3">Step 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4">Step 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5">Step 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6">Step 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7">Step 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8">Step 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-9">Step 9</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Belford
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

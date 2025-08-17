@@ -1,0 +1,1545 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Objectives &#8212; Data Chemistry 2025</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/oldcustom.css?v=e52fa269" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=ba2d5b83" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/modules/08-Molecular-Similarity/08-3-MolSimularity';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Module 9: Computer-Aided Drug Discovery and Design" href="../09-CADDD/README.html" />
+    <link rel="prev" title="What is a bit vector?" href="08-2-MolSimularity.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Data Chemistry 2025 - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Data Chemistry 2025 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    2025 Data Chemistry OLCC
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-OLCC-Primer/README.html">Module 1: OLCC Primer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-1-OLCC-Primer.html">1.1 OLCC Primer</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-2-python-basics.html">1.2 Python Basics</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-3-python-intermediate.html">1.3 Python Intermediate</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Introduction/README.html">Module 2: Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Introduction/02-1-PubChemDataTypes.html">PubChem Training Course</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../02-Introduction/02-2-PUG-REST-activity.html">Getting Molecular Properties through PubChem’s PUG REST Web Interface</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Public-Chemical-Databases/README.html">Module 3: Public Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Public-Chemical-Databases/03-01-Survey-Public-Chemical-Databases.html">Public Compound Databases</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-Chemical-Representations/README.html">Module 4: Chemical Representations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-01-introduction_chemical_representations.html">Chemical Representations and Introduction to RDKit</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-02-PubChem3D_update.html">PubChem3D</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-03-Substructure_Searching_with_SMARTS.html">Substructure Searching with SMARTS</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05-Searching-Chemical-Databases/README.html">Module 5: Searching Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-01-Exploring-PubChem.html">Exploring PubChem</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-02-structure-inputs.html">Chemical Structure Inputs for PUG-REST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-03-list-conversion.html">Intercoversion between PubChem records.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06-BioAssay/README.html">Module 6: BioAssays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-1-Bioactivity_Primer.html">PubChem Bioactivity Primer</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-2-eda-protein1.html">Exploratory Data Analysis 1: <br/><br/> Concordance of Thyroid Hormone Receptor Activity in Rats and Humans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-3-eda-pathway.html">Exploratory Data Analysis 2:<br/><br/>Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-QSAR-QSPR/README.html">Module 7: Quantitative Structure Property Reationships</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-QSAR-QSPR/07-01-QSPR.html">Molecular Descriptors</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Module 8: Molecular Similarity</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="08-1-MolSimularity.html">Fingerprint Generation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="08-2-MolSimularity.html">What is a bit vector?</a></li>
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Objectives</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-CADDD/README.html">Module 9: Computer-Aided Drug Discovery and Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-CADDD/09-1-virtual-screening.html">Virtual Screening</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10-Machine-Learning/README.html">Module 10: Supervised ML</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10-Machine-Learning/10-01-supervised-ML.html">Machine Learning Basics</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendices/README.html">Appendices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../appendices/Pandas.html">Introduction to Pandas</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/DivCHED-CCCE/DataChemistry2025OLCC/master?urlpath=lab/tree/docs/content/modules/08-Molecular-Similarity/08-3-MolSimularity.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://nanohub.org/tools/datachemolcc/hub/user-redirect/git-pull?repo=https%3A//github.com/DivCHED-CCCE/DataChemistry2025OLCC&urlpath=lab/tree/DataChemistry2025OLCC/docs/content/modules/08-Molecular-Similarity/08-3-MolSimularity.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DivCHED-CCCE/DataChemistry2025OLCC/blob/master/docs/content/modules/08-Molecular-Similarity/08-3-MolSimularity.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC/issues/new?title=Issue%20on%20page%20%2Fcontent/modules/08-Molecular-Similarity/08-3-MolSimularity.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/modules/08-Molecular-Similarity/08-3-MolSimularity.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Objectives</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Objectives</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-of-similarity-scores">1. Computation of similarity scores</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-similarity-scores">2. Interpretation of similarity scores</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-part-1-interpreting-data">Homework Part 1: Interpreting Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-part-2-writing-python-code">Homework Part 2: Writing Python Code</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <center><H1>Molecular Similarity</H1></center><section id="objectives">
+<h1>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h1>
+<div class="alert alert-block alert-info">
+<Strong>Objectives</strong>
+<ul class="simple">
+<li><p>Evaluate structural similarity between molecules using different molecular fingerpints and similarity metrics.</p></li>
+<li><p>Evaluate cutoff values for molecular similarity based on distribution of similarity scores for a given fingerprint</p></li>
+</ul>
+<p>Many useful documents/papers describe various aspects of molecular similarity, including molecular fingerprints and similarity measures.  Please read these if you need more details.</p>
+<ul class="simple">
+<li><p>Getting Started with the RDKit in Python<br>
+(https://www.rdkit.org/docs/GettingStartedInPython.html#fingerprinting-and-molecular-similarity)</p></li>
+<li><p>Fingerprint Generation, GraphSim Toolkit 2.4.2<br>
+(https://docs.eyesopen.com/toolkits/python/graphsimtk/fingerprint.html)</p></li>
+<li><p>Chemical Fingerprints<br>
+(https://docs.chemaxon.com/display/docs/Chemical+Fingerprints)</p></li>
+<li><p>Extended-Connectivity Fingerprints<br>
+(https://doi.org/10.1021/ci100050t)</p></li>
+<li><p>Why is Tanimoto index an appropriate choice for fingerprint-based similarity calculations?<br>
+(https://jcheminf.biomedcentral.com/articles/10.1186/s13321-015-0069-3)</p></li>
+</ul>
+</section>
+<section id="computation-of-similarity-scores">
+<h1>1. Computation of similarity scores<a class="headerlink" href="#computation-of-similarity-scores" title="Link to this heading">#</a></h1>
+<p>The “similar structure, similar function” is a powerful guiding force in medicinal chemistry. Structure-activity relationship studies allow chemists to We will start out comparing morphine to codeine and amlodipine. Morphine and codeine act at μ opioid receptors to cause analgesia. Amlodipine is a calcium channel blocker that reduces blood pressure. If the similar structure, similar funciton principle applies to these molecules, morphine and codeine should be structurally similar and different from amlodipine.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we will get SMILES from pubchem using the pubchem compound ID number</span>
+<span class="n">cids</span> <span class="o">=</span> <span class="p">[</span>    <span class="mi">5288826</span><span class="p">,</span>  <span class="c1"># morphine</span>
+            <span class="mi">5284371</span><span class="p">,</span>  <span class="c1"># codeine</span>
+            <span class="mi">2162</span><span class="p">]</span>     <span class="c1"># amlodipine</span>
+<span class="n">names</span><span class="o">=</span>  <span class="p">[</span><span class="s1">&#39;morphine&#39;</span><span class="p">,</span><span class="s1">&#39;codeine&#39;</span><span class="p">,</span><span class="s1">&#39;amlodipine&#39;</span><span class="p">]</span> <span class="c1">#for easy display of names with structures later</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s get the SMILES strings from PubChem, generate Mol objects from them, and draw their chemical structures.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this code requests all smiles in one PUG REST API request</span>
+<span class="n">prolog</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug&quot;</span>
+
+<span class="n">str_cid</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cids</span><span class="p">])</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">str_cid</span> <span class="o">+</span> <span class="s2">&quot;/property/isomericsmiles/txt&quot;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># the request will return all three smiles in one line</span>
+<span class="n">smiles</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="c1"># split the data into a new list corresponding to morphine, codeine and fentanyl </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#display the structures with names in legends</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">Draw</span>
+
+<span class="n">mols</span> <span class="o">=</span> <span class="p">[</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">smiles</span> <span class="p">]</span>
+<span class="n">Chem</span><span class="o">.</span><span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="n">legends</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<strong>Check your understanding</strong>
+<ul class="simple">
+<li><p>On quick inspection how are morphine and codeine structurally different?</p></li>
+<li><p>On quick inspection how different are morphine and amlodipine structurally?</p></li>
+<li><p>Would you expect morphine and amlodipine to bind to μ opioid receptors?</p></li>
+<li><p>Would you expect morphine to be a calcium channel blocker?</p></li>
+</ul>
+<p>Now generate MACCS keys for each compound to generate structural keys for comparison.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataStructs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">MACCSkeys</span>
+
+<span class="n">fps</span> <span class="o">=</span> <span class="p">[</span> <span class="n">MACCSkeys</span><span class="o">.</span><span class="n">GenMACCSKeys</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mols</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s compute the pair-wise similarity scores among them. The default calculation is Tanimoto simililarity. To make higher scores easier to find, they are indicated with the “*” character(s). The more “*” you see, the higher the similarity score.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span> <span class="p">:</span>
+        
+        <span class="n">score</span> <span class="o">=</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">FingerprintSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;vs.&quot;</span><span class="p">,</span> <span class="n">names</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">score</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.85</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ****&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.75</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ***&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.65</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; **&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.55</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; *&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<strong>Check your understanding</strong>
+<p>In the code cell below, using similarity scoring determine if you would expect felodipinum (CID = 3333) to be an opioid analgesic or a calcium channel blocker.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># write your code to compare similarity here</span>
+
+<span class="c1"># we will get SMILES from pubchem using the pubchem compound ID number</span>
+<span class="n">cids2</span> <span class="o">=</span> <span class="p">[</span>    <span class="mi">5288826</span><span class="p">,</span>  <span class="c1"># morphine</span>
+            <span class="mi">3333</span><span class="p">,</span>    <span class="c1"># Felodipinum</span>
+            <span class="mi">2162</span><span class="p">]</span>     <span class="c1"># amlodipine</span>
+<span class="n">names2</span><span class="o">=</span>  <span class="p">[</span><span class="s1">&#39;morphine&#39;</span><span class="p">,</span><span class="s1">&#39;felodipinim&#39;</span><span class="p">,</span><span class="s1">&#39;amlodipine&#39;</span><span class="p">]</span> <span class="c1">#for easy display of names with structures later</span>
+
+<span class="n">prolog</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug&quot;</span>
+
+<span class="n">str_cid2</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cids2</span><span class="p">])</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">str_cid2</span> <span class="o">+</span> <span class="s2">&quot;/property/isomericsmiles/txt&quot;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># the request will return all three smiles in one line</span>
+<span class="n">smiles2</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="c1"># split the data into a new list corresponding to morphine, codeine and fentanyl </span>
+
+<span class="n">mols2</span> <span class="o">=</span> <span class="p">[</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">smiles2</span> <span class="p">]</span>
+<span class="n">fps</span> <span class="o">=</span> <span class="p">[</span> <span class="n">MACCSkeys</span><span class="o">.</span><span class="n">GenMACCSKeys</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mols2</span> <span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span> <span class="p">:</span>
+        
+        <span class="n">score</span> <span class="o">=</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">FingerprintSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">names2</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;vs.&quot;</span><span class="p">,</span> <span class="n">names2</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">score</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.85</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ****&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.75</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ***&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.65</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; **&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.55</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; *&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+
+<span class="n">mols</span> <span class="o">=</span> <span class="p">[</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">smiles2</span> <span class="p">]</span>
+<span class="n">Chem</span><span class="o">.</span><span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">mols2</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="n">legends</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">names2</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As seen in the above section, two molecules can have very similar structures and have the same biological effect.</p>
+<p>Let’s explore a series of class of prescription drugs called <em>statins</em> that are used to lower cholesterol. They all work by inhibiting HMG-CoA reductase which is a critical enzyme in the production of cholesterol. Many of these drugs were developed be structurally similar to existing drugs but having fewer side effects or reduce drug-drug interactions. Mevastatin (CID 64715) was the first drug to be developed by never marketed. Pravastatin does not inhibit CYP-450 enzymes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">statin_cids</span> <span class="o">=</span> <span class="p">[</span>    <span class="mi">54454</span><span class="p">,</span>  <span class="c1"># Simvastatin (Zocor)</span>
+                   <span class="mi">54687</span><span class="p">,</span>  <span class="c1"># Pravastatin (Pravachol)</span>
+                   <span class="mi">60823</span><span class="p">,</span>  <span class="c1"># Atorvastatin (Lipitor)</span>
+                  <span class="mi">446155</span><span class="p">,</span>  <span class="c1"># Fluvastatin (Lescol)   </span>
+                  <span class="mi">446157</span><span class="p">,</span>  <span class="c1"># Rosuvastatin (Crestor)</span>
+                 <span class="mi">5282452</span><span class="p">,</span>  <span class="c1"># Pitavastatin (Livalo)</span>
+                <span class="mi">97938126</span> <span class="p">]</span> <span class="c1"># Lovastatin (Altoprev)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s get the SMILES strings from PubChem, generate Mol objects from them, and draw their chemical structures.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prolog</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug&quot;</span>
+
+<span class="n">str_statin_cid</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">statin_cids</span><span class="p">])</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">str_statin_cid</span> <span class="o">+</span> <span class="s2">&quot;/property/isomericsmiles/txt&quot;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">smiles</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">Draw</span>
+
+<span class="n">statins</span> <span class="o">=</span> <span class="p">[</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">smiles</span> <span class="p">]</span>
+<span class="n">Chem</span><span class="o">.</span><span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">statins</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="n">legends</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">statin_cids</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now generate MACCS keys for each compound.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataStructs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">MACCSkeys</span>
+
+<span class="n">fps</span> <span class="o">=</span> <span class="p">[</span> <span class="n">MACCSkeys</span><span class="o">.</span><span class="n">GenMACCSKeys</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">statins</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s compute the pair-wise similarity scores among them. To make higher scores easier to find, they are indicated with the “*” character(s).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span> <span class="p">:</span>
+        
+        <span class="n">score</span> <span class="o">=</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">FingerprintSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">statin_cids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;vs.&quot;</span><span class="p">,</span> <span class="n">statin_cids</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">score</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.85</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ****&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.75</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ***&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.65</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; **&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.55</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; *&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<strong>Check your understanding</strong>
+<ul class="simple">
+<li><p>Identify the two statins above that had the highest similarity score. What structural features are similar?</p></li>
+<li><p>Look at the structure of 446147, what key feature sets it apart from all other statins? What molecule is it most structurally similar to?</p></li>
+</ul>
+<p>97938126 was developed first by Merck, Sharp &amp; Dohme in 1976 and was metabolized by 2 CYP enzymes (CYP3A and CYP2C8). 54454 was developed 10 years later at the same company and is metabolized by only one CYP enzyme (CYP3A4). <a href ="https://pmc.ncbi.nlm.nih.gov/articles/PMC7576625/" >They are <em>me-too</em> drugs defined as “a pharmacologically active compound that is structurally related to a first‐in‐class compound, regarded as belonging to the same therapeutic class as the original compound, and used for the same therapeutic purposes, but which may differ in some respects, such as specificity of pharmacological action, adverse reactions profile, or drug–drug interactions.” </a></p>
+<p>By default, the similarity score is generated using the <strong>Tanimoto</strong> equation:</p>
+<p><span class="math notranslate nohighlight">\(\frac{|A \cap B|}{|A \cup B|}\)</span> or  <span class="math notranslate nohighlight">\(\frac{|A \cap B|}{|A| + |B| -|A\cap B|}\)</span> or <span class="math notranslate nohighlight">\(\frac{overlap}{|Unique A + Unique B - Overlap|}\)</span></p>
+<p>RDKit also supports other similarity metrics, including Dice, Cosine, Sokal, Russel, Kulczynski, McConnaughey, and Tversky.  The definition of these metrics is available at the LibreTexts page (https://bit.ly/2kx9NCd).</p>
+<p>You found that 446157 was quite different from the others with a highest Tanimoto similarity of 0.535.
+The following code cell shows comparison of CIDS 60823 vs. 446157 (Atorvastatin vs Rosuvstatin) using different similary indices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tanimoto    :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">TanimotoSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="mi">4</span><span class="p">]),</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dice        :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">DiceSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="mi">4</span><span class="p">]),</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cosine      :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">CosineSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="mi">4</span><span class="p">]),</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sokal       :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">SokalSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="mi">4</span><span class="p">]),</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;McConnaughey:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">McConnaugheySimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="mi">4</span><span class="p">]),</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By using different similarity scores, we can see that these molecules may be more or less similar depending on definition.</p>
+<p>The Tversky score is an asymmetric similarity measure, and its computation requires the weightings (α and β) of the two molecules being compared. <br> This allows for emphasizing features that are present in one set or prototype, that are not in the other.
+Setting <em><strong>α = β =1</strong></em> produces the <strong>Tanimoto Index</strong>, while setting <em><strong>α = β = 0.5</strong></em> is the same as the <strong>Dice index</strong>.</p>
+<p>In the code example below we are comparing similarity using the Tversky index of CIDS 54454 vs. 54687 (Simvastatin vs Pravastatin).</p>
+<p>When α &gt; β we are screening to indicate that molecules must have certain features. If second molecule has extra features, that is OK, but must have key features of the first molecule.  “You must include my core structure, but you can decorate it.”</p>
+<p>When α &lt; β we are screening to indicate that molecules must have certain features. If second molecules has extra features, that is not OK, we want the second molecule to be as close to the first molecule as possible. “Don’t stray too far from the original molecule; I want tight structural similarity.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span> <span class="p">:</span>
+    
+    <span class="n">alpha</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span> <span class="n">i</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(alpha, beta) = (&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="s2">&quot;) : &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">TverskySimilarity</span><span class="p">(</span> <span class="n">fps</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="p">),</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;When alpha and beta = 1&quot;</span><span class="p">)</span>
+<span class="n">alpha</span><span class="o">=</span> <span class="mi">1</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(alpha, beta) = (&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="s2">&quot;) : &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">TverskySimilarity</span><span class="p">(</span> <span class="n">fps</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="p">),</span> <span class="mi">4</span><span class="p">),</span> <span class="s2">&quot; which equals Tanimoto similarity above&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;When alpha and beta = 0.5&quot;</span><span class="p">)</span>
+<span class="n">alpha</span><span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(alpha, beta) = (&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="s2">&quot;) : &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">TverskySimilarity</span><span class="p">(</span> <span class="n">fps</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="p">),</span> <span class="mi">4</span><span class="p">),</span> <span class="s2">&quot; which equals Dice similarity above&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<strong>Check your understanding</strong>
+<p>Which values of  α  and β indicate that we are penalizing features missing from the first molecule (query molecule)and extra features in the second molecule (target molecule) do not reduce similarity at all?</p>
+<p>Why is the similarity lowest for this series when α = 0 and β = 1?</p>
+</section>
+<section id="interpretation-of-similarity-scores">
+<h1>2. Interpretation of similarity scores<a class="headerlink" href="#interpretation-of-similarity-scores" title="Link to this heading">#</a></h1>
+<p>Using molecular fingeprints. we can compute the similarity scores between molecules.  However, how should these scores be interpreted?  For example, the Tanimoto score between CID 60823 and CID 446155 is computed to be 0.662, but does it mean that the two compounds are similar?  How similar is similar?  The following analysis will help answer these questions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#run this code cell to refresh redraw these CIDs and have a mental picture of how similar they are</span>
+<span class="n">subset</span> <span class="o">=</span> <span class="n">statins</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">subset_legends</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">statin_cids</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+
+<span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">subset</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">legends</span><span class="o">=</span><span class="n">subset_legends</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Step 1.</strong> Randomly select 1,000 compounds from PubChem and download their SMILES strings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#choosing a random seed let&#39;s us have reproducable sequences of random numbers. When the seed is set</span>
+               <span class="c1">#the random numbers generated will be the the same every time the code is run.</span>
+
+<span class="n">cid_max</span> <span class="o">=</span> <span class="mi">121413818</span>  <span class="c1"># The maximum CID in PubChem as of May 2025</span>
+
+<span class="n">cids</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">cids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cid_max</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1">#picks a random number between 1 and max number of CIDS</span>
+
+<span class="n">chunk_size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span> <span class="o">%</span> <span class="n">chunk_size</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>                    <span class="c1"># set up chunks to request SMILES in batches of 100</span>
+    <span class="n">num_chunks</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span> <span class="o">/</span> <span class="n">chunk_size</span> <span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="n">num_chunks</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span> <span class="o">/</span> <span class="n">chunk_size</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">smiles</span> <span class="o">=</span> <span class="p">[]</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_chunks</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Processing chunk &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    
+    <span class="n">idx1</span> <span class="o">=</span> <span class="n">chunk_size</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="n">idx2</span> <span class="o">=</span> <span class="n">chunk_size</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">str_cids</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cids</span><span class="p">[</span><span class="n">idx1</span><span class="p">:</span><span class="n">idx2</span><span class="p">]])</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">str_cids</span> <span class="o">+</span> <span class="s2">&quot;/property/isomericsmiles/txt&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span> <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">:</span>
+        <span class="n">smiles</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="p">)</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Chunk&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;Failed to get SMILES.&quot;</span><span class="p">)</span>
+        
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Number of SMILES : &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">smiles</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Step 2.</strong> Generate the MACCSKeys for each compound.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
+
+<span class="n">mols</span> <span class="o">=</span> <span class="p">[</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">smiles</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="kc">None</span> <span class="p">]</span>
+<span class="n">fps</span>  <span class="o">=</span> <span class="p">[</span> <span class="n">MACCSkeys</span><span class="o">.</span><span class="n">GenMACCSKeys</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mols</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="kc">None</span> <span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Number of compounds:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mols</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Number of fingerprints:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this cell if the number of compounds != the number of fingerprints.</span>
+<span class="c1">#if ( len(cids) != len(fps) ):</span>
+<span class="c1">#    print(&quot;SMILES at index&quot;, mols.index(None), &quot;:&quot;, smiles[ mols.index(None) ])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Step 3.</strong> Compute the Tanimoto scores between compounds.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# The number of compound pairs:&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span> <span class="p">:</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Processing compound &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span> <span class="p">:</span>    <span class="c1">#avoids self- and redundant comparisons</span>
+        <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">FingerprintSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Number of scores : &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Step 4.</strong> Generate a histogram that shows the distribution of the pair-wise scores.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mybins</span> <span class="o">=</span> <span class="p">[</span> <span class="n">x</span> <span class="o">*</span> <span class="mf">0.01</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">)]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">mybins</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="n">x</span> <span class="o">*</span> <span class="mf">0.1</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">)])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Cumulative Distribution&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">mybins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cumulative</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mf">0.95</span><span class="p">,</span><span class="mf">0.95</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="n">x</span> <span class="o">*</span> <span class="mf">0.1</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">)])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;95th percentile threshold&quot;</span><span class="p">,</span> 
+             <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.56</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">),</span>            <span class="c1"># (x, y) location of the point to annotate</span>
+             <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.97</span><span class="p">),</span>        <span class="c1"># position of the label text</span>
+             <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">),</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<strong>Check your understanding</strong>
+<ul class="simple">
+<li><p>What shape is the distribution</p></li>
+<li><p>What is the approximate median of all Tanimoto scores?</p></li>
+<li><p>What is the approximate score for the top 5% of Tanimoto scores in this distribution?</p></li>
+</ul>
+<p>For each Tanimoto similarity threshold, we’ll count how many scores are <span class="math notranslate nohighlight">\(\geq\)</span> the threshold and calculate the percentage of scores that meet or exceed it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span> <span class="p">:</span>
+
+    <span class="n">thresh</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="mi">20</span> 
+    <span class="n">num_similar_pairs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">scores</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="n">thresh</span><span class="p">])</span> 
+    <span class="n">prob</span> <span class="o">=</span> <span class="n">num_similar_pairs</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2"> </span><span class="si">%8d</span><span class="s2"> (</span><span class="si">%8.4f</span><span class="s2"> </span><span class="si">%%</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">thresh</span><span class="p">,</span> <span class="n">num_similar_pairs</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">prob</span><span class="p">,</span><span class="mi">4</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statistics</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average (mean):</span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Median        :</span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">scores</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>From the distribution of the similarity scores among 1,000 compounds, we observe the following:<br></p>
+<ul class="simple">
+<li><p>If you randomly select two compounds from PubChem, the similarity score between them (computed using the Tanimoto equation and MACCS keys) is ~0.35 on average.</p></li>
+<li><p>About %5 of randomly selected compound pairs have a similarity score greater than 0.55.</p></li>
+<li><p>About %1 of randomly selected compound pairs have a similarity score greater than 0.65.</p></li>
+</ul>
+<p>If two compounds have a Tanimoto score of 0.35, it is close to the average Tanimoto score between randomly selected compounds and there is a 50% chance that you will get a score of 0.35 or greater just by selecting two compounds from PubChem.  Therefore, it is reasonable to consider the two compounds are not similar.<br></p>
+<p>The Tanimoto index may have a value ranging from 0 (for no similarity) to 1 (for identical molecules) and the midpoint of this value range is 0.5.  Because of this, a Tanimoto score of <strong>0.55</strong> may not sound great enough to consider two compounds to be similar.  However, according to the score distribution curve generated here, only <strong>~5%</strong> of randomly selected compound pairs will have a score greater than this.<br></p>
+<p>In the previous section, we computed the similarity scores between some cholesterol-lowering drugs, and CID 60823 and CID 446155 had a Tanimoto score of <strong>0.662</strong>.  Based on the score distribution curve generated in the second section, we can say that the probablilty of two randomly selected compounds from PubChem having a Tanimoto score greater than 0.662 is <strong>less than 1%</strong>.</p>
+<p>The following code cell demonstrates how to find an appropriate similarity score threshold above which a given percentage of the compound pairs will be considered to be similar to each other.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>    <span class="c1"># Sort the scores in an increasing order.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to find a threshold for top 3% compound pairs (i.e., 97% percentile)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# total compound pairs:   &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# 97</span><span class="si">% o</span><span class="s2">f compound pairs:  &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.97</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# score at 97% percentile:&quot;</span><span class="p">,</span> <span class="n">scores</span><span class="p">[</span> <span class="nb">round</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.97</span><span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+ <div class="alert alert-block alert-success">
+      <H1><center>Homework</center></H1></section>
+<section class="tex2jax_ignore mathjax_ignore" id="homework-part-1-interpreting-data">
+<h1>Homework Part 1: Interpreting Data<a class="headerlink" href="#homework-part-1-interpreting-data" title="Link to this heading">#</a></h1>
+<p>Turn in Part 1 as a written assignment.</p>
+<ol class="arabic simple">
+<li><p>Run the statins molecules using extended connectivity fingerprints in the code cells below. The current code sets the ECFP equivalent radius value to 1 with 1024 bits. Compare the Tanimoto similarity values to the MACCS data found previously. Explain what happens to the similarity values.</p></li>
+<li><p>Rerun this code with three different radius setting 0, 1 and 2. (You just ran radius 1 for question 1.)</p></li>
+</ol>
+<ul class="simple">
+<li><p>Calculate pairwise Tanimoto similarity scores for the same set of molecules at each radius setting.</p></li>
+<li><p>Compare how the similarity scores change as the radius increases.</p></li>
+<li><p>Describe any trends you observe. For example:</p>
+<ul>
+<li><p>do similarity scores tend to increase or decrease as radius increases or decreases?</p></li>
+<li><p>are the molecules ranked similarly or differently across radii?</p></li>
+</ul>
+</li>
+<li><p>Explain why you think these changes happen. Consider what kinds of molecular features are being captured at each radius. Hint:Think about what a radius of 0, 1, or 2 means in terms of what the fingerprint is seeing. How much of the molecular neighborhood around each atom is being encoded?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cids</span> <span class="o">=</span> <span class="p">[</span>    <span class="mi">54454</span><span class="p">,</span>  <span class="c1"># Simvastatin (Zocor)              </span>
+            <span class="mi">54687</span><span class="p">,</span>  <span class="c1"># Pravastatin (Pravachol)</span>
+            <span class="mi">60823</span><span class="p">,</span>  <span class="c1"># Atorvastatin (Lipitor)</span>
+           <span class="mi">446155</span><span class="p">,</span>  <span class="c1"># Fluvastatin (Lescol)   </span>
+           <span class="mi">446157</span><span class="p">,</span>  <span class="c1"># Rosuvastatin (Crestor)</span>
+          <span class="mi">5282452</span><span class="p">,</span>  <span class="c1"># Pitavastatin (Livalo)</span>
+         <span class="mi">97938126</span> <span class="p">]</span> <span class="c1"># Lovastatin (Altoprev)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prolog</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug&quot;</span>
+
+<span class="n">str_cid</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cids</span><span class="p">])</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">str_cid</span> <span class="o">+</span> <span class="s2">&quot;/property/isomericsmiles/txt&quot;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">smiles</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mols</span> <span class="o">=</span> <span class="p">[</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">smiles</span> <span class="p">]</span>
+<span class="n">Chem</span><span class="o">.</span><span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="n">legends</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cids</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Radius set to 1 and 1024 bit size</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataStructs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">rdFingerprintGenerator</span>
+<span class="n">mfpgen</span> <span class="o">=</span> <span class="n">rdFingerprintGenerator</span><span class="o">.</span><span class="n">GetMorganGenerator</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">fpSize</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+
+<span class="n">fps</span> <span class="o">=</span> <span class="p">[</span> <span class="n">mfpgen</span><span class="o">.</span><span class="n">GetFingerprint</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mols</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This calculates Tanimoto similarity</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span> <span class="p">:</span>
+        
+        <span class="n">score</span> <span class="o">=</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">TanimotoSimilarity</span><span class="p">(</span><span class="n">fps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fps</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">cids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;vs.&quot;</span><span class="p">,</span> <span class="n">cids</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">score</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.85</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ****&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.75</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ***&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.65</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; **&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.55</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; *&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Radius set to 0 and 1024 bit size</span>
+<span class="n">mfpgen</span> <span class="o">=</span> <span class="n">rdFingerprintGenerator</span><span class="o">.</span><span class="n">GetMorganGenerator</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">fpSize</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+<span class="n">fps0</span> <span class="o">=</span> <span class="p">[</span> <span class="n">mfpgen</span><span class="o">.</span><span class="n">GetFingerprint</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mols</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This calculates Tanimoto similarity</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps0</span><span class="p">))</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps0</span><span class="p">))</span> <span class="p">:</span>
+        
+        <span class="n">score</span> <span class="o">=</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">TanimotoSimilarity</span><span class="p">(</span><span class="n">fps0</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fps0</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">cids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;vs.&quot;</span><span class="p">,</span> <span class="n">cids</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">score</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.85</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ****&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.75</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ***&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.65</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; **&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.55</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; *&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Radius set to 2 and 1024 bit size</span>
+<span class="n">mfpgen</span> <span class="o">=</span> <span class="n">rdFingerprintGenerator</span><span class="o">.</span><span class="n">GetMorganGenerator</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">fpSize</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+<span class="n">fps2</span> <span class="o">=</span> <span class="p">[</span> <span class="n">mfpgen</span><span class="o">.</span><span class="n">GetFingerprint</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mols</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This calculates Tanimoto similarity</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps2</span><span class="p">))</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fps2</span><span class="p">))</span> <span class="p">:</span>
+        
+        <span class="n">score</span> <span class="o">=</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">TanimotoSimilarity</span><span class="p">(</span><span class="n">fps2</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fps2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">cids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;vs.&quot;</span><span class="p">,</span> <span class="n">cids</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">score</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.85</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ****&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.75</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ***&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.65</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; **&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.55</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; *&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="homework-part-2-writing-python-code">
+<h1>Homework Part 2: Writing Python Code<a class="headerlink" href="#homework-part-2-writing-python-code" title="Link to this heading">#</a></h1>
+<p>Turn in Part 2 as a new jupyter notebook titled <strong>MS2025_part2_homework</strong>. You will also be turning in a lab report for <strong>Part 2 Problem 2</strong>.</p>
+<p><strong>Part 2 Problem 1:</strong>  Compute the Tanimoto similarity scores between the seven statin compounds used in similarity section, using the PubChem fingerprints</p>
+<ul class="simple">
+<li><p>Download the PubChem Fingerprint for the seven CIDs.</p></li>
+<li><p>Convert the downloaded fingerprints into bit vectors.</p></li>
+<li><p>Compute the pair-wise Tanimoto scores using the bit vectors.</p></li>
+<li><p>Compare these results to the MACCS keys earlier.</p></li>
+</ul>
+<p>In this problem, you are calculating Tanimoto similarity scores between statin molecules using two types of fingerprints: MACCS keys (166 bits) and PubChem fingerprints (881 bits).</p>
+<p>You may have noticed that, even though the statins are structurally quite similar, MACCS keys produced slightly lower similarity scores than PubChem fingerprints.</p>
+<p>Turn the following question in along with Part 1 as a written assignment.</p>
+<p>Why might a fingerprint with fewer bits (MACCS) give lower similarity scores in a set of already similar molecules?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code in this cell</span>
+
+<span class="c1"># need user defined function o decode pubchem fingerprints</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">base64</span><span class="w"> </span><span class="kn">import</span> <span class="n">b64decode</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">PCFP_BitString</span><span class="p">(</span><span class="n">pcfp_base64</span><span class="p">)</span> <span class="p">:</span>
+
+    <span class="n">pcfp_bitstring</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">[</span><span class="s2">&quot;</span><span class="si">{:08b}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">b64decode</span><span class="p">(</span> <span class="n">pcfp_base64</span> <span class="p">)]</span> <span class="p">)[</span><span class="mi">32</span><span class="p">:</span><span class="mi">913</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">pcfp_bitstring</span>
+
+<span class="c1"># Need statin CIDS</span>
+<span class="n">statin_cids</span> <span class="o">=</span> <span class="p">[</span>    <span class="mi">54454</span><span class="p">,</span>  <span class="c1"># Simvastatin (Zocor)</span>
+                   <span class="mi">54687</span><span class="p">,</span>  <span class="c1"># Pravastatin (Pravachol)</span>
+                   <span class="mi">60823</span><span class="p">,</span>  <span class="c1"># Atorvastatin (Lipitor)</span>
+                  <span class="mi">446155</span><span class="p">,</span>  <span class="c1"># Fluvastatin (Lescol)   </span>
+                  <span class="mi">446157</span><span class="p">,</span>  <span class="c1"># Rosuvastatin (Crestor)</span>
+                 <span class="mi">5282452</span><span class="p">,</span>  <span class="c1"># Pitavastatin (Livalo)</span>
+                <span class="mi">97938126</span> <span class="p">]</span> <span class="c1"># Lovastatin (Altoprev)</span>
+
+<span class="c1"># download each pubchem fingerprint, convert to bitstring and store in a list</span>
+<span class="c1"># Method 1 with separate requests</span>
+<span class="n">statin_pcfp</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">statin_cids</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/CID/&quot;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;/property/Fingerprint2D/TXT&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">pcfp_bitstring</span> <span class="o">=</span> <span class="n">PCFP_BitString</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="c1"># use DataStructs.CreateFromBitString to convert a string to an RDKit bit vect object.</span>
+    <span class="n">statin_pcfp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">DataStructs</span><span class="o">.</span><span class="n">CreateFromBitString</span><span class="p">(</span><span class="n">pcfp_bitstring</span><span class="p">))</span>
+
+<span class="c1"># This calculates Tanimoto similarity of pubchem fingerprints</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">statin_pcfp</span><span class="p">))</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">statin_pcfp</span><span class="p">))</span> <span class="p">:</span>
+        
+        <span class="n">score</span> <span class="o">=</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">TanimotoSimilarity</span><span class="p">(</span><span class="n">statin_pcfp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">statin_pcfp</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">statin_cids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;vs.&quot;</span><span class="p">,</span> <span class="n">statin_cids</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">score</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.85</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ****&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.75</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ***&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.65</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; **&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mf">0.55</span> <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; *&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+
+<span class="c1"># method 2 get Pubchem fingerprints in one request</span>
+<span class="c1"># join to make one request</span>
+<span class="n">str_statin_cids</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">statin_cids</span><span class="p">])</span>
+<span class="c1"># generate the url</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/cid/&quot;</span> <span class="o">+</span> <span class="n">str_statin_cids</span> <span class="o">+</span> <span class="s2">&quot;/property/Fingerprint2D/TXT&quot;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">statin_pcfps_base64</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">statin_pcfps_bitstring</span> <span class="o">=</span> <span class="p">[</span> <span class="n">PCFP_BitString</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">statin_pcfps_base64</span> <span class="p">]</span>
+
+<span class="c1"># use DataStructs.CreateFromBitString to convert a string to an RDKit bit vect object for calculations.</span>
+<span class="n">statin_pcfps_bitvect</span> <span class="o">=</span> <span class="p">[</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">CreateFromBitString</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">statin_pcfps_bitstring</span> <span class="p">]</span>
+
+<span class="c1"># This calculates Tanimoto similarity of pubchem fingerprints</span>
+<span class="c1">#for i in range(0, len(statin_pcfps_bitvect)) :</span>
+<span class="c1">#    for j in range(i+1, len(statin_pcfps_bitvect)) :</span>
+        
+<span class="c1">#        score = DataStructs.TanimotoSimilarity(statin_pcfps_bitvect[i], statin_pcfps_bitvect[j])</span>
+<span class="c1">#        print(statin_cids[i], &quot;vs.&quot;, statin_cids[j], &quot;:&quot;, round(score,3), end=&#39;&#39;)</span>
+        
+<span class="c1">#        if ( score &gt;= 0.85 ):</span>
+<span class="c1">#            print(&quot; ****&quot;)</span>
+<span class="c1">#        elif ( score &gt;= 0.75 ):</span>
+<span class="c1">#            print(&quot; ***&quot;)</span>
+<span class="c1">#        elif ( score &gt;= 0.65 ):</span>
+<span class="c1">#            print(&quot; **&quot;)</span>
+<span class="c1">#        elif ( score &gt;= 0.55 ):</span>
+<span class="c1">#            print(&quot; *&quot;)</span>
+<span class="c1">#        else:</span>
+<span class="c1">#            print(&quot; &quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Part 2 Problem 2:</strong></p>
+<p>Previously, you computed the similarity scores between some cholesterol-lowering drugs, and CID 60823 and CID 446155 had a Tanimoto score of <strong>0.662</strong>.  Based on the score distribution curve generated in the second section, we can say that the probablilty of two randomly selected compounds from PubChem having a Tanimoto score greater than 0.662 is <strong>less than 1%</strong>. This was with MACCS Keys.</p>
+<p>In this exercise, we want to generate the distribution of the similarity scores among 1,000 compounds randomly selected from PubChem, using different molecular fingeprints and similarity metrics.</p>
+<p>For molecular fingerprints, use the following:</p>
+<ul class="simple">
+<li><p>PubChem Fingerprint</p></li>
+<li><p>MACCS keys</p></li>
+<li><p>Morgan Fingerprint (ECFP4 analogue, 1024-bit-long)</p></li>
+</ul>
+<p>For similarity metrics, use the following:</p>
+<ul class="simple">
+<li><p>Tanimoto similarity</p></li>
+<li><p>Dice similarity</p></li>
+<li><p>Cosine similarity</p></li>
+</ul>
+<p>As a result, a total of 9 distribution curves need to be generated.</p>
+<p>Here are additional instructions to follow:</p>
+<ul class="simple">
+<li><p>When generating the histograms, bin the scores from 0 to 1 with an increment of 0.01.</p></li>
+<li><p>For each distribution curve, determine the similarity score threshold so that 1% of the compound pairs have a similarity score greater than or equal to this threshold.</p></li>
+<li><p>Use RDKit to generate the MACCS keys and Morgan fingerprint (radius 2 and 1024 bits) and download the PubChem fingerprints from PubChem.</p></li>
+<li><p>For reproducibility, use random.seed(2025) before you generate random CIDs.</p></li>
+</ul>
+<p><strong>Lab report:</strong></p>
+<ol class="arabic simple">
+<li><p>Title, Author and Date</p></li>
+<li><p>Introduction</p>
+<ul class="simple">
+<li><p>Brief overview of molecular similarity and its role in cheminformatics</p></li>
+<li><p>Define fingerprints (PubChem, MACCS, Morgan) and similarity metrics (Tanimoto, Dice, Cosine)</p></li>
+<li><p>State the goal of the experiment</p></li>
+</ul>
+</li>
+<li><p>Methods: Describe how</p>
+<ul class="simple">
+<li><p>CIDS were selected</p></li>
+<li><p>SMILES were retrieved</p></li>
+<li><p>fingerprints were generated</p></li>
+<li><p>similarity scores were calculated</p></li>
+</ul>
+</li>
+<li><p>Results</p>
+<ul class="simple">
+<li><p>Similarity Score Distributions (9 Histograms)</p></li>
+<li><p>Top 1% Similarity Thresholds
+|Fingerprint|Tanimoto|Dice|Cosine|
+|———–|——–|———|———|
+|PubChem|—|—|—|
+|MACCS|—|—|—|
+|Morgan(radius = 2)|—|—|—|</p></li>
+</ul>
+</li>
+<li><p>Discussion:</p>
+<ul class="simple">
+<li><p>Which fingerprints gave higher or lower similarity scores?</p></li>
+<li><p>How did similarity metrics affect score distributions?</p></li>
+<li><p>Did MACCS, PubChem or Morgan fingerprints behave differently? If so, why?</p></li>
+<li><p>What cut-off would you use for virtual screening to find like molecules?</p></li>
+</ul>
+</li>
+<li><p>Conclusion:</p>
+<ul class="simple">
+<li><p>summarize your findings in 2-3 sentences</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Step 1:</strong> Generate 1,000 random CIDs, download the isomeric SMILES for them, and create the RDKit mol objects from the downloaded SMILES strings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code in this cell</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Step 2:</strong> Generate the fingerprints, compute the similarity scores, determine similarity thresholds, and make histograms.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code in this cell (or as many new cells as needed) to complete Step 2.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="acknowledgments">
+<h1>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h1>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "datachem"
+        },
+        kernelOptions: {
+            name: "datachem",
+            path: "./content/modules/08-Molecular-Similarity"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'datachem'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="08-2-MolSimularity.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">What is a bit vector?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../09-CADDD/README.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 9: Computer-Aided Drug Discovery and Design</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Objectives</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computation-of-similarity-scores">1. Computation of similarity scores</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-similarity-scores">2. Interpretation of similarity scores</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-part-1-interpreting-data">Homework Part 1: Interpreting Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-part-2-writing-python-code">Homework Part 2: Writing Python Code</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Belford
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

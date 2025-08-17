@@ -1,0 +1,1744 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exploratory Data Analysis 1: Concordance of Thyroid Hormone Receptor Activity in Rats and Humans &#8212; Data Chemistry 2025</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/oldcustom.css?v=e52fa269" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=ba2d5b83" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/modules/06-BioAssay/06-2-eda-protein1';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exploratory Data Analysis 2:Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS)" href="06-3-eda-pathway.html" />
+    <link rel="prev" title="PubChem Bioactivity Primer" href="06-1-Bioactivity_Primer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Data Chemistry 2025 - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Data Chemistry 2025 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    2025 Data Chemistry OLCC
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-OLCC-Primer/README.html">Module 1: OLCC Primer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-1-OLCC-Primer.html">1.1 OLCC Primer</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-2-python-basics.html">1.2 Python Basics</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-3-python-intermediate.html">1.3 Python Intermediate</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Introduction/README.html">Module 2: Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Introduction/02-1-PubChemDataTypes.html">PubChem Training Course</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../02-Introduction/02-2-PUG-REST-activity.html">Getting Molecular Properties through PubChem’s PUG REST Web Interface</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Public-Chemical-Databases/README.html">Module 3: Public Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Public-Chemical-Databases/03-01-Survey-Public-Chemical-Databases.html">Public Compound Databases</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-Chemical-Representations/README.html">Module 4: Chemical Representations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-01-introduction_chemical_representations.html">Chemical Representations and Introduction to RDKit</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-02-PubChem3D_update.html">PubChem3D</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-03-Substructure_Searching_with_SMARTS.html">Substructure Searching with SMARTS</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05-Searching-Chemical-Databases/README.html">Module 5: Searching Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-01-Exploring-PubChem.html">Exploring PubChem</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-02-structure-inputs.html">Chemical Structure Inputs for PUG-REST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-03-list-conversion.html">Intercoversion between PubChem records.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Module 6: BioAssays</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="06-1-Bioactivity_Primer.html">PubChem Bioactivity Primer</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Exploratory Data Analysis 1: <br/><br/> Concordance of Thyroid Hormone Receptor Activity in Rats and Humans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-3-eda-pathway.html">Exploratory Data Analysis 2:<br/><br/>Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-QSAR-QSPR/README.html">Module 7: Quantitative Structure Property Reationships</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-QSAR-QSPR/07-01-QSPR.html">Molecular Descriptors</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Molecular-Similarity/README.html">Module 8: Molecular Similarity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-1-MolSimularity.html">Fingerprint Generation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-2-MolSimularity.html">What is a bit vector?</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-3-MolSimularity.html">Objectives</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-CADDD/README.html">Module 9: Computer-Aided Drug Discovery and Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-CADDD/09-1-virtual-screening.html">Virtual Screening</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10-Machine-Learning/README.html">Module 10: Supervised ML</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10-Machine-Learning/10-01-supervised-ML.html">Machine Learning Basics</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendices/README.html">Appendices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../appendices/Pandas.html">Introduction to Pandas</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/DivCHED-CCCE/DataChemistry2025OLCC/master?urlpath=lab/tree/docs/content/modules/06-BioAssay/06-2-eda-protein1.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://nanohub.org/tools/datachemolcc/hub/user-redirect/git-pull?repo=https%3A//github.com/DivCHED-CCCE/DataChemistry2025OLCC&urlpath=lab/tree/DataChemistry2025OLCC/docs/content/modules/06-BioAssay/06-2-eda-protein1.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DivCHED-CCCE/DataChemistry2025OLCC/blob/master/docs/content/modules/06-BioAssay/06-2-eda-protein1.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC/issues/new?title=Issue%20on%20page%20%2Fcontent/modules/06-BioAssay/06-2-eda-protein1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/modules/06-BioAssay/06-2-eda-protein1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exploratory Data Analysis 1: <br><br> Concordance of Thyroid Hormone Receptor Activity in Rats and Humans</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-the-amount-of-available-data">Checking the amount of available data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data-for-rat-thyroid-hormone-receptor">Loading data for rat thyroid hormone receptor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data-for-human-thyroid-hormone-receptor">Loading data for human thyroid hormone receptor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Checking the amount of available data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-the-available-bioassays">Checking the available bioassays</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-hts-screening-data-for-rat-and-human">Comparing HTS screening data for Rat and human</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-hts-screening-data-for-rats">Loading the HTS screening data for Rats</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-hts-data-for-humans">Loading the HTS data for humans</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#substance-level-analysis">Substance-level analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-outcomes-and-phenotypes">Activity outcomes and phenotypes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#efficacy">Efficacy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#potency">Potency</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#efficacy-vs-potency">Efficacy vs Potency</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compound-level-analysis">Compound-level Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregating-substance-data-rats">Aggregating substance data rats</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregating-substance-data-for-humans">Aggregating substance data for humans</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-rat-data-and-human-data">Merging rat data and human data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compound-level-comparison">Compound-level comparison</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exploratory-data-analysis-1-concordance-of-thyroid-hormone-receptor-activity-in-rats-and-humans">
+<h1>Exploratory Data Analysis 1: <br><br> Concordance of Thyroid Hormone Receptor Activity in Rats and Humans<a class="headerlink" href="#exploratory-data-analysis-1-concordance-of-thyroid-hormone-receptor-activity-in-rats-and-humans" title="Link to this heading">#</a></h1>
+<p>In the preclinical stage of drug development, drug candidates are tested against in non-human species.  One of the commonly used animals in the preclinical stage is rodents (e.g., mice and rats).<br />
+The underlying assumption here is that the bioactivity (e.g., toxicity and efficacy) of a drug candidate in animals is similar to its activity in humans.</p>
+<p>In this notebook, we will look into the validity of this assumption by comparing the bioactivity data available in PubChem for human and rat thyroid hormone receptor.</p>
+<p>Let’s import necessary libraries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">linregress</span>
+<span class="c1">#import time</span>
+<span class="c1">#import json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="checking-the-amount-of-available-data">
+<h2>Checking the amount of available data<a class="headerlink" href="#checking-the-amount-of-available-data" title="Link to this heading">#</a></h2>
+<p>This section focuses on assessing the availability of the bioactivity data for the thyroid hormone receptor in both human and rat models.  The data sets were downloaded (in August 2025) from the PubChem Protein summary pages for protein assesions  <code class="docutils literal notranslate"><span class="pre">NP_001257783</span></code> (rats) and <code class="docutils literal notranslate"><span class="pre">P10828</span></code> (humans).</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NP_001257783</span></code> (rats)<br />
+https://pubchem.ncbi.nlm.nih.gov/protein/NP_001257783#section=Chemicals-and-Bioactivities</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P10828</span></code> (humans)<br />
+https://pubchem.ncbi.nlm.nih.gov/protein/P10828#section=Chemicals-and-Bioactivities</p></li>
+</ul>
+<p>The names of the downloaded files are:</p>
+<section id="loading-data-for-rat-thyroid-hormone-receptor">
+<h3>Loading data for rat thyroid hormone receptor<a class="headerlink" href="#loading-data-for-rat-thyroid-hormone-receptor" title="Link to this heading">#</a></h3>
+<p>The following cells load and provide an initial exploration of the bioactivity data for the <strong>rat thyroid hormone receptor</strong>.</p>
+<p>This cell defines the data type for the “COMPOUND_CID” column to ensure accurate data loading and to prevent memory-related issues.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mydtype</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Compound_CID&quot;</span> <span class="p">:</span> <span class="s2">&quot;Int64&quot;</span><span class="p">}</span>
+<span class="c1">#mydtype = {&quot;Compound_CID&quot; : &quot;Int64&quot;, &quot;pmid&quot;:&quot;Int64&quot;, &quot;taxid&quot;:&quot;object&quot;, &quot;targettaxid&quot;:&quot;object&quot;}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now read a CSV file containing bioactivity data for the rat thyroid hormone receptorinto a pandas DataFrame and then displays the dimensions of the DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_rat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;pubchem_protacxn_NP_001257783_bioactivity_protein.zip&#39;</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="s1">&#39;zip&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">mydtype</span><span class="p">,</span><span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_rat</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Display a first few rows of the rat bioactivity DataFrame to get a quick overview of the data’s structure and content.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_rat</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df_rat.columns    # Uncomment to check the column names.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="loading-data-for-human-thyroid-hormone-receptor">
+<h3>Loading data for human thyroid hormone receptor<a class="headerlink" href="#loading-data-for-human-thyroid-hormone-receptor" title="Link to this heading">#</a></h3>
+<p>Now read a CSV file containing bioactivity data for the <strong>human</strong> thyroid hormone receptor into a pandas DataFrame, called <code class="docutils literal notranslate"><span class="pre">df_human</span></code>, and then displays the dimensions of the DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Displays a first few rows of the new data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df_human.columns    # Uncomment to check the column names.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>Checking the amount of available data<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Here, we compare the types of bioactivity data available for both rat and human thyroid hormone receptors.</p>
+<p>This cell counts the occurrences of each unique value in the ‘Activity_Type’ column of the rat bioactivity DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_rat</span><span class="p">[</span><span class="s1">&#39;Activity_Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now get the occurrences of each unique value in the ‘Activity_Type’ column of the human bioactivity DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s generate a pair of bar charts to visually compare the distribution of different activity types in the rat and human bioactivity datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_rat</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Activity_Type&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_human</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Activity_Type&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of Data Points (rat)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of Data Points (human)&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span> <span class="p">:</span>    <span class="c1"># loop over each chart.</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">containers</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">bar_label</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To compare the small-molecule bioactivity between rats and humans, we need to use the same activity measures.  The rat data set has only the potency values, while the human data has other types of activities (e.g., EC50, IC50, Ki, Kd, …).  Because the potency is the only activity type available for <strong>both</strong> species, we will use the potency data for comparison.</p>
+</section>
+<section id="checking-the-available-bioassays">
+<h3>Checking the available bioassays<a class="headerlink" href="#checking-the-available-bioassays" title="Link to this heading">#</a></h3>
+<p>This section identifies the unique bioassays in which the rat and human thyroid hormone receptor were targeted.</p>
+<p>First, let’s get the number of unique AIDs for rat thyroid hormone receptor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_rat</span><span class="p">[</span><span class="s1">&#39;BioAssay_AID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s get the number of data points for rat thyroid hormone receptor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_rat</span><span class="p">[</span><span class="s1">&#39;BioAssay_AID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now check the number of unique assays and the number of data points for each unique assay for human thyroid hormone receptor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are more than one hundred assays for human thyroid hormone receptor. However, we are interested in the assays with the <strong>potency</strong> values, because only the potency data is available for both rats and humans.  Therefore, let’s focus on them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_rat</span><span class="p">[</span> <span class="n">df_rat</span><span class="p">[</span><span class="s1">&#39;Activity_Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Potency&#39;</span><span class="p">][[</span><span class="s1">&#39;BioAssay_AID&#39;</span><span class="p">,</span> <span class="s1">&#39;BioAssay_Name&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_human</span><span class="p">[</span> <span class="n">df_human</span><span class="p">[</span><span class="s1">&#39;Activity_Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Potency&#39;</span><span class="p">][[</span><span class="s1">&#39;BioAssay_AID&#39;</span><span class="p">,</span> <span class="s1">&#39;BioAssay_Name&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Considering the title and the data point counts for the returned assays, the three assays for rat thyroid hormone receptor are high-throughput screening (HTS) assays.  Therefore, we also need HTS assays for human thyroid hormone receptor.</p>
+<p>In the remaining part of this notebook, we will use the qHTS assays for antagonists of rat and human thyroid hormone receptors.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/bioassay/743065"><strong>AID 743065</strong></a>: Confirmatory Assay (Antagonists)</p></li>
+<li><p><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/bioassay/588547"><strong>AID 588547</strong></a>: Confirmatory (antagonists)</p></li>
+</ul>
+<p>They were chosen based on the following considerations.</p>
+<ul class="simple">
+<li><p>The four assays for human thyroid hormone receptors with more than 1000 data points (i.e., 1469, 1479, 588547, 588545) are HTS screening.</p></li>
+<li><p>Strictly speaking, AIDs 1469 and 1479 are not targeting the human thyroid hormone receptor, but its interaction with steroid receptor coregulator.</p></li>
+<li><p>At the <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/bioassay/743067#section=Comment">summary page of <strong>AID 743067</strong></a>, it is explained that the assay summarizes from an confirmatory antagonist assay (<a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/bioassay/743065"><strong>AID 743065</strong></a>) and a cell viability counter screening (<a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/bioassay/743064"><strong>AID 743064</strong></a>).</p></li>
+<li><p>More active compounds were identified in the antagonist HTS assays for both species (<a class="reference external" href="https::/pubchem.ncbi.nlm.nih.gov/bioassay/743065"><strong>AIDs 743065</strong></a> and <a class="reference external" href="https::/pubchem.ncbi.nlm.nih.gov/bioassay/588547"><strong>588547</strong></a>), compared to the agonist assays (<a class="reference external" href="https::/pubchem.ncbi.nlm.nih.gov/bioassay/743066"><strong>AIDs 743066</strong></a> and <a class="reference external" href="https::/pubchem.ncbi.nlm.nih.gov/bioassay/588545"><strong>588545</strong></a>).</p></li>
+</ul>
+</section>
+</section>
+<section id="comparing-hts-screening-data-for-rat-and-human">
+<h2>Comparing HTS screening data for Rat and human<a class="headerlink" href="#comparing-hts-screening-data-for-rat-and-human" title="Link to this heading">#</a></h2>
+<p>The following section uses the quantitative HTS (qHTS) data for thyroid hormone receptor antagonsts.  The data files were downlonaded from their BioAssay record pages:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/bioassay/743065"><strong>AID 743065</strong></a>: Confirmatory Assay (Antagonists)</p></li>
+<li><p><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/bioassay/588547"><strong>AID 588547</strong></a>: Confirmatory (antagonists)</p></li>
+</ul>
+<p>The names of the downloaded files are:</p>
+<section id="loading-the-hts-screening-data-for-rats">
+<h3>Loading the HTS screening data for Rats<a class="headerlink" href="#loading-the-hts-screening-data-for-rats" title="Link to this heading">#</a></h3>
+<p>Now let’s load the HTS data for the rat thyroid hormone receptor.</p>
+<ul class="simple">
+<li><p>The data type for the <code class="docutils literal notranslate"><span class="pre">PUBCHEM_CID</span></code> column is explicitly specified to ensure it is read as an integer, which is important for accurate data handling.</p></li>
+<li><p>The first 5 rows are skipped because they do not contain data, but meta data (e.g., the description of each column).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mydtype</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;PUBCHEM_CID&#39;</span><span class="p">:</span><span class="s1">&#39;Int64&#39;</span> <span class="p">}</span>
+<span class="n">df_aid_rat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;AID_743065_datatable_all.zip&#39;</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="s1">&#39;zip&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">mydtype</span><span class="p">,</span> <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This data frame has many columns that don’t have any values. The following cell removes those columns and displays the updated dimensions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat</span> <span class="o">=</span> <span class="n">df_aid_rat</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_aid_rat</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="loading-the-hts-data-for-humans">
+<h3>Loading the HTS data for humans<a class="headerlink" href="#loading-the-hts-data-for-humans" title="Link to this heading">#</a></h3>
+<p>Now read the CSV file for the human HTS data into a dataframe called <code class="docutils literal notranslate"><span class="pre">df_aid_human</span></code>. Make sure to skip the initial descriptive rows and set the data type for ‘PUBCHEM_CID’ to ‘Int64’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check a first few lines of the new data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Displays the dimensions of the human HTS DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following cell Remove the columns containing no values and displays the updated dimensions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="substance-level-analysis">
+<h3>Substance-level analysis<a class="headerlink" href="#substance-level-analysis" title="Link to this heading">#</a></h3>
+<p>This section compares the HTS data for rats and humans at the substance level</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df_aid_rat.columns    # Uncomment this line if you want to see what columns the data frame has.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df_aid_human.columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="activity-outcomes-and-phenotypes">
+<h4>Activity outcomes and phenotypes<a class="headerlink" href="#activity-outcomes-and-phenotypes" title="Link to this heading">#</a></h4>
+<p>This part of the analysis focuses on comparing the activity outcomes and observed phenotypes from the HTS data for both species.</p>
+<p>First, let’s generate two bar charts to visually compare the distribution of <code class="docutils literal notranslate"><span class="pre">PUBCHEM_ACTIVITY_OUTCOME</span></code> in the rat and human HTS datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_rat</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_human</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of Data Points (rat)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of Data Points (human)&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span> <span class="p">:</span>    <span class="c1"># loop over each chart.</span>
+
+    <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">containers</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">bar_label</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>The majority of the data points in the two data sets are declared in <code class="docutils literal notranslate"><span class="pre">Inactive</span></code>.</p></li>
+<li><p>There are 1880 <code class="docutils literal notranslate"><span class="pre">Active</span></code> data points in the rat data set and 12 <code class="docutils literal notranslate"><span class="pre">Active</span></code> data points in the human data set.</p></li>
+</ul>
+<p>Both data sets have a column containing information on the observed characteristics of the chemicals tested in the assays.  These columns are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Phenotype-Replicate_1</span></code> for rats</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Phenotype</span></code> for humans</p></li>
+</ul>
+<p>It is worth mentioning that the column for rats is suffixed with <code class="docutils literal notranslate"><span class="pre">-Replicate_1</span></code>.  The rat data set contains data from repeated assay experiments, which are indicated as Replicate_1, Replicate_2, Replicate_3, and so on. For simplicity, we will use the data for <code class="docutils literal notranslate"><span class="pre">-Replicate_1</span></code>, but if we were to perform a stricter analysis, we should consider data from all replicates.</p>
+<p>Now let’s create two bar charts to compare the distribution of phenotypes (‘Phenotype-Replicate_1’ for rat and ‘Phenotype’ for human) across the two HTS datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To find the relationship between the activity outcomes and phenotypes, let’s count the occurrences of each unique combination of ‘PUBCHEM_ACTIVITY_OUTCOME’ and ‘Phenotype-Replicate_1’ in the <strong>rat HTS data</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat</span><span class="p">[[</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="s1">&#39;Phenotype-Replicate_1&#39;</span> <span class="p">]]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> and <code class="docutils literal notranslate"><span class="pre">.size()</span></code> can be used to get the same information (but sorted differently).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="s1">&#39;Phenotype-Replicate_1&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now counts the occurrences of each unique combination of ‘PUBCHEM_ACTIVITY_OUTCOME’ and ‘Phenotype’ in the <strong>human HTS data</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_human</span><span class="p">[[</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="s1">&#39;Phenotype&#39;</span> <span class="p">]]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Get the same information using <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> and <code class="docutils literal notranslate"><span class="pre">.size()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_human</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="s1">&#39;Phenotype&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are several noteworthy things.</p>
+<ul class="simple">
+<li><p>The objective of the two assays considered here (i.e., <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/bioassay/743065">AID 743065</a> and <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/bioassay/588547">AID 588547</a>) was to identify antagonists (i.e., inhibitors) of thyroid hormone receptor.  With that said, the chemicals with the <code class="docutils literal notranslate"><span class="pre">Activitor</span></code> phenotype (i.e., agonist) are not declared as <code class="docutils literal notranslate"><span class="pre">Active</span></code> because the activator identification was not the objective of the assays.  They are declared as <code class="docutils literal notranslate"><span class="pre">Inactive</span></code> in the rat data set and as <code class="docutils literal notranslate"><span class="pre">Inconclusive</span></code> in the human data set. Note that the two assays are different experiments and whether to view activators as inactive or inconclusive is up to those who performed the experiment.
+<br></p></li>
+<li><p>In the human data set, the compounds with the “inconclusive” outcomes have additional phenotypes, including Cytotoxic, Flurescent, Inconclusive, Inhibitor and Activator.</p>
+<ul>
+<li><p><strong>cytotoxic</strong>: some chemicals are so toxic that they kill cells.</p></li>
+<li><p><strong>fluorescent</strong>: some assays measure the activity of a chemical against the target protein by measuring the change in the fluorescence intensity caused by the protein-ligand interaction. However, some chemicals can absorb light energy and emit light through flourescence even without interaction with the target proteins.</p></li>
+<li><p>inconclusive or inhibitor: some chemicals did not show a clear dose-response curve to compute the quantitative inhibitory activities (e.g., efficacy and potency), or did not show enough inhibitory activity.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="efficacy">
+<h4>Efficacy<a class="headerlink" href="#efficacy" title="Link to this heading">#</a></h4>
+<p>In this section, we compare the <strong>efficacy</strong> data from the HTS assays for both rat and human thyroid hormone receptors.</p>
+<p>First, let’s generate two histograms to visualize and compare the distribution of efficacy values (‘Efficacy-Replicate_1’ for rat and ‘Efficacy’ for human) for different activity outcomes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_rat</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Efficacy-Replicate_1&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_human</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Efficacy&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (%, rat)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (%, human)&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This time, visualize the same data using strip plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">hue_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Active&#39;</span><span class="p">,</span>  <span class="s1">&#39;Inconclusive&#39;</span><span class="p">,</span> <span class="s1">&#39;Inactive&#39;</span><span class="p">]</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_rat</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Efficacy-Replicate_1&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="n">hue_order</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_human</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Efficacy&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="n">hue_order</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (micro-M, rat)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (micro-M, human)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can use box plots to visualize the minimum, maximum, median, and outliers of the efficacy values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">hue_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Active&#39;</span><span class="p">,</span>  <span class="s1">&#39;Inconclusive&#39;</span><span class="p">,</span> <span class="s1">&#39;Inactive&#39;</span><span class="p">]</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_rat</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Efficacy-Replicate_1&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="n">hue_order</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_human</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Efficacy&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="n">hue_order</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (micro-M, rat)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (micro-M, human)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above histograms, strip plots, and box plots indicate that the assay against the <strong>human</strong> thyroid hormone receptor did not determine efficacy values for inactive compounds.</p>
+</section>
+<section id="potency">
+<h4>Potency<a class="headerlink" href="#potency" title="Link to this heading">#</a></h4>
+<p>Now visualize the potency of the tested chemicals on the rat and human thyroid hormone receptors.</p>
+<p>Generate two histograms to visualize and compare the distribution of potency values for different activity outcomes in the rat and human HTS datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Generate two strip plots to visualize the potency values for different activity outcomes in the rat and human HTS datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Generate two box plots to visualize the potency data for different activity outcomes in the rat and human HTS datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compute the mean, median, minimum, maximum of the efficacy and potency values for the different outcomes of the <strong>rat</strong> data set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">)[[</span><span class="s1">&#39;Efficacy-Replicate_1&#39;</span><span class="p">,</span> <span class="s1">&#39;Potency-Replicate_1&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">)[[</span><span class="s1">&#39;Efficacy-Replicate_1&#39;</span><span class="p">,</span> <span class="s1">&#39;Potency-Replicate_1&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">)[[</span><span class="s1">&#39;Efficacy-Replicate_1&#39;</span><span class="p">,</span> <span class="s1">&#39;Potency-Replicate_1&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">)[[</span><span class="s1">&#39;Efficacy-Replicate_1&#39;</span><span class="p">,</span> <span class="s1">&#39;Potency-Replicate_1&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compute the mean, median, minimum, maximum of the efficacy and potency values for the different outcomes of the <strong>human</strong> data set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code for mean</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code for median</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code for minimum</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code for maximum</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="efficacy-vs-potency">
+<h4>Efficacy vs Potency<a class="headerlink" href="#efficacy-vs-potency" title="Link to this heading">#</a></h4>
+<p>This section explores the relationship between the efficacy and potency of the tested compounds for both the rat and human thyroid hormone receptors.</p>
+<p>The following code creates two scatter plots, one for the rat data and one for the human data, to visualize the relationship between potency and efficacy, with points colored by their activity outcome.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">hue_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Active&#39;</span><span class="p">,</span>  <span class="s1">&#39;Inconclusive&#39;</span><span class="p">,</span> <span class="s1">&#39;Inactive&#39;</span><span class="p">]</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_rat</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Potency-Replicate_1&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Efficacy-Replicate_1&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="n">hue_order</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_human</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Potency&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Efficacy&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="n">hue_order</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Potency (micro-M, rat)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Potency (micro-M, human)&quot;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (%, rat)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (%, human)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Uncomment next three lines to limit the x-axis to 200.</span>
+<span class="c1">#for ax in axes :    # loop over each panel</span>
+<span class="c1">#    ax.set_xlim(0, 200)</span>
+<span class="c1">#    ax.set_ylim(0, 200)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="compound-level-analysis">
+<h3>Compound-level Analysis<a class="headerlink" href="#compound-level-analysis" title="Link to this heading">#</a></h3>
+<p>In PubChem, substances are chemical records provided by individual data contributors and compounds are unique chemical structures extracted from substance records.<br />
+In many assays, substances can be viewed as “samples” of chemicals.  A chemical can be tested in multiple samples containing that chemical in a single assay. The samples are not necessary the same as each other. For example, they may be different in terms of its concentration, temperature, solvent used, etc.<br />
+Therefore, if you want to determine the activity of a chemical, you may need to collapse the data from multiple samples (i.e., substances) into a single data point for the chemical.</p>
+<p>The code cells below checks how many unique compounds in the data set and how many of them are associated with multiple substances.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_rat_cidcount</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_aid_rat</span><span class="p">[</span><span class="s1">&#39;PUBCHEM_CID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_human_cidcount</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_aid_human</span><span class="p">[</span><span class="s1">&#39;PUBCHEM_CID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#-- Rat data set&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# CIDs in total                      :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_rat_cidcount</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# CIDs associated with multiple SIDs :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_rat_cidcount</span><span class="p">[</span><span class="n">df_rat_cidcount</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">])</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;------------------------------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#-- Human data set&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# CIDs in total                      :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_human_cidcount</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# CIDs associated with multiple SIDs :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_human_cidcount</span><span class="p">[</span><span class="n">df_human_cidcount</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">])</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_rat_cidcount</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span>  <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_human_cidcount</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span>  <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of SIDs per CID&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of SIDs per CID&quot;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Number of CIDs&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Number of CIDs&quot;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Rat&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Human&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="aggregating-substance-data-rats">
+<h4>Aggregating substance data rats<a class="headerlink" href="#aggregating-substance-data-rats" title="Link to this heading">#</a></h4>
+<p>Now we aggregate the substance data for each unique compound (identified by its CID).</p>
+<p>This code groups the rat HTS data by ‘PUBCHEM_CID’ and store them in a data frame with three columns (<code class="docutils literal notranslate"><span class="pre">PUBCHEM_CID</span></code>, <code class="docutils literal notranslate"><span class="pre">Potency-Replicate_1</span></code>, and <code class="docutils literal notranslate"><span class="pre">Efficacy-Replicate_1</span></code>).  Note that some CIDs are associated with multiple SIDs, and hence, multiple activity values.  For those cases, we are going to take the average of the multiple activity values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat_cid</span> <span class="o">=</span> <span class="n">df_aid_rat</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;PUBCHEM_CID&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_aid_rat_cid</span> <span class="o">=</span> <span class="n">df_aid_rat_cid</span><span class="p">[[</span><span class="s1">&#39;PUBCHEM_CID&#39;</span><span class="p">,</span> <span class="s1">&#39;Potency-Replicate_1&#39;</span><span class="p">,</span> <span class="s1">&#39;Efficacy-Replicate_1&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat_cid</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code defines a function, <code class="docutils literal notranslate"><span class="pre">get_cid_outcome</span></code>, that determines a single activity outcome for each unique compound ID (CID) in a given DataFrame. If a compound has multiple, conflicting outcomes recorded, it is labeled as “Conflicting”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_cid_outcome</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="p">:</span>
+
+    <span class="n">outcomes</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">cid</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;PUBCHEM_CID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="p">:</span>   <span class="c1"># loop over unique CIDs (without Null)</span>
+
+        <span class="n">outcome</span> <span class="o">=</span><span class="s2">&quot;&quot;</span>
+    
+        <span class="n">unique_outcomes</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;PUBCHEM_CID&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">cid</span> <span class="p">][</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    
+        <span class="k">if</span> <span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_outcomes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">:</span>
+            <span class="n">outcome</span> <span class="o">=</span> <span class="n">unique_outcomes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_outcomes</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">:</span>
+            <span class="n">outcome</span> <span class="o">=</span> <span class="s2">&quot;Conflicting&quot;</span>
+        <span class="k">else</span> <span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: Something is wrong&quot;</span><span class="p">,</span> <span class="n">cid</span><span class="p">,</span> <span class="n">unique_outcomes</span><span class="p">)</span>
+
+        <span class="n">outcomes</span><span class="p">[</span> <span class="n">cid</span> <span class="p">]</span> <span class="o">=</span> <span class="n">outcome</span>
+
+    <span class="n">df_outcomes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">outcomes</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_CID&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span><span class="p">(</span><span class="n">df_outcomes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This line of code applies the get_cid_outcome function to the rat HTS data to generate a DataFrame that summarizes the activity outcome for each unique compound.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_cid_outcome_rat</span> <span class="o">=</span> <span class="n">get_cid_outcome</span><span class="p">(</span><span class="n">df_aid_rat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_cid_outcome_rat</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s merge the aggregated rat compound data (containing mean potency and efficacy) with the summarized compound outcomes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat_cid</span> <span class="o">=</span> <span class="n">df_aid_rat_cid</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_cid_outcome_rat</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_CID&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat_cid</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This cell counts the occurrences of each unique ‘PUBCHEM_ACTIVITY_OUTCOME’ in the aggregated rat compound data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat_cid</span><span class="p">[</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="aggregating-substance-data-for-humans">
+<h4>Aggregating substance data for humans<a class="headerlink" href="#aggregating-substance-data-for-humans" title="Link to this heading">#</a></h4>
+<p>Now let’s repeat the data aggregation process, this time for the human thyroid hormone receptor HTS data.</p>
+<p>Group the human HTS data by ‘PUBCHEM_CID’ and store the mean efficacy and potency values in a data frame called ‘df_aid_human_cid’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Show a first few line of the <code class="docutils literal notranslate"><span class="pre">df_aid_human_cid</span></code> data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">get_cid_outcome</span></code> function to the human HTS data to generate a DataFrame that summarizes the activity outcome for each unique compound.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This command displays the first few rows of the DataFrame containing the summarized compound outcomes for the human data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code merges the aggregated human compound data with the summarized compound outcomes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This command displays the first few rows of the merged human compound DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code> the occurrences of each unique ‘PUBCHEM_ACTIVITY_OUTCOME’ in the aggregated human compound data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="merging-rat-data-and-human-data">
+<h4>Merging rat data and human data<a class="headerlink" href="#merging-rat-data-and-human-data" title="Link to this heading">#</a></h4>
+<p>This subsection focuses on combining the aggregated compound-level data from both the rat and human HTS assays to facilitate a direct comparison.</p>
+<p>This command displays the column names of the aggregated rat compound DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat_cid</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s rename the columns in the rat compound DataFrame to have consistent naming with the human compound DataFrame before merging.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat_cid</span> <span class="o">=</span> <span class="n">df_aid_rat_cid</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Potency-Replicate_1&#39;</span><span class="p">:</span><span class="s1">&#39;Potency&#39;</span> <span class="p">,</span> <span class="s1">&#39;Efficacy-Replicate_1&#39;</span><span class="p">:</span><span class="s1">&#39;Efficacy&#39;</span><span class="p">,</span> <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This command displays the first three rows of the renamed rat compound DataFrame to verify the column name changes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_rat_cid</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now merge the aggregated rat and human compound DataFrames based on ‘PUBCHEM_CID’, keeping only the compounds that are present in both datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_merged_cid</span> <span class="o">=</span> <span class="n">df_aid_rat_cid</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_aid_human_cid</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_CID&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;_rat&#39;</span><span class="p">,</span><span class="s1">&#39;_human&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check if the merged data frame contains desired information.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_merged_cid</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_merged_cid</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This cell counts the occurrences of each unique ‘PUBCHEM_ACTIVITY_OUTCOME’ for the rat data within the merged DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_merged_cid</span><span class="p">[</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_rat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This cell counts the occurrences of each unique ‘PUBCHEM_ACTIVITY_OUTCOME’ for the human data within the merged DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_merged_cid</span><span class="p">[</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_human&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="compound-level-comparison">
+<h4>Compound-level comparison<a class="headerlink" href="#compound-level-comparison" title="Link to this heading">#</a></h4>
+<p>Let’s compare the bioactivity of the same compounds between the rat and human thyroid hormone receptors.</p>
+<p>The following code cell generates two box plots to compare the distribution of efficacy for different activity outcomes between the rat and human data in the merged dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">hue_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Active&#39;</span><span class="p">,</span>  <span class="s1">&#39;Inactive&#39;</span><span class="p">,</span> <span class="s1">&#39;Conflicting&#39;</span><span class="p">,</span> <span class="s1">&#39;Inconclusive&#39;</span><span class="p">]</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_merged_cid</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Efficacy_rat&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_rat&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_rat&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="n">hue_order</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_merged_cid</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Efficacy_human&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_human&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_human&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="n">hue_order</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (micro-M, rat)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (micro-M, human)&quot;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PUBCHEM_ACTIVITY_OUTCOME&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Generate two box plots to compare the distribution of potency for different activity outcomes between the rat and human data in the merged dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code creates two scatter plots to visualize the relationship between potency and efficacy for the rat and human data in the merged dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1">#hue_order = [&#39;Active&#39;,  &#39;Inconclusive&#39;, &#39;Inactive&#39;]</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_merged_cid</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Potency_rat&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Efficacy_rat&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_rat&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_merged_cid</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Potency_human&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Efficacy_human&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_human&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Potency (micro-M, rat)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Potency (micro-M, human)&quot;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (%, rat)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (%, human)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Uncomment the next three lines to limit the x and y axes to 200.</span>
+<span class="c1">#for ax in axes :    # loop over each panel</span>
+<span class="c1">#    ax.set_xlim(0, 200)</span>
+<span class="c1">#    ax.set_ylim(0, 200)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we want to generate a heatmap that shows the counts of rat and human activity outcome pairs. (For example, how many chemicals are active in both species, and how many chemicals are active in one species and inactive in the other?).<br />
+To do that we want to get the outcome pair count information from the <code class="docutils literal notranslate"><span class="pre">df_aid_merged_cid</span></code> data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outcome_counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_aid_merged_cid</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_human&#39;</span><span class="p">,</span> <span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_rat&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Count&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">outcome_counts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, use <code class="docutils literal notranslate"><span class="pre">.pivot()</span></code> to change the ‘outcome_counts’ DataFrame into a square matrix form, where the rows are human activity outcomes, the columns are rat activity outcomes, and the values are the counts of compounds.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heatmap_data</span> <span class="o">=</span> <span class="n">outcome_counts</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_human&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_rat&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">heatmap_data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Generate a heatmap to visualize the activity outcome pair counts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">heatmap_data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;flare&quot;</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;4.0f&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code creates two scatter plots to directly compare the efficacy and potency of compounds between the rat and human assays.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">hue_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Active&#39;</span><span class="p">,</span>  <span class="s1">&#39;Inactive&#39;</span><span class="p">,</span> <span class="s1">&#39;Inconclusive&#39;</span><span class="p">,</span> <span class="s1">&#39;Conflicting&#39;</span><span class="p">]</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_merged_cid</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Efficacy_rat&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Efficacy_human&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_rat&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="n">hue_order</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">legend</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_merged_cid</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Potency_rat&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Potency_human&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_rat&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="n">hue_order</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (%, rat)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (%, human)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Efficacy&quot;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Potency (micro-M, rat)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Potency (micro-M, human)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Potency&quot;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Uncomment to limit the axes to 200.</span>
+<span class="c1">#for ax in axes :    # loop over each panel</span>
+<span class="c1">#   ax.set_xlim(0, 200)</span>
+<span class="c1">#    ax.set_ylim(0, 200)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above graphs, it is not easy to see if there is any correlation between rat and human activities (in terms of the efficacy and potency).</p>
+<p>Let’s focus only on the active compounds in both the rat and human assays.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_aid_merged_cid_active</span> <span class="o">=</span> <span class="n">df_aid_merged_cid</span><span class="p">[(</span><span class="n">df_aid_merged_cid</span><span class="p">[</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_rat&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Active&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_aid_merged_cid</span><span class="p">[</span><span class="s1">&#39;PUBCHEM_ACTIVITY_OUTCOME_human&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Active&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code generates two scatter plots to compare the efficacy and potency of the compounds that were active in both rat and human assays.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_merged_cid_active</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Efficacy_rat&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Efficacy_human&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_aid_merged_cid_active</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Potency_rat&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Potency_human&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Efficacy&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (%, rat)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Efficacy (%, human)&quot;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Potency&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Potency (micro-M, rat)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Potency (micro-M, human)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res_efficacy</span> <span class="o">=</span> <span class="n">linregress</span><span class="p">(</span><span class="n">df_aid_merged_cid_active</span><span class="p">[</span><span class="s1">&#39;Efficacy_rat&#39;</span><span class="p">],</span> <span class="n">df_aid_merged_cid_active</span><span class="p">[</span><span class="s1">&#39;Efficacy_human&#39;</span><span class="p">])</span>
+<span class="n">res_potency</span> <span class="o">=</span> <span class="n">linregress</span><span class="p">(</span><span class="n">df_aid_merged_cid_active</span><span class="p">[</span><span class="s1">&#39;Potency_rat&#39;</span><span class="p">],</span> <span class="n">df_aid_merged_cid_active</span><span class="p">[</span><span class="s1">&#39;Potency_human&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;                      Efficacy</span><span class="se">\t</span><span class="s2">Potency&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Slope               : </span><span class="si">{</span><span class="n">res_efficacy</span><span class="o">.</span><span class="n">slope</span><span class="si">:</span><span class="s2">4.4f</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">res_potency</span><span class="o">.</span><span class="n">slope</span><span class="si">:</span><span class="s2">&lt;4.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;intercept           : </span><span class="si">{</span><span class="n">res_efficacy</span><span class="o">.</span><span class="n">intercept</span><span class="si">:</span><span class="s2">4.4f</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">res_potency</span><span class="o">.</span><span class="n">intercept</span><span class="si">:</span><span class="s2">4.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;r-value             : </span><span class="si">{</span><span class="n">res_efficacy</span><span class="o">.</span><span class="n">rvalue</span><span class="si">:</span><span class="s2">4.4f</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">res_potency</span><span class="o">.</span><span class="n">rvalue</span><span class="si">:</span><span class="s2">4.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-value             : </span><span class="si">{</span><span class="n">res_efficacy</span><span class="o">.</span><span class="n">pvalue</span><span class="si">:</span><span class="s2">4.4f</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">res_potency</span><span class="o">.</span><span class="n">pvalue</span><span class="si">:</span><span class="s2">4.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;std-err (slope)     : </span><span class="si">{</span><span class="n">res_efficacy</span><span class="o">.</span><span class="n">stderr</span><span class="si">:</span><span class="s2">4.4f</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">res_potency</span><span class="o">.</span><span class="n">stderr</span><span class="si">:</span><span class="s2">4.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;std-err (intercept) : </span><span class="si">{</span><span class="n">res_efficacy</span><span class="o">.</span><span class="n">intercept_stderr</span><span class="si">:</span><span class="s2">4.4f</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">res_potency</span><span class="o">.</span><span class="n">intercept_stderr</span><span class="si">:</span><span class="s2">4.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we consider the compounds that are active in both species, there appears to be a positive correlation between the rat and human data.  However,  there are only six compounds active in both species, we cannot confidently say there is a definitive relationship.</p>
+</section>
+</section>
+</section>
+<section id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h2>
+<p>Answer the following questions, based on the analysis of the compounds tested in both rat and human thyroid hormone receptors (i.e., the compounds in the <code class="docutils literal notranslate"><span class="pre">df_aid_merged_cid</span></code> data frame).</p>
+<p>(1) How many compounds were tested against both rat thyroid hormone receptor?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Provide your answer here -&gt; </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(2) Among the compounds tested in both species, how many were active against <strong>rat</strong> thyroid hormone receptor?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Provide your answer here -&gt; </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(3) Among the compounds active in rats (i.e., those in (2)), how many were active against <strong>human</strong> thyroid hormone receptor?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Provide your answer here -&gt; </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(4) Read the following paper on the concordance of the toxicity of drugs between animals and humans and summarize its main conclusion (in 50-60 words).</p>
+<p><strong>Limitations of Animal Studies for Predicting Toxicity in Clinical Trials: Is it Time to Rethink Our Current Approach?</strong><br />
+Van Norman GA.<br />
+JACC Basic Transl Sci. 2019 Nov 25;4(7):845-854.<br />
+doi: <a class="reference external" href="https://doi.org/10.1016/j.jacbts.2019.10.008">10.1016/j.jacbts.2019.10.008</a>. PMID: 31998852; PMCID: PMC6978558.</p>
+<p># Write your summary in this markdown cell:</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "datachem"
+        },
+        kernelOptions: {
+            name: "datachem",
+            path: "./content/modules/06-BioAssay"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'datachem'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="06-1-Bioactivity_Primer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PubChem Bioactivity Primer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="06-3-eda-pathway.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exploratory Data Analysis 2:<br><br>Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-the-amount-of-available-data">Checking the amount of available data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data-for-rat-thyroid-hormone-receptor">Loading data for rat thyroid hormone receptor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data-for-human-thyroid-hormone-receptor">Loading data for human thyroid hormone receptor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Checking the amount of available data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-the-available-bioassays">Checking the available bioassays</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-hts-screening-data-for-rat-and-human">Comparing HTS screening data for Rat and human</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-hts-screening-data-for-rats">Loading the HTS screening data for Rats</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-hts-data-for-humans">Loading the HTS data for humans</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#substance-level-analysis">Substance-level analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-outcomes-and-phenotypes">Activity outcomes and phenotypes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#efficacy">Efficacy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#potency">Potency</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#efficacy-vs-potency">Efficacy vs Potency</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compound-level-analysis">Compound-level Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregating-substance-data-rats">Aggregating substance data rats</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregating-substance-data-for-humans">Aggregating substance data for humans</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-rat-data-and-human-data">Merging rat data and human data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compound-level-comparison">Compound-level comparison</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Belford
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

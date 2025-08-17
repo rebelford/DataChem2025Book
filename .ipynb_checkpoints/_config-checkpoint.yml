@@ -8,8 +8,14 @@ logo: logo.png
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: cache # was force
-  nb_execution_show_tb: True  # <- Add this if it's not already present
+  execute_notebooks: "off"     # never execute during build
+  # Optional if/when you re-enable execution later:
+  timeout: -1                   # no timeouts
+  allow_errors: false           # fail build on exceptions
+  nb_execution_show_tb: true    # show tracebacks if outputs already contain them
+
+#  execute_notebooks: cache # was force
+#  nb_execution_show_tb: True  # <- Add this if it's not already present
 
 #exclude_patterns:
 #  - content/module1-setup/*.ipynb

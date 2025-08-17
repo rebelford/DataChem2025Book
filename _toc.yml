@@ -1,14 +1,57 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
 root: content/index
 chapters:
-- file: content/modules/README
+- file: content/modules/01-OLCC-Primer/README
   sections:
     - file: content/modules/01-OLCC-Primer/01-1-OLCC-Primer
     - file: content/modules/01-OLCC-Primer/01-2-python-basics
     - file: content/modules/01-OLCC-Primer/01-3-python-intermediate
+
+- file: content/modules/02-Introduction/README
+  sections:  
+    - file: content/modules/02-Introduction/02-1-PubChemDataTypes
+    - file: content/modules/02-Introduction/02-2-PUG-REST-activity
+
+- file: content/modules/03-Public-Chemical-Databases/README
+  sections:
+    - file: content/modules/03-Public-Chemical-Databases/03-01-Survey-Public-Chemical-Databases
+
+- file: content/modules/04-Chemical-Representations/README
+  sections:  
+    - file: content/modules/04-Chemical-Representations/04-01-introduction_chemical_representations
+    - file: content/modules/04-Chemical-Representations/04-02-PubChem3D_update
+    - file: content/modules/04-Chemical-Representations/04-03-Substructure_Searching_with_SMARTS
+
+- file: content/modules/05-Searching-Chemical-Databases/README
+  sections:  
+    - file: content/modules/05-Searching-Chemical-Databases/05-01-Exploring-PubChem
+    - file: content/modules/05-Searching-Chemical-Databases/05-02-structure-inputs
+    - file: content/modules/05-Searching-Chemical-Databases/05-03-list-conversion
+
+- file: content/modules/06-BioAssay/README
+  sections:   
+    - file: content/modules/06-BioAssay/06-1-Bioactivity_Primer
+    - file: content/modules/06-BioAssay/06-2-eda-protein1
+    - file: content/modules/06-BioAssay/06-3-eda-pathway
+
+- file: content/modules/07-QSAR-QSPR/README
+  sections:
+    - file: content/modules/07-QSAR-QSPR/07-01-QSPR
+ 
+- file: content/modules/08-Molecular-Similarity/README
+  sections:  
+    - file: content/modules/08-Molecular-Similarity/08-1-MolSimularity
+    - file: content/modules/08-Molecular-Similarity/08-2-MolSimularity
+    - file: content/modules/08-Molecular-Similarity/08-3-MolSimularity
+
+- file: content/modules/09-CADDD/README
+  sections:
+    - file: content/modules/09-CADDD/09-1-virtual-screening
+  
+- file: content/modules/10-Machine-Learning/README
+  sections:
+    - file: content/modules/10-Machine-Learning/10-01-supervised-ML
+ 
 - file: content/appendices/README
   sections:
     - file: content/appendices/Pandas

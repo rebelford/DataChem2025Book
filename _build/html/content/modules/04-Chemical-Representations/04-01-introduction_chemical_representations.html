@@ -1,0 +1,1598 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chemical Representations and Introduction to RDKit &#8212; Data Chemistry 2025</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/oldcustom.css?v=e52fa269" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=ba2d5b83" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/modules/04-Chemical-Representations/04-01-introduction_chemical_representations';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="PubChem3D" href="04-02-PubChem3D_update.html" />
+    <link rel="prev" title="Module 4: Chemical Representations" href="README.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Data Chemistry 2025 - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Data Chemistry 2025 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    2025 Data Chemistry OLCC
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-OLCC-Primer/README.html">Module 1: OLCC Primer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-1-OLCC-Primer.html">1.1 OLCC Primer</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-2-python-basics.html">1.2 Python Basics</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-3-python-intermediate.html">1.3 Python Intermediate</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Introduction/README.html">Module 2: Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Introduction/02-1-PubChemDataTypes.html">PubChem Training Course</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../02-Introduction/02-2-PUG-REST-activity.html">Getting Molecular Properties through PubChem’s PUG REST Web Interface</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Public-Chemical-Databases/README.html">Module 3: Public Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Public-Chemical-Databases/03-01-Survey-Public-Chemical-Databases.html">Public Compound Databases</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Module 4: Chemical Representations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Chemical Representations and Introduction to RDKit</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="04-02-PubChem3D_update.html">PubChem3D</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="04-03-Substructure_Searching_with_SMARTS.html">Substructure Searching with SMARTS</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05-Searching-Chemical-Databases/README.html">Module 5: Searching Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-01-Exploring-PubChem.html">Exploring PubChem</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-02-structure-inputs.html">Chemical Structure Inputs for PUG-REST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-03-list-conversion.html">Intercoversion between PubChem records.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06-BioAssay/README.html">Module 6: BioAssays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-1-Bioactivity_Primer.html">PubChem Bioactivity Primer</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-2-eda-protein1.html">Exploratory Data Analysis 1: <br/><br/> Concordance of Thyroid Hormone Receptor Activity in Rats and Humans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-3-eda-pathway.html">Exploratory Data Analysis 2:<br/><br/>Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-QSAR-QSPR/README.html">Module 7: Quantitative Structure Property Reationships</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-QSAR-QSPR/07-01-QSPR.html">Molecular Descriptors</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Molecular-Similarity/README.html">Module 8: Molecular Similarity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-1-MolSimularity.html">Fingerprint Generation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-2-MolSimularity.html">What is a bit vector?</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-3-MolSimularity.html">Objectives</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-CADDD/README.html">Module 9: Computer-Aided Drug Discovery and Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-CADDD/09-1-virtual-screening.html">Virtual Screening</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10-Machine-Learning/README.html">Module 10: Supervised ML</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10-Machine-Learning/10-01-supervised-ML.html">Machine Learning Basics</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendices/README.html">Appendices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../appendices/Pandas.html">Introduction to Pandas</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/DivCHED-CCCE/DataChemistry2025OLCC/master?urlpath=lab/tree/docs/content/modules/04-Chemical-Representations/04-01-introduction_chemical_representations.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://nanohub.org/tools/datachemolcc/hub/user-redirect/git-pull?repo=https%3A//github.com/DivCHED-CCCE/DataChemistry2025OLCC&urlpath=lab/tree/DataChemistry2025OLCC/docs/content/modules/04-Chemical-Representations/04-01-introduction_chemical_representations.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DivCHED-CCCE/DataChemistry2025OLCC/blob/master/docs/content/modules/04-Chemical-Representations/04-01-introduction_chemical_representations.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC/issues/new?title=Issue%20on%20page%20%2Fcontent/modules/04-Chemical-Representations/04-01-introduction_chemical_representations.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/modules/04-Chemical-Representations/04-01-introduction_chemical_representations.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chemical Representations and Introduction to RDKit</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chemical Representations and Introduction to RDKit</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-smiles-and-rdkit">Introduction to SMILES and RDKit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-bonds-atoms-and-stereochemistry">Exploring Bonds, Atoms and Stereochemistry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-connection-tables">Exploring Connection Tables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-mol-files">3D Mol Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-with-py3dmol">Visualization with py3dmol</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-optimization">Geometry Optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-issues-with-smiles-by-using-inchi-and-inchikey">Resolving issues with SMILES by using InChI and InChiKey</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chemical-representations-and-introduction-to-rdkit">
+<h1>Chemical Representations and Introduction to RDKit<a class="headerlink" href="#chemical-representations-and-introduction-to-rdkit" title="Link to this heading">#</a></h1>
+<p>This notebook is inspired by and borrows from <a href = "https://weisscharlesj.github.io/SciCompforChemists/notebooks/chapter_015/chap_15_notebook.html"> Chapter 15: Cheminformatics with RDKit </a> from Charlie Weiss’s book <a href ="https://weisscharlesj.github.io/SciCompforChemists/notebooks/introduction/intro.html">   Scientific Computing for Chemists with Python</a>,
+and  <a href = "https://colab.research.google.com/github/PatWalters/practical_cheminformatics_tutorials/blob/main/fundamentals/SMILES_tutorial.ipynb"> An Introduction to the Simplified Molecular Input Line Entry System (SMILES)</a> from Pat Walter’s <a href="https://github.com/PatWalters/practical_cheminformatics_tutorials?tab=readme-ov-file"> Cheminformatics Tutorials Github.</a></p>
+<div class="alert alert-block alert-info">
+<h2>Learning Objectives</h2>
+<ul class="simple">
+<li><p>Explore Chemical Representations:</p>
+<ul>
+<li><p>Line Notation (SMILES, InChI, InChIKey)</p></li>
+<li><p>Connection Tables</p></li>
+<li><p>Structural Data Files</p></li>
+</ul>
+</li>
+<li><p>Explore RDKit</p>
+<ul>
+<li><p>Visualizing molecules</p></li>
+<li><p>Geometry Optimization</p></li>
+</ul>
+</li>
+<li><p>Review PubChem’s PUG REST Web Interface</p>
+<ul>
+<li><p>Getting data from PubChem through PUG-REST</p></li>
+</ul>
+</li>
+<li><p>Practice code from previous notebooks</p></li>
+</ul>
+</div>
+<section id="introduction-to-smiles-and-rdkit">
+<h2>Introduction to SMILES and RDKit<a class="headerlink" href="#introduction-to-smiles-and-rdkit" title="Link to this heading">#</a></h2>
+<p>SMILES (Simplified Molecular Input Line Entry System) is a compact, text-based way to represent chemical structures using ASCII characters. Developed in the 1980s to encode molecular graphs for computers, SMILES captures atoms, bonds, branching, and ring structures in a linear string. While modern software can generate SMILES automatically, understanding how they work provides insight into how chemical information is stored, searched, and shared in databases and cheminformatics tools.</p>
+<p>The <a class="reference external" href="https://www.daylight.com/dayhtml/doc/theory/">Daylight Theory Manual</a> is the foundational reference for understanding how SMILES work. Created by the developers of the original SMILES system at Daylight Chemical Information Systems, this manual outlines the principles behind molecular graph representation, atom and bond encoding, and the syntax rules that govern how structures are translated into strings.</p>
+<p>The <a class="reference external" href="https://www.daylight.com/dayhtml_tutorials/languages/smiles/index.html">Daylight SMILES Tutorial</a> is another valuable resource, offering a practical introduction to writing and interpreting SMILES. For those curious about the origin story and cultural quirks behind SMILES, this <a class="reference external" href="https://www.chemistryworld.com/opinion/weiningers-smiles/4014639.article">Chemistry World</a> article provides an engaging look at its history and the chemist who created it.</p>
+<p><a class="reference external" href="https://rdkit.org/">RDKit</a> is an open-source cheminformatics toolkit that makes it easy to work with chemical structures in Python. It allows you to read, manipulate, visualize, and analyze molecules using formats like SMILES, SDF, and more. With RDKit, you can generate 2D or 3D structures, calculate molecular properties, perform substructure searches, and integrate chemistry into data science workflows. It’s a powerful tool for anyone working at the intersection of chemistry and programming.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this loads rdkit and allows us to draw molecules in the window</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>  
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem.Draw</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPythonConsole</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">Draw</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">ipython_useSVG</span><span class="o">=</span><span class="kc">True</span>  <span class="c1">#&lt; set this to False if you want PNGs instead of SVGs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s start by obtaining the SMILES string for butane from PubChem</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="n">pugrest</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug&quot;</span>
+<span class="n">pugin</span>   <span class="o">=</span> <span class="s2">&quot;compound/name/butane&quot;</span>
+<span class="n">pugoper</span> <span class="o">=</span> <span class="s2">&quot;property/SMILES&quot;</span>
+<span class="n">pugout</span>  <span class="o">=</span> <span class="s2">&quot;txt&quot;</span>
+<span class="n">url</span>     <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">[</span><span class="n">pugrest</span><span class="p">,</span> <span class="n">pugin</span><span class="p">,</span> <span class="n">pugoper</span><span class="p">,</span> <span class="n">pugout</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The SMILES string for butane is:&quot;</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="c1"># create a molecule object from the SMILES string</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">molSize</span> <span class="o">=</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span> <span class="c1"># set the size of the image</span>
+<span class="n">mol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s load a simple structure of 2-methylbutane</span>
+<span class="n">pugin</span>   <span class="o">=</span> <span class="s2">&quot;compound/name/2-methylbutane&quot;</span>
+<span class="n">url</span>     <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">[</span><span class="n">pugrest</span><span class="p">,</span> <span class="n">pugin</span><span class="p">,</span> <span class="n">pugoper</span><span class="p">,</span> <span class="n">pugout</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The SMILES string for 2-methylbutane is:&quot;</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="c1"># create a molecule object from the SMILES string</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">molSize</span> <span class="o">=</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span> <span class="c1"># set the size of the image</span>
+
+<span class="n">mol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s load another SMILES string for 2-methylbutane</span>
+<span class="n">smiles</span> <span class="o">=</span> <span class="s2">&quot;CC(C)CC&quot;</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
+<span class="n">mol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<strong>Check your understanding</strong><br>
+<p>Using your knowledge of SMILES, generate the SMILES string for 2,3-dimethylpentane and display the molecule in the code cell below.</p>
+<p>Compare your SMILES string to what is in the PubChem Database.</p>
+<details>
+<summary>Solution</summary>
+CC(C)C(C)CC and CCC(C)C(C)C would be valid SMILES for 2,3-dimethylpentane
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># write your code here to display the molecule</span>
+<span class="n">smiles1</span> <span class="o">=</span> <span class="s2">&quot;CC(C)C(C)CC&quot;</span>
+<span class="n">smiles2</span> <span class="o">=</span> <span class="s2">&quot;CCC(C)C(C)C&quot;</span>
+<span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles1</span><span class="p">),</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles2</span><span class="p">)]</span> 
+<span class="n">myLegends</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2,3-dimethylpentane CC(C)C(C)CC &quot;</span><span class="p">,</span> <span class="s2">&quot;2,3-dimethylpentane CCC(C)C(C)C&quot;</span><span class="p">]</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="n">legends</span><span class="o">=</span><span class="n">myLegends</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this next section, we will display three stuctures of toluene.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s load a simple structure of Toluene</span>
+<span class="n">smiles1</span> <span class="o">=</span> <span class="s2">&quot;Cc1ccccc1&quot;</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles1</span><span class="p">)</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawOptions</span><span class="o">.</span><span class="n">addAtomIndices</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">mol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s load a simple structure of Toluene</span>
+<span class="n">smiles2</span> <span class="o">=</span> <span class="s2">&quot;c1ccccc1C&quot;</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles2</span><span class="p">)</span>
+<span class="n">mol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s load a simple structure of Toluene</span>
+<span class="n">smiles3</span> <span class="o">=</span> <span class="s2">&quot;c1cc(C)ccc1&quot;</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles3</span><span class="p">)</span>
+<span class="n">mol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Checking to see if SMILES are identical&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">smiles1</span> <span class="o">!=</span> <span class="n">smiles2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The SMILES strings are different:</span><span class="se">\n</span><span class="s2">  SMILES 1: </span><span class="si">{</span><span class="n">smiles1</span><span class="si">}</span><span class="se">\n</span><span class="s2">  SMILES 2: </span><span class="si">{</span><span class="n">smiles2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The SMILES strings are the same: </span><span class="si">{</span><span class="n">smiles1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">smiles1</span> <span class="o">!=</span> <span class="n">smiles3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The SMILES strings are different:</span><span class="se">\n</span><span class="s2">  SMILES 1: </span><span class="si">{</span><span class="n">smiles1</span><span class="si">}</span><span class="se">\n</span><span class="s2">  SMILES 2: </span><span class="si">{</span><span class="n">smiles3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The SMILES strings are the same: </span><span class="si">{</span><span class="n">smiles2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">smiles2</span> <span class="o">!=</span> <span class="n">smiles3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The SMILES strings are different:</span><span class="se">\n</span><span class="s2">  SMILES 1: </span><span class="si">{</span><span class="n">smiles2</span><span class="si">}</span><span class="se">\n</span><span class="s2">  SMILES 3: </span><span class="si">{</span><span class="n">smiles3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The SMILES strings are the same: </span><span class="si">{</span><span class="n">smiles3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s explore how the SMILES for Toluene is stored in PubChem:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pugin</span>   <span class="o">=</span> <span class="s2">&quot;compound/name/toluene&quot;</span>
+<span class="n">url</span>     <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">[</span><span class="n">pugrest</span><span class="p">,</span> <span class="n">pugin</span><span class="p">,</span> <span class="n">pugoper</span><span class="p">,</span> <span class="n">pugout</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The PubChem SMILES string for toluene is:&quot;</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">PubChemSMILES</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>  <span class="c1"># remove any trailing newline characters</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">PubChemSMILES</span><span class="p">)</span> <span class="c1"># create a molecule object from the SMILES string</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">molSize</span> <span class="o">=</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span> <span class="c1"># set the size of the image</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawOptions</span><span class="o">.</span><span class="n">addAtomIndices</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">mol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pugin</span>   <span class="o">=</span> <span class="s2">&quot;compound/name/methylcyclohexane&quot;</span>
+<span class="n">url</span>     <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">[</span><span class="n">pugrest</span><span class="p">,</span> <span class="n">pugin</span><span class="p">,</span> <span class="n">pugoper</span><span class="p">,</span> <span class="n">pugout</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The PubChem SMILES string for methylcyclohexane is:&quot;</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">PubChemSMILES</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>  <span class="c1"># remove any trailing newline characters</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">PubChemSMILES</span><span class="p">)</span> <span class="c1"># create a molecule object from the SMILES string</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">molSize</span> <span class="o">=</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span> <span class="c1"># set the size of the image</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawOptions</span><span class="o">.</span><span class="n">addAtomIndices</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">mol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<strong>Check your understanding</strong><br>
+- In the toluene SMILES examples, are the SMILES different?<br>
+- How are aromatic carbons shown in SMILES notation? Is there more than one way?<br>
+- How is the SMILES for methylcyclohexane different from toluene?<br>
+- In the toluene SMILES examples, does RDKit generate different structures?<br>
+- What do you notice about the atom index numbers in the toluene structure output?<br>
+- What can you anticipate being an issue for storing SMILES strings in a database?
+</div>
+<p>While SMILES is widely used, it’s important to know that the original Daylight SMILES format is proprietary and maintained by Daylight Chemical Information Systems. Over time, other organizations and toolkits, such as OpenEye, OpenSMILES and RDKit, have implemented their own versions of SMILES, each with slight differences in syntax rules, aromaticity perception, or handling of tautomers. This means that the same molecule may be represented by different SMILES strings depending on the software generating it. So while SMILES is a powerful and convenient representation, it’s not always perfectly standardized across platforms. This is important to keep in mind when working with multiple tools or databases.</p>
+<section id="exploring-bonds-atoms-and-stereochemistry">
+<h3>Exploring Bonds, Atoms and Stereochemistry<a class="headerlink" href="#exploring-bonds-atoms-and-stereochemistry" title="Link to this heading">#</a></h3>
+<p>In SMILES notation, molecules are built from atoms and the bonds that connect them, using a set of straightforward rules and symbols.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pugrest</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug&quot;</span>
+<span class="n">pugin</span>   <span class="o">=</span> <span class="s2">&quot;compound/cid/84682,444683,5247073,7045591,517045,5326161,5326160,12732&quot;</span>
+<span class="n">pugoper</span> <span class="o">=</span> <span class="s2">&quot;property/IUPACName,ConnectivitySMILES,SMILES&quot;</span>
+<span class="n">pugout</span>  <span class="o">=</span> <span class="s2">&quot;csv&quot;</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">[</span><span class="n">pugrest</span><span class="p">,</span> <span class="n">pugin</span><span class="p">,</span> <span class="n">pugoper</span><span class="p">,</span> <span class="n">pugout</span><span class="p">]</span> <span class="p">)</span>   <span class="c1"># Construct the URL</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">StringIO</span>
+
+
+<span class="c1"># Step 2: Parse CSV data</span>
+<span class="n">csv_text</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span>
+<span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">csv_text</span><span class="p">))</span> <span class="c1"># Create a CSV reader object with dictionary output</span>
+
+<span class="c1"># Step 3: Extract molecule objects and legends</span>
+<span class="n">mols</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">legends</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv_reader</span><span class="p">:</span>
+    <span class="n">smiles</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;SMILES&quot;</span><span class="p">]</span>
+    <span class="n">conn_smiles</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;ConnectivitySMILES&quot;</span><span class="p">]</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;IUPACName&quot;</span><span class="p">]</span>
+
+    <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">mol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+        <span class="n">legend</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;IUPAC name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="s2">Connectivity SMILES: </span><span class="si">{</span><span class="n">conn_smiles</span><span class="si">}</span><span class="se">\n</span><span class="s2">SMILES: </span><span class="si">{</span><span class="n">smiles</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">legends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">legend</span><span class="p">)</span>
+
+<span class="c1"># Step 4: Draw molecules in a 2x2 grid</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawOptions</span><span class="o">.</span><span class="n">addAtomIndices</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="n">legends</span><span class="o">=</span><span class="n">legends</span><span class="p">)</span>
+<span class="n">img</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<strong>Check your understanding</strong><br>
+- What ASCII characters are used to indicate double and triple bonds in SMILES strings?<br>
+- What ASCII characters are used to indicate stereogenic centers and geometric isomers?<br>
+- How are charged species accounted for in SMILES strings?<br>
+- How are salts accounted for in SMILES strings?<br>
+- Why is it important for chemical databases to store isomeric SMILES in addition to connectivity SMILES? What types of structural information are captured in isomeric SMILES that are lost in connectivity-only representations?
+</div>
+<p>RDKit also allows for the assigning of absolute stereochemistry of a molecule. Looking at &#64; or &#64;&#64; for chiral centers or / or \ for double bonds isn’t very helpful.</p>
+<p>RDKit <code class="docutils literal notranslate"><span class="pre">Chem.FindMolChiralCenters</span></code> method identifies all chiral centers and indicates the atom number where found. Keep in mind this is RDKit numbering and not IUPAC numbering.</p>
+<p>To obtain the stereochemistry of double bonds, we can iterate through the bonds and obtain the stereochemistry using the GetStereo() bond method as shown in the following code cell. There are three possible outputs list below.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Output</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>STEREONONE</p></td>
+<td><p>No stereochemistry (often not a double bond)</p></td>
+</tr>
+<tr class="row-odd"><td><p>STEREOE</p></td>
+<td><p><em>E</em> stereochemistry</p></td>
+</tr>
+<tr class="row-even"><td><p>STEREOZ</p></td>
+<td><p><em>Z</em> stereochemistry</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pentenol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;O[C@@H](C)/C=C/C&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">FindMolChiralCenters</span><span class="p">(</span><span class="n">pentenol</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">pentenol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">bond</span><span class="o">.</span><span class="n">GetStereo</span><span class="p">())</span>
+
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawOptions</span><span class="o">.</span><span class="n">addAtomIndices</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawOptions</span><span class="o">.</span><span class="n">addStereoAnnotation</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">pentenol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The printed output above is messy as it is telling us the streochemistry at each bond. The following code is cleaner as it only tells us the stereochemistry at any double bonds and where they are:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">pentenol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBondType</span><span class="p">()</span> <span class="o">==</span> <span class="n">Chem</span><span class="o">.</span><span class="n">rdchem</span><span class="o">.</span><span class="n">BondType</span><span class="o">.</span><span class="n">DOUBLE</span><span class="p">:</span>
+        <span class="n">stereo</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetStereo</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bond between atoms </span><span class="si">{</span><span class="n">bond</span><span class="o">.</span><span class="n">GetBeginAtomIdx</span><span class="p">()</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">bond</span><span class="o">.</span><span class="n">GetEndAtomIdx</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Stereo type: </span><span class="si">{</span><span class="n">stereo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<strong>Check your understanding</strong><br>
+The code cell below sends a PUG REST request to retrieve a compound from PubChem using its CID.
+<p>Your task: Write code that prints out absolute configuration of all stereogenic centers and double bond stereochemistry (<em>E/Z</em>) in text format, and also displays this information visually on the molecule image.</p>
+<p>Pay special attention to the double bonds between <strong>atoms 1 and 2</strong> and <strong>atoms 21 and 22</strong>. Your output should clearly indicate whether each of these bonds is assigned <em>E</em> (<em>trans</em>), <em>Z</em> (<em>cis</em>), or if no stereochemistry is defined. Be prepared to explain why RDKit provides the output you received.</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pugrest</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug&quot;</span>
+<span class="n">pugin</span>   <span class="o">=</span> <span class="s2">&quot;compound/cid/6438744&quot;</span>
+<span class="n">pugoper</span> <span class="o">=</span> <span class="s2">&quot;property/SMILES&quot;</span>
+<span class="n">pugout</span>  <span class="o">=</span> <span class="s2">&quot;txt&quot;</span>
+<span class="n">url</span>     <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">[</span><span class="n">pugrest</span><span class="p">,</span> <span class="n">pugin</span><span class="p">,</span> <span class="n">pugoper</span><span class="p">,</span> <span class="n">pugout</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="c1"># create a molecule object from the SMILES string</span>
+
+<span class="c1">#Write your code here to display the molecule and the stereochemistry</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">FindMolChiralCenters</span><span class="p">(</span><span class="n">mol</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">bond</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetBondType</span><span class="p">()</span> <span class="o">==</span> <span class="n">Chem</span><span class="o">.</span><span class="n">rdchem</span><span class="o">.</span><span class="n">BondType</span><span class="o">.</span><span class="n">DOUBLE</span><span class="p">:</span>
+        <span class="n">stereo</span> <span class="o">=</span> <span class="n">bond</span><span class="o">.</span><span class="n">GetStereo</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bond between atoms </span><span class="si">{</span><span class="n">bond</span><span class="o">.</span><span class="n">GetBeginAtomIdx</span><span class="p">()</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">bond</span><span class="o">.</span><span class="n">GetEndAtomIdx</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Stereo type: </span><span class="si">{</span><span class="n">stereo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawOptions</span><span class="o">.</span><span class="n">addAtomIndices</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawOptions</span><span class="o">.</span><span class="n">addStereoAnnotation</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">molSize</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span> <span class="c1"># set the size of the image</span>
+<span class="n">mol</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exploring-connection-tables">
+<h3>Exploring Connection Tables<a class="headerlink" href="#exploring-connection-tables" title="Link to this heading">#</a></h3>
+<p>A connection table is a tabular representation that lists atoms and the bonds between them. This structure forms the backbone of many molecular file formats and is critical for understanding how software interprets molecular topology.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert SMILES to RDKit molecule object</span>
+<span class="n">acetylcholine</span> <span class="o">=</span> <span class="s2">&quot;[N+](C)(C)(C)CCOC(=O)C&quot;</span> <span class="c1">#acetylcholine (a neurotransmitter)</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">acetylcholine</span><span class="p">)</span>
+
+<span class="c1"># Check if the molecule was successfully created</span>
+<span class="k">if</span> <span class="n">mol</span><span class="p">:</span>
+    <span class="c1"># Convert the molecule object to a MOL block</span>
+    <span class="n">mol_block</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToMolBlock</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+    <span class="c1"># Print the MOL block</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mol_block</span><span class="p">)</span>
+
+    <span class="c1"># Optionally, write the MOL block to a file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;acetylcholine.mol&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">mol_block</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: Could not create molecule from SMILES string.&quot;</span><span class="p">)</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawOptions</span><span class="o">.</span><span class="n">addAtomIndices</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">molSize</span> <span class="o">=</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span> <span class="c1"># set the size of the image</span>
+<span class="n">mol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<strong>Check your understanding</strong>
+<ul class="simple">
+<li><p>Based on the output, is the MOL file a 2D or 3D structure? (There are two different ways you can tell.)</p></li>
+<li><p>How many atoms are in molecule? What two ways can you determine this?</p></li>
+<li><p>How many bonds are in the molecule? What two ways can you determine this?</p></li>
+<li><p>Which atoms are explicit? Which atoms are implied?</p></li>
+<li><p>Identify the Atom Block in the MOL file.</p></li>
+<li><p>Identify the Bond Block in the MOL file.</p></li>
+<li><p>How is bond order indicated in the Bond Block?</p></li>
+<li><p>How is charge indicated in the MOL file?</p></li>
+<li><p>Check your local directory, is there a file named molecule.mol? Open it with a text editor to view.</p></li>
+</ul>
+<p>Change the code above to display atom indices for the displayed molecule. How do the atom indices in the mol file compare to the diplayed molecule?</p>
+</div><p>Why do my numbers in the mol file differ from the image?</p>
+<p><code class="docutils literal notranslate"><span class="pre">MolFromSmiles()</span></code> and RDKit’s internal API (e.g., <code class="docutils literal notranslate"><span class="pre">atom.GetIdx()</span></code>) use zero-based indexing (starts at 0), like Python.</p>
+<p><code class="docutils literal notranslate"><span class="pre">MolToMolBlock()</span></code> produces a <code class="docutils literal notranslate"><span class="pre">MolBlock</span></code> in CTfile format, which follows the Molfile V2000/V3000 standard, and uses one-based indexing (starts at 1).</p>
+<p>If we wanted to create a workaround so that the numbers matched, we would adjust the numbers by creating new atom numbers:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create labels with 1-based indexing</span>
+<span class="n">atom_labels</span> <span class="o">=</span> <span class="p">{</span><span class="n">atom</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">():</span> <span class="nb">str</span><span class="p">(</span><span class="n">atom</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()}</span>
+</pre></div>
+</div>
+</section>
+<section id="d-mol-files">
+<h3>3D Mol Files<a class="headerlink" href="#d-mol-files" title="Link to this heading">#</a></h3>
+<p>SMILES strings are great for capturing the basics of a molecule (such as atom types, bonding patterns, formal charges, and stereochemistry) but they only represent 2D connectivity. Even when you convert a SMILES to a Mol object and generate a mol file, you’ll notice that the coordinate section often includes only X and Y values, with all Z-coordinates set to 0. That’s because SMILES doesn’t encode 3D geometry.</p>
+<p>To generate 3D coordinates, RDKit can apply molecular mechanics methods such as the Universal Force Field (UFF) or Merck Molecular Force Field (MMFF). These algorithms estimate a three-dimensional structure by minimizing molecular strain. Keep in mind, though, that while these methods provide reasonable 3D conformations, they don’t always yield the lowest-energy conformation. For many applications, they’re good enough. For more rigorous modeling further optimization or conformer sampling may be necessary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">AllChem</span>
+<span class="n">acetylcholine</span> <span class="o">=</span> <span class="s2">&quot;[N+](C)(C)(C)CCOC(=O)C&quot;</span>  <span class="c1"># same as before, but now we will generate 3D coordinates</span>
+<span class="c1"># Generate molecule from SMILES </span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">acetylcholine</span><span class="p">)</span>
+
+<span class="c1"># Add explicit hydrogens for a proper 3D structure </span>
+<span class="n">mol_h</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">AddHs</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+
+<span class="c1"># Generate initial 3D coordinates (embedded in molecule object) </span>
+<span class="n">AllChem</span><span class="o">.</span><span class="n">EmbedMolecule</span><span class="p">(</span><span class="n">mol_h</span><span class="p">,</span> <span class="n">AllChem</span><span class="o">.</span><span class="n">ETKDG</span><span class="p">())</span>
+
+<span class="c1"># Optimize geometry using UFF force field (can also use MMFF94 if available) </span>
+<span class="n">AllChem</span><span class="o">.</span><span class="n">UFFOptimizeMolecule</span><span class="p">(</span><span class="n">mol_h</span><span class="p">)</span>
+
+<span class="c1"># Get optimized coordinates as MolBlock (optional, for visualization or output) </span>
+<span class="n">optimized_molblock</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToMolBlock</span><span class="p">(</span><span class="n">mol_h</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">optimized_molblock</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawOptions</span><span class="o">.</span><span class="n">addAtomIndices</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">mol_h</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="visualization-with-py3dmol">
+<h4>Visualization with py3dmol<a class="headerlink" href="#visualization-with-py3dmol" title="Link to this heading">#</a></h4>
+<p>While a mol file and its static image can confirm the presence of 3D coordinates, chemists often want to visually explore the 3D structure itself. There are several tools available for rendering molecules in three dimensions. In this example we’ll use py3Dmol, which is a Python package that integrates seamlessly with Jupyter notebooks to provide interactive 3D molecular visualizations. It’s a convenient way to inspect geometry, stereochemistry, and conformational features directly within your workflow.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">py3Dmol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">Draw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem.Draw</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPythonConsole</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">molSize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawMol3D</span><span class="p">(</span><span class="n">mol_h</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<strong>Check your understanding</strong>
+<ul class="simple">
+<li><p>Based on the output, is the MOL file a 2D or 3D structure? (There are two different ways you can tell.)</p></li>
+<li><p>Why are hydrogen atoms and bonds added to the molecule object?</p></li>
+<li><p>Does the 3D visualization indicate that bond lengths and angles have been properly calculated?</p></li>
+</ul>
+</div></section>
+</section>
+<section id="geometry-optimization">
+<h3>Geometry Optimization<a class="headerlink" href="#geometry-optimization" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">AllChem.EmbedMultipleConfs()</span></code> function in RDKit allows you to generate multiple 3D conformations of a molecule using distance geometry methods. By specifying the number of conformers and embedding parameters, RDKit creates several possible geometries that follow chemical rules.</p>
+<p>The parameters are established using <code class="docutils literal notranslate"><span class="pre">ETKDGv3</span></code> which stands for <em>Experimental Torsion-angle preferences with Knowledge-based Distance Geometry, version 3</em>. It combines experimental data from crystal structures with knowledge-based rules to produce more realistic 3D conformers, particularly for molecules with flexible ring systems and rotatable bonds. These conformers are stored in the same molecule object and can be accessed, visualized, or optimized further for applications like docking or energy calculations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Molecule preparation</span>
+<span class="n">acetylcholine</span> <span class="o">=</span> <span class="s2">&quot;[N+](C)(C)(C)CCOC(=O)C&quot;</span> 
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">acetylcholine</span><span class="p">)</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">AddHs</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 2: Embed multiple conformations </span>
+<span class="n">num_confs</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># Number of conformers to generate </span>
+<span class="n">params</span> <span class="o">=</span> <span class="n">AllChem</span><span class="o">.</span><span class="n">ETKDGv3</span><span class="p">()</span>
+<span class="n">conformers</span> <span class="o">=</span> <span class="n">AllChem</span><span class="o">.</span><span class="n">EmbedMultipleConfs</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">numConfs</span><span class="o">=</span><span class="n">num_confs</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 3: Optimize each conformer and calculate energies </span>
+<span class="n">energies</span> <span class="o">=</span> <span class="p">[]</span> 
+<span class="k">for</span> <span class="n">conf_id</span> <span class="ow">in</span> <span class="n">conformers</span><span class="p">:</span> 
+    <span class="c1"># Geometry optimization using UFF (you could use MMFF as an alternative) </span>
+    <span class="n">ff</span> <span class="o">=</span> <span class="n">AllChem</span><span class="o">.</span><span class="n">UFFGetMoleculeForceField</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">confId</span><span class="o">=</span><span class="n">conf_id</span><span class="p">)</span>
+    <span class="c1">#ff = AllChem.MMFFGetMoleculeForceField(mol, AllChem.MMFFGetMoleculeProperties(mol), confId=conf_id)</span>
+    <span class="n">ff</span><span class="o">.</span><span class="n">Minimize</span><span class="p">()</span> 
+    <span class="n">energy</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">CalcEnergy</span><span class="p">()</span> 
+    <span class="n">energies</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">conf_id</span><span class="p">,</span> <span class="n">energy</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 4: Sort conformers by energy </span>
+<span class="n">sorted_energies</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">energies</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display energies </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conformer ID : Energy (kcal/mol)&quot;</span><span class="p">)</span> 
+<span class="k">for</span> <span class="n">conf_id</span><span class="p">,</span> <span class="n">energy</span> <span class="ow">in</span> <span class="n">sorted_energies</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">conf_id</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">energy</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get lowest-energy conformer ID </span>
+<span class="n">global_min_id</span> <span class="o">=</span> <span class="n">sorted_energies</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> 
+<span class="c1"># Display global minimum structure as 3D depiction </span>
+<span class="n">mol_global_min</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">Mol</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">global_min_id</span><span class="p">)</span> 
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawMol3D</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">confId</span><span class="o">=</span><span class="n">global_min_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">global_min_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get highest-energy conformer ID </span>
+<span class="n">sorted_energies</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">energies</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">global_max_id</span> <span class="o">=</span> <span class="n">sorted_energies</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># highest energy</span>
+<span class="c1"># Display global minimum structure as 3D depiction </span>
+<span class="n">mol_global_min</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">Mol</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">global_max_id</span><span class="p">)</span> 
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawMol3D</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">confId</span><span class="o">=</span><span class="n">global_max_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">global_max_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get optimized coordinates as MolBlock (optional, for visualization or output) </span>
+<span class="n">optimized_molblock</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToMolBlock</span><span class="p">(</span><span class="n">mol_global_min</span><span class="p">)</span>
+    <span class="c1"># Optionally, write the MOL block to a file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;optimized_acetylcholine.mol&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">optimized_molblock</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">optimized_molblock</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<strong>Check your understanding</strong>
+<ul class="simple">
+<li><p>Compare the lowest energy conformation to the highest energy conformation. Are they different?</p></li>
+<li><p>Rerun the above section with 100 conformers and the MMFF minimization method.</p></li>
+<li><p>Are the results different? Do either the low or high energy conformation have a <em>gauche</em> or <em>anti</em> orientation sighting down the C-C bond?</p></li>
+</ul>
+</div><p>In the previous code section, you wrote out the connection table as a mol file. In this section, let’s read the file back in as a new variable and generate a SMILES string from it to compare to our previous SMILES string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># loading the mol file we just saved</span>
+
+<span class="n">optimizedSavedMol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromMolFile</span><span class="p">(</span><span class="s2">&quot;optimized_acetylcholine.mol&quot;</span><span class="p">,</span> <span class="n">removeHs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+<span class="n">molblockText</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToMolBlock</span><span class="p">(</span><span class="n">optimizedSavedMol</span><span class="p">)</span> <span class="c1"># convert the mol object back to a mol block</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">molblockText</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate a SMILES string from the optimized molecule</span>
+<span class="n">smiles_optimized</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">optimizedSavedMol</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SMILES string of the optimized molecule:&quot;</span><span class="p">,</span> <span class="n">smiles_optimized</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above section, since we loaded the saved mol with explicit hydrogens by setting the parameter <code class="docutils literal notranslate"><span class="pre">removeHs=False</span></code> we get a SMILES string with all the hydrogens explicitly stated. The recommended approach is to remove explicit hydrogens from teh molecule before converting to SMILES as shown in the code cell below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mol_optimized_noH</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">RemoveHs</span><span class="p">(</span><span class="n">optimizedSavedMol</span><span class="p">)</span>  <span class="c1"># remove explicit hydrogens</span>
+<span class="n">smiles_optimized_noH</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">mol_optimized_noH</span><span class="p">)</span>  <span class="c1"># generate SMILES without explicit hydrogens</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SMILES string of the optimized molecule without explicit hydrogens:&quot;</span><span class="p">,</span> <span class="n">smiles_optimized_noH</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Previously, we used a provided SMILES string for acetylcholine. After generating and optimizing its 3D structure, we saved and reloaded the molecule, then generated a new SMILES string from the optimized structure. Let’s check if the original and new SMILES strings look different. This is a good reminder that SMILES are not necessarily canonical by default. Let’s confirm that both SMILES represent the same molecule by comparing their molecular graphs directly in RDKit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myLegends</span> <span class="o">=</span> <span class="p">[</span><span class="n">acetylcholine</span><span class="p">,</span><span class="n">smiles_optimized_noH</span><span class="p">]</span>
+<span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">acetylcholine</span><span class="p">),</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles_optimized_noH</span><span class="p">)]</span> 
+<span class="n">img</span> <span class="o">=</span> <span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="n">legends</span><span class="o">=</span><span class="n">myLegends</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="resolving-issues-with-smiles-by-using-inchi-and-inchikey">
+<h3>Resolving issues with SMILES by using InChI and InChiKey<a class="headerlink" href="#resolving-issues-with-smiles-by-using-inchi-and-inchikey" title="Link to this heading">#</a></h3>
+<p>The <a class="reference external" href="https://www.inchi-trust.org/">InChI (International Chemical Identifier)</a> is a standardized, non-proprietary textual representation of a chemical substance developed by <a class="reference external" href="https://iupac.org/">IUPAC (International Union of Pure and Applied Chemistry)</a>. Unlike SMILES, which can vary depending on software or formatting choices, InChI is designed to be a unique and consistent way to encode a molecule’s structure. It includes layers of information (connectivity, hydrogen atoms, charge, stereochemistry, and isotopes) organized in a systematic, machine-readable format. While not particularly human-friendly, InChI is widely used for database indexing, structure matching, and ensuring reproducibility in chemical informatics.</p>
+<p>RDKit can convert a molecule (<code class="docutils literal notranslate"><span class="pre">Mol</span></code> object) to an InChI string using the <code class="docutils literal notranslate"><span class="pre">MolToInchi()</span></code> function from the rdkit.Chem.inchi module. This allows you to generate a standardized, unique identifier directly from molecular structure data within your Python workflow.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># loading the optimized saved mol file of acetylcholine</span>
+<span class="n">optimizedSavedMol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromMolFile</span><span class="p">(</span><span class="s2">&quot;optimized_acetylcholine.mol&quot;</span><span class="p">,</span> <span class="n">removeHs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+
+<span class="c1"># loading the original acetylcholine saved mol file</span>
+<span class="n">originalSavedMol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromMolFile</span><span class="p">(</span><span class="s2">&quot;acetylcholine.mol&quot;</span><span class="p">,</span> <span class="n">removeHs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Generate InChi string for each molecule and display </span>
+<span class="n">inchi_optimized</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchi</span><span class="p">(</span><span class="n">optimizedSavedMol</span><span class="p">)</span>
+<span class="n">inchi_original</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchi</span><span class="p">(</span><span class="n">originalSavedMol</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;InChI of the optimized molecule:&quot;</span><span class="p">,</span> <span class="n">inchi_optimized</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;InChI of the original molecule: &quot;</span><span class="p">,</span> <span class="n">inchi_original</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also generate InChI from the two SMILES strings that we had for acetylcholine previously, however, we need to create an RDKit molecule object first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mol_from_original_smiles</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">acetylcholine</span><span class="p">)</span>  <span class="c1"># create a molecule object from the original SMILES string</span>
+<span class="n">mol_from_optimized_smiles</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles_optimized_noH</span><span class="p">)</span>  <span class="c1"># create a molecule object from the optimized SMILES string</span>
+
+<span class="n">inchi_from_original_smiles</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchi</span><span class="p">(</span><span class="n">mol_from_original_smiles</span><span class="p">)</span>
+<span class="n">inchi_from_optimized_smiles</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchi</span><span class="p">(</span><span class="n">mol_from_optimized_smiles</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;InChI from original SMILES: &quot;</span><span class="p">,</span> <span class="n">inchi_from_original_smiles</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;InChI from optimized SMILES:&quot;</span><span class="p">,</span> <span class="n">inchi_from_optimized_smiles</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># output of all InChI strings to easily compare</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inchi_optimized</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inchi_original</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inchi_from_original_smiles</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inchi_from_optimized_smiles</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<strong>Check your understanding</strong>
+<ul class="simple">
+<li><p>If you start with different SMILES strings or MOL files that represent the same molecule, will the resulting InChI always be identical? Why or why not?</p></li>
+<li><p>How does storing molecular structures as InChI in a database help prevent errors or inconsistencies in chemical data management?</p></li>
+</ul>
+</div><p>RDKit also allows for convenient interconversion of SMILES to InChI. Let’s demonstrate this with ethanol.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SMILES --&gt; InChI</span>
+<span class="n">smiles</span> <span class="o">=</span> <span class="s1">&#39;CCO&#39;</span> <span class="c1"># ethanol  could also use C(O)C or OCC as alternatives SMILES for ethanol</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span> <span class="c1"># need to create a molecule object from the SMILES string</span>
+<span class="c1"># Convert SMILES to InChI</span>
+<span class="n">inchi</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchi</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">inchi</span><span class="p">)</span>
+
+
+<span class="c1">#InChI --&gt; SMILES</span>
+<span class="n">inchi</span> <span class="o">=</span> <span class="s1">&#39;InChI=1S/C2H6O/c1-2-3/h3H,2H2,1H3&#39;</span> <span class="c1"># ethanol </span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromInchi</span><span class="p">(</span><span class="n">inchi</span><span class="p">)</span> <span class="c1"># need to create a molecule object from the InChI string</span>
+<span class="c1"># Convert InChI to SMILES </span>
+<span class="n">smiles</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>InChIKey is a hashed, fixed-length version of the full InChI string, designed for easier searching, indexing, and data sharing. While InChI strings can be long and complex, the InChIKey condenses this information into a 27-character code that’s easier to use in databases, spreadsheets, and web searches. It’s not human-readable, but it allows for fast structure-based lookups and is commonly used as a stable chemical identifier across platforms.</p>
+<p>It consists of three blocks separated by hyphens. The first block (14 characters) encodes the main molecular skeleton, including atom types and connectivity. The second block (8 characters) captures stereochemistry and isotope information. The third block (1 character) indicates the protonation state or InChI version.</p>
+<p>Searching with full InChI strings or SMILES can be problematic, especially in web forms or databases that don’t handle special characters like slashes (/), backslashes (), or plus signs (+) well. These characters can be misinterpreted by search engines or software, leading to errors or failed queries. The InChIKey solves this issue by providing a simplified, fixed-format identifier that avoids special characters, making it much more robust for searching, indexing, and sharing chemical information across platforms.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#InChI --&gt; InChIKey</span>
+<span class="n">inchi</span> <span class="o">=</span> <span class="s1">&#39;InChI=1S/C7H16NO2/c1-7(9)10-6-5-8(2,3)4/h5-6H2,1-4H3/q+1&#39;</span> <span class="c1"># acetylcholine </span>
+<span class="c1"># create a molecule object from the InChI string</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromInchi</span><span class="p">(</span><span class="n">inchi</span><span class="p">)</span> 
+<span class="c1"># Convert InChI to InChIKey </span>
+<span class="n">inchikey</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">InchiToInchiKey</span><span class="p">(</span><span class="n">inchi</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">inchikey</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s important to note that the InChIKey is a one-way encrypted representation of the full InChI. It’s designed for compact identification, not reconstruction. This means you can’t convert an InChIKey back into the original chemical structure or InChI string directly. Instead, it serves as a reliable, searchable fingerprint for matching or referencing molecules across databases. If you need the full structural details, you must store or retrieve the original InChI or another structure-based format alongside the InChIKey.</p>
+<p>Let’s look at our original saved MOL file of acetylcholine wtih 2D coordinates and our optimized saved MOL file with 3D coordinates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># loading the optimized saved mol file of acetylcholine</span>
+<span class="n">optimizedSavedMol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromMolFile</span><span class="p">(</span><span class="s2">&quot;optimized_acetylcholine.mol&quot;</span><span class="p">,</span> <span class="n">removeHs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+
+<span class="c1"># loading the original acetylcholine saved mol file</span>
+<span class="n">originalSavedMol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromMolFile</span><span class="p">(</span><span class="s2">&quot;acetylcholine.mol&quot;</span><span class="p">,</span> <span class="n">removeHs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Generate InChi string for each molecule and display</span>
+<span class="n">inchikey_optimized</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchiKey</span><span class="p">(</span><span class="n">optimizedSavedMol</span><span class="p">)</span>
+<span class="n">inchikey_original</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchiKey</span><span class="p">(</span><span class="n">originalSavedMol</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;InChIKey of the optimized molecule:&quot;</span><span class="p">,</span> <span class="n">inchikey_optimized</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;InChIKey of the original molecule: &quot;</span><span class="p">,</span> <span class="n">inchikey_original</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that the two MOL files provide the same InChIKey as there is no coordinate data provided in the InChIKey, only atom types connectivity in the main section as shown with <code class="docutils literal notranslate"><span class="pre">OIPILFWXSMYKGL</span></code> and no stereochemistry data in the second block as shown with <code class="docutils literal notranslate"><span class="pre">UHFFFAOYSA</span></code>.</p>
+<p>Let’s look at molecules with stereochemical data included (or not). The following shows tartaric acid which has two stereogenic centers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ltartaric_acid</span> <span class="o">=</span> <span class="s2">&quot;[C@@H]([C@H](C(=O)O)O)(C(=O)O)O&quot;</span>
+<span class="n">Dtartaric_acid</span> <span class="o">=</span> <span class="s2">&quot;[C@H]([C@@H](C(=O)O)O)(C(=O)O)O&quot;</span>
+<span class="n">racemic_tartaric_acid</span> <span class="o">=</span> <span class="s2">&quot;C(C(C(=O)O)O)(C(=O)O)O&quot;</span>
+
+<span class="n">mol_L</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">Ltartaric_acid</span><span class="p">)</span>
+<span class="n">mol_D</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">Dtartaric_acid</span><span class="p">)</span>
+<span class="n">mol_racemic</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">racemic_tartaric_acid</span><span class="p">)</span> 
+
+<span class="n">inchikey_L</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchiKey</span><span class="p">(</span><span class="n">mol_L</span><span class="p">)</span>
+<span class="n">inchikey_D</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchiKey</span><span class="p">(</span><span class="n">mol_D</span><span class="p">)</span>
+<span class="n">inchikey_racemic</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchiKey</span><span class="p">(</span><span class="n">mol_racemic</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;InChIKey of L-tartaric acid:      &quot;</span><span class="p">,</span> <span class="n">inchikey_L</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;InChIKey of D-tartaric acid:      &quot;</span><span class="p">,</span> <span class="n">inchikey_D</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;InChIKey of racemic tartaric acid:&quot;</span><span class="p">,</span> <span class="n">inchikey_racemic</span><span class="p">)</span>
+
+
+<span class="n">myLegends</span> <span class="o">=</span> <span class="p">[</span><span class="n">inchikey_L</span><span class="p">,</span> <span class="n">inchikey_D</span><span class="p">,</span> <span class="n">inchikey_racemic</span><span class="p">]</span>
+<span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">Ltartaric_acid</span><span class="p">),</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">Dtartaric_acid</span><span class="p">),</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">racemic_tartaric_acid</span><span class="p">)]</span> 
+<span class="n">img</span> <span class="o">=</span> <span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="n">legends</span><span class="o">=</span><span class="n">myLegends</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ltartrate</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s2">&quot;[C@@H]([C@H](C(=O)[O-])O)(C(=O)[O-])O&quot;</span><span class="p">)</span>
+<span class="n">inchikey_Ltartrate</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchiKey</span><span class="p">(</span><span class="n">Ltartrate</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;InChIKey of L-tartrate:     &quot;</span><span class="p">,</span> <span class="n">inchikey_Ltartrate</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;InChIKey of L-tartaric acid:&quot;</span><span class="p">,</span> <span class="n">inchikey_L</span><span class="p">)</span>
+
+<span class="n">myLegends</span> <span class="o">=</span> <span class="p">[</span><span class="n">inchikey_Ltartrate</span><span class="p">,</span> <span class="n">inchikey_L</span><span class="p">]</span>
+<span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Ltartrate</span><span class="p">,</span><span class="n">mol_L</span><span class="p">]</span> 
+<span class="n">img</span> <span class="o">=</span> <span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">mols</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="n">legends</span><span class="o">=</span><span class="n">myLegends</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<strong>Check your understanding</strong>
+<ol class="arabic simple">
+<li><p>The first block of the InChIKey encodes the molecular skeleton (connectivity). Which of the tartaric acid forms share this same first block, and what does that tell you about their atomic connectivity?</p></li>
+<li><p>The second block encodes stereochemistry and isotopes. How does this block differ between L-, D-, and racemic tartaric acid? What does this suggest about the presence or absence of defined stereochemistry?</p></li>
+<li><p>Compare the InChIKeys of L-tartaric acid and L-tartrate. Which part(s) of the InChIKey change, and how does this reflect differences in protonation or formal charge?</p></li>
+<li><p>If two molecules have identical first blocks but different second or third blocks, what kinds of chemical differences does that imply?</p></li>
+<li><p>Why might using the InChIKey be more helpful than using SMILES when comparing stereoisomers in a chemical database?</p></li>
+</ol>
+<p>In this notebook we loaded InChIs and SMILES into RDKit <code class="docutils literal notranslate"><span class="pre">mol</span></code> objects. This was required to interconvert them. Let’s try one last bit of code that will result in an error. We are going to attempt to read an InChiKey in into a <code class="docutils literal notranslate"><span class="pre">mol</span></code> object. This should result in an error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try to create a molecule from InChIKey</span>
+<span class="n">mol_from_key</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromInchi</span><span class="p">(</span><span class="n">inchikey_Ltartrate</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mol_from_key</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-success">
+<center><H1>Homework</H1></center>
+<p>Using the <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/#draw=true">PubChem Draw Structure Utility</a> draw a molecule that has:</p>
+<ul class="simple">
+<li><p>an aromatic heterocycle,</p></li>
+<li><p>5 rotatable bonds,</p></li>
+<li><p>at least one <em>E</em> or <em>Z</em> double bond,</p></li>
+<li><p>at least one chiral center,</p></li>
+<li><p>a deprotonated carboxylic acid or a protonated amine.</p></li>
+</ul>
+<p>In the drawing window, PubChem will generate the InChI for you. Copy and paste this into a variable called <code class="docutils literal notranslate"><span class="pre">myInChI</span></code>.</p>
+<p>You will be writing code to:</p>
+<ol class="arabic simple">
+<li><p>Generate a mol object from your <code class="docutils literal notranslate"><span class="pre">mySMILES</span></code> variable</p></li>
+<li><p>Generate a skeletal drawing from your mol object with atom indices</p></li>
+<li><p>List stereochemistry for any chiral centers and double bonds</p></li>
+<li><p>Generate a 2D connection table for your molecule and save it as <code class="docutils literal notranslate"><span class="pre">myMolecule.mol</span></code></p></li>
+<li><p>Utilizing UFF, optimize the geometry of your molecule and generate a mol block (SDF output/mol file)</p></li>
+<li><p>Generate 100 conformers of your molecule</p></li>
+<li><p>Display the lowest energy conformation as a rotatable 3D visualization</p></li>
+<li><p>Save the lowest energy conformation MOL file as <code class="docutils literal notranslate"><span class="pre">myLowestConformation.mol</span></code></p></li>
+<li><p>Load the lowest energy conformation MOL file as a new variable called <code class="docutils literal notranslate"><span class="pre">savedMOL</span></code></p></li>
+<li><p>Generate and print SMILES (no hydrogens), InChI and InChiKey line notations for your molecule stored in <code class="docutils literal notranslate"><span class="pre">savedMOL</span></code></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1) Generate a mol object from your `mySMILES` variable</span>
+<span class="n">myInChI</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2) Generate a skeletal drawing from your mol object with atom indices</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3) List stereochemistry for any chiral centers and double bonds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4) Generate a 2D connection table for your molecule and save it as `myMolecule.mol`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5) Using UFF, optimize the geometry of your molecule and generate a mol block (SDF output/mol file)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 6) Generate 100 conformers of your molecule</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 7) Display the lowest energy conformation as a rotatable 3D visualization</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 8) Save the lowest energy conformation MOL file as `myLowestConformation.mol`</span>
+
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 9) Load the lowest energy conformation MOL file as a new variable called `savedMOL`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#10) Generate and print SMILES (no hydrogens), InChI and InChiKey line notations for your molecule stored in `savedMOL`</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="acknowledgments">
+<h1>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h1>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "datachem"
+        },
+        kernelOptions: {
+            name: "datachem",
+            path: "./content/modules/04-Chemical-Representations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'datachem'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="README.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 4: Chemical Representations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04-02-PubChem3D_update.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PubChem3D</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chemical Representations and Introduction to RDKit</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-smiles-and-rdkit">Introduction to SMILES and RDKit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-bonds-atoms-and-stereochemistry">Exploring Bonds, Atoms and Stereochemistry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-connection-tables">Exploring Connection Tables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-mol-files">3D Mol Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-with-py3dmol">Visualization with py3dmol</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-optimization">Geometry Optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-issues-with-smiles-by-using-inchi-and-inchikey">Resolving issues with SMILES by using InChI and InChiKey</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Belford
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

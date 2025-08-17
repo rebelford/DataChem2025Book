@@ -1,0 +1,1007 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chemical Structure Inputs for PUG-REST &#8212; Data Chemistry 2025</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/oldcustom.css?v=e52fa269" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=ba2d5b83" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/modules/05-Searching-Chemical-Databases/05-02-structure-inputs';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Intercoversion between PubChem records." href="05-03-list-conversion.html" />
+    <link rel="prev" title="Exploring PubChem" href="05-01-Exploring-PubChem.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Data Chemistry 2025 - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Data Chemistry 2025 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    2025 Data Chemistry OLCC
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-OLCC-Primer/README.html">Module 1: OLCC Primer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-1-OLCC-Primer.html">1.1 OLCC Primer</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-2-python-basics.html">1.2 Python Basics</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-3-python-intermediate.html">1.3 Python Intermediate</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Introduction/README.html">Module 2: Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Introduction/02-1-PubChemDataTypes.html">PubChem Training Course</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../02-Introduction/02-2-PUG-REST-activity.html">Getting Molecular Properties through PubChem’s PUG REST Web Interface</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Public-Chemical-Databases/README.html">Module 3: Public Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Public-Chemical-Databases/03-01-Survey-Public-Chemical-Databases.html">Public Compound Databases</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-Chemical-Representations/README.html">Module 4: Chemical Representations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-01-introduction_chemical_representations.html">Chemical Representations and Introduction to RDKit</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-02-PubChem3D_update.html">PubChem3D</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-03-Substructure_Searching_with_SMARTS.html">Substructure Searching with SMARTS</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Module 5: Searching Chemical Databases</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="05-01-Exploring-PubChem.html">Exploring PubChem</a></li>
+
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Chemical Structure Inputs for PUG-REST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-03-list-conversion.html">Intercoversion between PubChem records.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06-BioAssay/README.html">Module 6: BioAssays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-1-Bioactivity_Primer.html">PubChem Bioactivity Primer</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-2-eda-protein1.html">Exploratory Data Analysis 1: <br/><br/> Concordance of Thyroid Hormone Receptor Activity in Rats and Humans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-3-eda-pathway.html">Exploratory Data Analysis 2:<br/><br/>Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-QSAR-QSPR/README.html">Module 7: Quantitative Structure Property Reationships</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-QSAR-QSPR/07-01-QSPR.html">Molecular Descriptors</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Molecular-Similarity/README.html">Module 8: Molecular Similarity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-1-MolSimularity.html">Fingerprint Generation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-2-MolSimularity.html">What is a bit vector?</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-3-MolSimularity.html">Objectives</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-CADDD/README.html">Module 9: Computer-Aided Drug Discovery and Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-CADDD/09-1-virtual-screening.html">Virtual Screening</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10-Machine-Learning/README.html">Module 10: Supervised ML</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10-Machine-Learning/10-01-supervised-ML.html">Machine Learning Basics</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendices/README.html">Appendices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../appendices/Pandas.html">Introduction to Pandas</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/DivCHED-CCCE/DataChemistry2025OLCC/master?urlpath=lab/tree/docs/content/modules/05-Searching-Chemical-Databases/05-02-structure-inputs.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://nanohub.org/tools/datachemolcc/hub/user-redirect/git-pull?repo=https%3A//github.com/DivCHED-CCCE/DataChemistry2025OLCC&urlpath=lab/tree/DataChemistry2025OLCC/docs/content/modules/05-Searching-Chemical-Databases/05-02-structure-inputs.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DivCHED-CCCE/DataChemistry2025OLCC/blob/master/docs/content/modules/05-Searching-Chemical-Databases/05-02-structure-inputs.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC/issues/new?title=Issue%20on%20page%20%2Fcontent/modules/05-Searching-Chemical-Databases/05-02-structure-inputs.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/modules/05-Searching-Chemical-Databases/05-02-structure-inputs.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chemical Structure Inputs for PUG-REST</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-http-get-method">1. Using the HTTP GET method.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-encoded-in-the-url-path">1-(1) Structure encoded in the URL path.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-encoded-as-a-url-argument">1-(2) Structure encoded as a URL argument</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-passed-in-a-dictionary">1-(3) Structure passed in a dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-http-post-method">2. Using the HTTP POST method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-http-post-and-get">2-(1) Comparison of HTTP POST and GET</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#http-post-for-multi-line-structure-input">2-(2) HTTP POST for multi-line structure input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#http-post-for-sdf-file-input">2-(3) HTTP POST for SDF file input</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chemical-structure-inputs-for-pug-rest">
+<h1>Chemical Structure Inputs for PUG-REST<a class="headerlink" href="#chemical-structure-inputs-for-pug-rest" title="Link to this heading">#</a></h1>
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Use SMILES and InChI strings to specify the input compound for a PUG-REST request.</p></li>
+<li><p>Use a structure-data (SD) file to specify the input compound for a PUG-REST request.</p></li>
+<li><p>Learn to submit a PUG-REST request using the HTTP-POST method.
+<br>
+<br></p></li>
+</ul>
+<p>You can use a chemical structure as an input for a PUG-REST request.  PUG-REST accepts some popular chemical structure line notations such as SMILES and InChI strings.  It is also possible to use an Structure-Data File (SDF) as a structure input.<br><br>
+To learn how to specify the structure input in a PUG-REST request, one needs to know that there are two methods by which data are transferred from clients (users) and servers (PubChem) through PUG-REST.  Discussing what these methods are in detail is beyond the scope of this material, and it is enough to know three things:<br></p>
+<ul class="simple">
+<li><p>When you make a PUG-REST request by typing the request URL in the address bar of your web browser (such as Google Chrome, MS Internet Explorer), the HTTP GET method is used<br></p></li>
+<li><p>The HTTP GET method transfers information encoded in a single-line URL.<br></p></li>
+<li><p>Some chemical structure inputs are not appropriate to encode in a single-line URL (because they may contain special characters not compatible with the URL syntax, span over multiple lines, or too long), and the HTTP POST needs to be used for such cases.</p></li>
+</ul>
+<p>For more information on HTTP GET and POST, read the following documents.</p>
+<ul class="simple">
+<li><p>HTTP request methods (https://www.w3schools.com/tags/ref_httpmethods.asp)</p></li>
+<li><p>Get vs. POST (https://www.diffen.com/difference/GET-vs-POST-HTTP-Requests)</p></li>
+</ul>
+<p>Here, import the Requests library, necessary to make web service requests to PubChem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-the-http-get-method">
+<h2>1. Using the HTTP GET method.<a class="headerlink" href="#using-the-http-get-method" title="Link to this heading">#</a></h2>
+</section>
+<section id="structure-encoded-in-the-url-path">
+<h2>1-(1) Structure encoded in the URL path.<a class="headerlink" href="#structure-encoded-in-the-url-path" title="Link to this heading">#</a></h2>
+<p>In some cases, you can encode a chemical structure in the PUG-REST request URL path as in the following example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prolog</span> <span class="o">=</span> <span class="s1">&#39;https://pubchem.ncbi.nlm.nih.gov/rest/pug&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles1</span> <span class="o">=</span> <span class="s2">&quot;CC(C)CC1=CC=C(C=C1)C(C)C(=O)O&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/smiles/&quot;</span> <span class="o">+</span> <span class="n">smiles1</span> <span class="o">+</span> <span class="s2">&quot;/cids/txt&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This request URL returns ibuprofen (CID 3672).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Try to run the following</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smiles2</span> <span class="o">=</span> <span class="s2">&quot;CC1=C([C@@](SC1=O)(C)/C=C(\C)/C=C)O&quot;</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/smiles/&quot;</span> <span class="o">+</span> <span class="n">smiles2</span> <span class="o">+</span> <span class="s2">&quot;/cids/txt&quot;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><br>Note in the above example that the SMILES string contains special characters. In this case a forward slash (“/”), which is also used in the URL path.  These special characters conflict with the PUG-REST request URL syntax, causing an error when used in the PUG-REST request URL.</p>
+</section>
+<section id="structure-encoded-as-a-url-argument">
+<h2>1-(2) Structure encoded as a URL argument<a class="headerlink" href="#structure-encoded-as-a-url-argument" title="Link to this heading">#</a></h2>
+<p>To circumvent the issue mentioned above, the SMILES string may be encoded as the URL argments (as an optional parameter followed by the “?” character).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/smiles/cids/txt?&quot;</span> <span class="o">+</span> <span class="s2">&quot;smiles=&quot;</span> <span class="o">+</span> <span class="n">smiles2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">res2</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res2</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="structure-passed-in-a-dictionary">
+<h2>1-(3) Structure passed in a dictionary<a class="headerlink" href="#structure-passed-in-a-dictionary" title="Link to this heading">#</a></h2>
+<p>It is also possible to pass the structure query as a key-value pair in a dictionary.  The following example does the same task as the previous example does.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/smiles/cids/txt&quot;</span>
+<span class="n">struct</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;smiles&#39;</span><span class="p">:</span> <span class="n">smiles2</span> <span class="p">}</span>
+<span class="n">res3</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">struct</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res3</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The object returned from a web service request (res, res2, and res3 in our examples) contains information on the request URL through which the data have been retrieved.  This information can be accessed using the “.url” attribute of the object, as shown in this example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">smiles2</span><span class="p">)</span>    <span class="c1"># the orginal smiles string unencoded</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res2</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>   <span class="c1"># from (request 2) structure encoded as a URL argument</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">struct</span><span class="p">)</span>     <span class="c1"># to show the smiles string in the dictionary is unencoded for URL</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res3</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>   <span class="c1"># from (request 3) structure passed in a dictionary</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>From these two URLs, we can see two important things:</p>
+<ul class="simple">
+<li><p>When the structure is passed using a key-value pair in a dictionary (i.e., “res3”), the structure is automatically encoded as a URL argument (after the “?” mark).</p></li>
+<li><p>When the structure is passed in a dictionary, the special characters in the SMILES string are coverted according to the URL encoding rules: https://www.w3schools.com/tags/ref_urlencode.asp.  [for example, the equal sign “=” changes into “%3D”, and “(” into “%28”, “/” into “%2F”, etc]
+<br></p></li>
+</ul>
+<p>It illustrates that the last two approaches using HTTP GET are essentially the same.</p>
+<p><strong>Exercise 1a</strong> Retrieve (in the CSV (comma-separated values) format) the Hydrogen bond donor and acceptor counts, TPSA, and XLogP of the chemical represented by the SMILES string: “C1=CC(=C(C=C1Cl)O)OC2=C(C=C(C=C2)Cl)Cl”.  When you construct a PUG-REST url for this request, encode the structure in the URL path.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code in this cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise 1b</strong> Get the CID corresponding to the following InChI string, using the HTTP GET method.  Pay attention to the case sensitivity of the URL parameter part after the “?” mark.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inchi</span> <span class="o">=</span> <span class="s2">&quot;InChI=1S/C17H14O4S/c1-22(19,20)14-9-7-12(8-10-14)15-11-21-17(18)16(15)13-5-3-2-4-6-13/h2-10H,11H2,1H3&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code in this cell</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-the-http-post-method">
+<h2>2. Using the HTTP POST method<a class="headerlink" href="#using-the-http-post-method" title="Link to this heading">#</a></h2>
+</section>
+<section id="comparison-of-http-post-and-get">
+<h2>2-(1) Comparison of HTTP POST and GET<a class="headerlink" href="#comparison-of-http-post-and-get" title="Link to this heading">#</a></h2>
+<p>All the three examples above use the HTTP GET method, as implied in the use of “requests.get()”.  Alternatively, one can use the HTTP POST method.  For example, the following example returns the identical result as the last two HTTP GET examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/smiles/cids/txt&quot;</span>
+<span class="n">struct</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;smiles&#39;</span><span class="p">:</span> <span class="n">smiles2</span> <span class="p">}</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">struct</span><span class="p">)</span>   <span class="c1"># the SMILES as a URL parameter</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/smiles/cids/txt&quot;</span>
+<span class="n">struct</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;smiles&#39;</span><span class="p">:</span> <span class="n">smiles2</span> <span class="p">}</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">struct</span><span class="p">)</span>    <span class="c1"># the SMILES as data</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the first one passes the input SMILES string as a parameter, while the second one passes it as data.  Because of this, the URL stored in the “res.url” variable in the second code does not contain structure informaion.</p>
+</section>
+<section id="http-post-for-multi-line-structure-input">
+<h2>2-(2) HTTP POST for multi-line structure input<a class="headerlink" href="#http-post-for-multi-line-structure-input" title="Link to this heading">#</a></h2>
+<p>The HTTP POST method should be used if the input molecular structure for PUG-REST request span over multiple lines (e.g., stored in a structure-data file (SDF) format).  The SDF file contains structure information of a molecule in a multi-line format, along with other data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mysdf</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;1983</span>
+<span class="s1">  -OEChem-07241917072D</span>
+
+<span class="s1"> 20 20  0     0  0  0  0  0  0999 V2000</span>
+<span class="s1">    2.8660   -2.5950    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    4.5981    1.4050    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    2.8660    1.4050    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    2.8660    0.4050    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    3.7320   -0.0950    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    2.0000   -0.0950    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    3.7320   -1.0950    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    2.0000   -1.0950    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    2.8660   -1.5950    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    3.7320    1.9050    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    3.7320    2.9050    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    4.2690    0.2150    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    1.4631    0.2150    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    2.3291    1.7150    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    4.2690   -1.4050    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    1.4631   -1.4050    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    4.3520    2.9050    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    3.7320    3.5250    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    3.1120    2.9050    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">    2.3291   -2.9050    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0</span>
+<span class="s1">  1  9  1  0  0  0  0</span>
+<span class="s1">  1 20  1  0  0  0  0</span>
+<span class="s1">  2 10  2  0  0  0  0</span>
+<span class="s1">  3  4  1  0  0  0  0</span>
+<span class="s1">  3 10  1  0  0  0  0</span>
+<span class="s1">  3 14  1  0  0  0  0</span>
+<span class="s1">  4  5  2  0  0  0  0</span>
+<span class="s1">  4  6  1  0  0  0  0</span>
+<span class="s1">  5  7  1  0  0  0  0</span>
+<span class="s1">  5 12  1  0  0  0  0</span>
+<span class="s1">  6  8  2  0  0  0  0</span>
+<span class="s1">  6 13  1  0  0  0  0</span>
+<span class="s1">  7  9  2  0  0  0  0</span>
+<span class="s1">  7 15  1  0  0  0  0</span>
+<span class="s1">  8  9  1  0  0  0  0</span>
+<span class="s1">  8 16  1  0  0  0  0</span>
+<span class="s1"> 10 11  1  0  0  0  0</span>
+<span class="s1"> 11 17  1  0  0  0  0</span>
+<span class="s1"> 11 18  1  0  0  0  0</span>
+<span class="s1"> 11 19  1  0  0  0  0</span>
+<span class="s1">M  END</span>
+<span class="s1">&gt; &lt;PUBCHEM_COMPOUND_CID&gt;</span>
+<span class="s1">1983</span>
+
+<span class="s1">&gt; &lt;PUBCHEM_COMPOUND_CANONICALIZED&gt;</span>
+<span class="s1">1</span>
+
+<span class="s1">&gt; &lt;PUBCHEM_CACTVS_COMPLEXITY&gt;</span>
+<span class="s1">139</span>
+
+<span class="s1">&gt; &lt;PUBCHEM_CACTVS_HBOND_ACCEPTOR&gt;</span>
+<span class="s1">2</span>
+
+<span class="s1">&gt; &lt;PUBCHEM_CACTVS_HBOND_DONOR&gt;</span>
+<span class="s1">2</span>
+
+<span class="s1">&gt; &lt;PUBCHEM_CACTVS_ROTATABLE_BOND&gt;</span>
+<span class="s1">1</span>
+<span class="s1">$$$$</span>
+<span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, the triple quotes (‘’’) are used to enclose a multi-line string.  This multi-line sdf data is used as an input for a PUG-REST request through the HTTP POST.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/sdf/cids/txt&quot;</span>
+<span class="n">mydata</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;sdf&#39;</span><span class="p">:</span> <span class="n">mysdf</span> <span class="p">}</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mydata</span><span class="p">)</span> <span class="c1"># the multiline sdf as URL data</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="http-post-for-sdf-file-input">
+<h2>2-(3) HTTP POST for SDF file input<a class="headerlink" href="#http-post-for-sdf-file-input" title="Link to this heading">#</a></h2>
+<p>One may want to use the structure stored in a file as the input for a PUG-REST request.  The following code shows how to read an SDF file into a variable.  This code cell assumes that the ‘Structure2D_CID_5288826.sdf’ file is in the current directory.  The file can be downloaded from the <strong>Chapter 2 Assignments</strong> page.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;Structure2D_CID_5288826.sdf&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">mysdf</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">mysdf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now the structure stored in the “mysdf” can be used in a PUG-REST request through HTTP-POST.  For example, the code cell below shows how to retrieve various names (also called “synonyms”) of the input structure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">prolog</span> <span class="o">+</span> <span class="s2">&quot;/compound/sdf/synonyms/txt&quot;</span>
+<span class="n">mydata</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;sdf&#39;</span><span class="p">:</span> <span class="n">mysdf</span> <span class="p">}</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mydata</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise 2a</strong> Retrieve (in the <strong>CSV</strong> format) the XlogP, molecular weight, hydrogen bond donor count, hydrogen bond aceptor count, and TPSA of the compounds contained in the five sdf files below, which can be downloaded from the <strong>Chapter 2 Assignments</strong> page.</p>
+<ul class="simple">
+<li><p>Use a for loop to retrieve the data for each compound.</p></li>
+<li><p>Import the time package and add “time.sleep(0.2)” to sleep 0.2 seconds after retrieving the data for each compound.</p></li>
+<li><p>Refer to the “lecture 1” notebook to see how to merge the multiple CSV outputs into a single CSV output.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;lecture02_ex2b_compound1.sdf&#39;</span><span class="p">,</span><span class="s1">&#39;lecture02_ex2b_compound2.sdf&#39;</span><span class="p">,</span><span class="s1">&#39;lecture02_ex2b_compound3.sdf&#39;</span><span class="p">,</span> \
+         <span class="s1">&#39;lecture02_ex2b_compound4.sdf&#39;</span><span class="p">,</span><span class="s1">&#39;lecture02_ex2b_compound5.sdf&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code in this cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "datachem"
+        },
+        kernelOptions: {
+            name: "datachem",
+            path: "./content/modules/05-Searching-Chemical-Databases"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'datachem'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05-01-Exploring-PubChem.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exploring PubChem</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="05-03-list-conversion.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Intercoversion between PubChem records.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-http-get-method">1. Using the HTTP GET method.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-encoded-in-the-url-path">1-(1) Structure encoded in the URL path.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-encoded-as-a-url-argument">1-(2) Structure encoded as a URL argument</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-passed-in-a-dictionary">1-(3) Structure passed in a dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-http-post-method">2. Using the HTTP POST method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-http-post-and-get">2-(1) Comparison of HTTP POST and GET</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#http-post-for-multi-line-structure-input">2-(2) HTTP POST for multi-line structure input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#http-post-for-sdf-file-input">2-(3) HTTP POST for SDF file input</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Belford
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
