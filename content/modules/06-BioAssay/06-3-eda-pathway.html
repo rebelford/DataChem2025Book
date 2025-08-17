@@ -1,0 +1,1551 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exploratory Data Analysis 2:Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS) &#8212; Data Chemistry 2025</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/oldcustom.css?v=e52fa269" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=ba2d5b83" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/modules/06-BioAssay/06-3-eda-pathway';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Module 7: Quantitative Structure Property Reationships" href="../07-QSAR-QSPR/README.html" />
+    <link rel="prev" title="Exploratory Data Analysis 1: Concordance of Thyroid Hormone Receptor Activity in Rats and Humans" href="06-2-eda-protein1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Data Chemistry 2025 - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Data Chemistry 2025 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    2025 Data Chemistry OLCC
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-OLCC-Primer/README.html">Module 1: OLCC Primer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-1-OLCC-Primer.html">1.1 OLCC Primer</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-2-python-basics.html">1.2 Python Basics</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-3-python-intermediate.html">1.3 Python Intermediate</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Introduction/README.html">Module 2: Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Introduction/02-1-PubChemDataTypes.html">PubChem Training Course</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../02-Introduction/02-2-PUG-REST-activity.html">Getting Molecular Properties through PubChem’s PUG REST Web Interface</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Public-Chemical-Databases/README.html">Module 3: Public Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Public-Chemical-Databases/03-01-Survey-Public-Chemical-Databases.html">Public Compound Databases</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-Chemical-Representations/README.html">Module 4: Chemical Representations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-01-introduction_chemical_representations.html">Chemical Representations and Introduction to RDKit</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-02-PubChem3D_update.html">PubChem3D</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-03-Substructure_Searching_with_SMARTS.html">Substructure Searching with SMARTS</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05-Searching-Chemical-Databases/README.html">Module 5: Searching Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-01-Exploring-PubChem.html">Exploring PubChem</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-02-structure-inputs.html">Chemical Structure Inputs for PUG-REST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05-Searching-Chemical-Databases/05-03-list-conversion.html">Intercoversion between PubChem records.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Module 6: BioAssays</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="06-1-Bioactivity_Primer.html">PubChem Bioactivity Primer</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="06-2-eda-protein1.html">Exploratory Data Analysis 1: <br/><br/> Concordance of Thyroid Hormone Receptor Activity in Rats and Humans</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Exploratory Data Analysis 2:<br/><br/>Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-QSAR-QSPR/README.html">Module 7: Quantitative Structure Property Reationships</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-QSAR-QSPR/07-01-QSPR.html">Molecular Descriptors</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Molecular-Similarity/README.html">Module 8: Molecular Similarity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-1-MolSimularity.html">Fingerprint Generation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-2-MolSimularity.html">What is a bit vector?</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-3-MolSimularity.html">Objectives</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-CADDD/README.html">Module 9: Computer-Aided Drug Discovery and Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-CADDD/09-1-virtual-screening.html">Virtual Screening</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10-Machine-Learning/README.html">Module 10: Supervised ML</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10-Machine-Learning/10-01-supervised-ML.html">Machine Learning Basics</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendices/README.html">Appendices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../appendices/Pandas.html">Introduction to Pandas</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/DivCHED-CCCE/DataChemistry2025OLCC/master?urlpath=lab/tree/docs/content/modules/06-BioAssay/06-3-eda-pathway.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://nanohub.org/tools/datachemolcc/hub/user-redirect/git-pull?repo=https%3A//github.com/DivCHED-CCCE/DataChemistry2025OLCC&urlpath=lab/tree/DataChemistry2025OLCC/docs/content/modules/06-BioAssay/06-3-eda-pathway.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DivCHED-CCCE/DataChemistry2025OLCC/blob/master/docs/content/modules/06-BioAssay/06-3-eda-pathway.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC/issues/new?title=Issue%20on%20page%20%2Fcontent/modules/06-BioAssay/06-3-eda-pathway.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/modules/06-BioAssay/06-3-eda-pathway.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exploratory Data Analysis 2:<br><br>Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-gene-list-into-a-data-frame">Loading the gene list into a data frame.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-chemicals-tested-against-the-genes">Getting chemicals tested against the genes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-chemicals-tested-against-a-single-gene">Getting chemicals tested against a single gene.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-bioactivity-data-for-all-genes">Getting bioactivity data for all genes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-descriptive-statistics-of-the-data">Getting Descriptive Statistics of the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-activity">Quantitative Activity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ic50">IC50</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ki">Ki</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-known-drugs-from-the-tested-compounds">Identifying known drugs from the tested compounds</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-one-page-of-the-annotation-data">Getting one page of the annotation data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-the-atc-code-from-the-annotation-data">Extracting the ATC code from the annotation data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-all-pages-of-the-annotation-data">Getting all pages of the annotation data.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-drug-information-to-the-bioactivity-data-frame">Appending drug information to the bioactivity data frame.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-known-drugs-from-submicromolar-activity">Identifying known drugs from submicromolar activity</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exploratory-data-analysis-2-chemical-modulation-of-renin-angiotensin-aldosterone-system-raas">
+<h1>Exploratory Data Analysis 2:<br><br>Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS)<a class="headerlink" href="#exploratory-data-analysis-2-chemical-modulation-of-renin-angiotensin-aldosterone-system-raas" title="Link to this heading">#</a></h1>
+<p>A biological pathway is a series of interactions among molecules (e.g., chemicals, genes, and proteins) in a cell that leads to a certain product or a change in a cell.<br />
+In this notebook, we will learn how to access information for a given pathway, with the human Renin-Angiotensin-Aldosterone System (RAAS) as an example. In PubChem, there are multiple records for the RAAS pathway, derived from different data sources.  Among them, we will use the RAAS record from WikiPathways (WikiPathways ID: WP4756).  The summary page of this record can be accessed at the following URL:</p>
+<p>https://pubchem.ncbi.nlm.nih.gov/pathway/WikiPathways:WP4756</p>
+<p>Among various annotations available on this page, we will use the list of genes downloaded from the Genes section:</p>
+<p>https://pubchem.ncbi.nlm.nih.gov/pathway/WikiPathways:WP4756#section=Genes</p>
+<p>The downloaded data file is already stored in the current directory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_pathway_genes</span> <span class="o">=</span> <span class="s2">&quot;pubchem_pathwayid_1295579_pcget_pathway_gene.csv&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s import necessary libraries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="loading-the-gene-list-into-a-data-frame">
+<h2>Loading the gene list into a data frame.<a class="headerlink" href="#loading-the-gene-list-into-a-data-frame" title="Link to this heading">#</a></h2>
+<p>First, create a data frame containing the list of genes involved in the RAAS pathway.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_pathway_genes</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To quickly access information on the individual genes, we want to add the URLs to their summary pages.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/gene/&quot;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;geneid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the output of the above code cell, the URLs are not clickable.  To make them clickable, display the data frame as an HTML page.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">render_links</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Click the URL for each gene and read the “Description” in the box presented at the top of the summary page to learn about the gene.</p>
+</section>
+<section id="getting-chemicals-tested-against-the-genes">
+<h2>Getting chemicals tested against the genes<a class="headerlink" href="#getting-chemicals-tested-against-the-genes" title="Link to this heading">#</a></h2>
+<p>It is noteworthy that the above gene summary pages have the bioactivity data for chemicals tested against the genes.  Therefore, you can find chemical modulators of a given pathway, by looking into the bioactivity of the chemicals against the genes involved in that pathway.  In this section, we will get the bioactivity data for the genes involved in the RAAS pathway programmatically through <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest">PUG-REST</a>.</p>
+<section id="getting-chemicals-tested-against-a-single-gene">
+<h3>Getting chemicals tested against a single gene.<a class="headerlink" href="#getting-chemicals-tested-against-a-single-gene" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/gene/geneid/183/concise/CSV&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datatype</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;CID&quot;</span><span class="p">:</span><span class="s2">&quot;Int64&quot;</span><span class="p">,</span> <span class="s2">&quot;RNAi&quot;</span><span class="p">:</span><span class="s2">&quot;Int64&quot;</span> <span class="p">}</span>
+<span class="n">df_gene_183</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">datatype</span><span class="p">)</span>
+<span class="n">df_gene_183</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_gene_183</span><span class="o">.</span><span class="n">shape</span>    <span class="c1"># Checking the dimension of the data frame</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The downloaded data set does not have the target gene information. If we download the bioactivity data for multiple genes and merge them into a single data frame, it may be inconveninent to find which gene a given row is for.  Therefore, we want to add the gene information to the data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_gene_183</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;Gene_ID&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;183&#39;</span><span class="p">)</span>
+<span class="n">df_gene_183</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;AGT&#39;</span><span class="p">)</span>
+<span class="n">df_gene_183</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;Gene_Name&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;angiotensinogen&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_gene_183</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="getting-bioactivity-data-for-all-genes">
+<h3>Getting bioactivity data for all genes<a class="headerlink" href="#getting-bioactivity-data-for-all-genes" title="Link to this heading">#</a></h3>
+<p>Now generate a single data frame containing the bioactivity data for all seven genes involved in the RAAS pathway.</p>
+<ul class="simple">
+<li><p>First, create an empty list called <code class="docutils literal notranslate"><span class="pre">list_dfs</span></code>.</p></li>
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to get the bioactivity data for the seven genes.</p>
+<ul>
+<li><p>To get the gene IDs, loop over the rows of the <code class="docutils literal notranslate"><span class="pre">df</span></code> data frame, using <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code>.</p></li>
+<li><p>For each gene, add new columns called <code class="docutils literal notranslate"><span class="pre">Gene_ID</span></code>, <code class="docutils literal notranslate"><span class="pre">Gene_Symbol</span></code>, and <code class="docutils literal notranslate"><span class="pre">Gene_Name</span></code>, containing relevant information.</p></li>
+<li><p>For each loop, add the generated data frame to the <code class="docutils literal notranslate"><span class="pre">list_df</span></code> list.</p></li>
+<li><p>At the end of each loop, add a <code class="docutils literal notranslate"><span class="pre">time.sleep(0.5)</span></code> command, not to overload the PubChem server.</p></li>
+</ul>
+</li>
+<li><p>After adding the bioactivity data for all genes to the <code class="docutils literal notranslate"><span class="pre">list_df</span></code> list, create a single data frame by using <code class="docutils literal notranslate"><span class="pre">pd.concat</span></code> from <code class="docutils literal notranslate"><span class="pre">list_dfs</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code here</span>
+
+<span class="n">list_dfs</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()</span> <span class="p">:</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/gene/geneid/&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;geneid&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;/concise/CSV&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Getting data for GeneID &quot;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;geneid&#39;</span><span class="p">],</span> <span class="s2">&quot;from &quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+    
+    <span class="n">df_tmp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">datatype</span><span class="p">)</span>
+
+    <span class="n">df_tmp</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;Gene_ID&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;geneid&#39;</span><span class="p">])</span>
+    <span class="n">df_tmp</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;genesymbol&#39;</span><span class="p">])</span>
+    <span class="n">df_tmp</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;Gene_Name&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;genename&#39;</span><span class="p">])</span>
+    
+    <span class="n">list_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">df_tmp</span> <span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">df_bioactivity</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">list_dfs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_bioactivity</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_bioactivity</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="getting-descriptive-statistics-of-the-data">
+<h3>Getting Descriptive Statistics of the data<a class="headerlink" href="#getting-descriptive-statistics-of-the-data" title="Link to this heading">#</a></h3>
+<p>The BioAssay records in PubChem can be classified into two groups: small molecule assays and RNAi screenings:</p>
+<ul class="simple">
+<li><p>small molecule assay: an assay where small molecules are tested against a target macromolecule (e.g., protein).</p></li>
+<li><p>RNAi screening: a high-throughput experimental approach used to systematically identify genes that regulate a specific cellular process or phenotype by silencing them using RNA interference (RNAi).</p></li>
+</ul>
+<p>In this lesson, we are intrested in small molecule assays, so we want to remove RNAi screening data.  They are flagged in the RNAi column of the data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_bioactivity</span><span class="p">[</span> <span class="n">df_bioactivity</span><span class="p">[</span><span class="s1">&#39;RNAi&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">indices_rnai</span> <span class="o">=</span> <span class="n">df_bioactivity</span><span class="p">[</span><span class="n">df_bioactivity</span><span class="p">[</span><span class="s1">&#39;RNAi&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activity_small</span> <span class="o">=</span> <span class="n">df_bioactivity</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">indices_rnai</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activity_small</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check the number of bioactivity data points for each gene.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activity_small</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Visualize the above count information, using the seaborn <code class="docutils literal notranslate"><span class="pre">countplot()</span></code>.  Add the data label for each bar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code.</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_activity_small</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">containers</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar_label</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above count plot, we see that CTSG has the most data points (more than 62 thousands).  Let’s look into this graph further.  First, group the data points by <code class="docutils literal notranslate"><span class="pre">Gene_symbol</span></code> and <code class="docutils literal notranslate"><span class="pre">Activity</span> <span class="pre">Outcome</span></code> (using <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>) and displays the number of data points for each combination of <code class="docutils literal notranslate"><span class="pre">Gene_Symbol</span></code> and <code class="docutils literal notranslate"><span class="pre">Activity</span> <span class="pre">Outcome</span></code> (using <code class="docutils literal notranslate"><span class="pre">size()</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+<span class="n">df_activity_small</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">,</span> <span class="s1">&#39;Activity Outcome&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Generate a count plot that shows the number of data points grouped by <code class="docutils literal notranslate"><span class="pre">Gene_Symbol</span></code> and <code class="docutils literal notranslate"><span class="pre">Activity_Outcome</span></code>.</p>
+<ul class="simple">
+<li><p>Add the data labels to individual bars.</p></li>
+<li><p>Make the bars horizontal (not vertical).</p></li>
+<li><p>Use the logarithmic scale to make small bars easier-to-recognize.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+<span class="c1">#ax = sns.countplot(data=df_activity_small, x=&#39;Gene_Symbol&#39;, hue=&#39;Activity Outcome&#39;)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_activity_small</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Activity Outcome&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">containers</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar_label</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The majority of data points for CTSG are declared “inactive”.  What we observe here implies that there may be a high-throughput screening (HTS) assay that tested a large number of chemicals against CTSG, because a HTS experiment usally results in a small number of active chemicals with a large number of inactive chemicals.<br />
+Find the assay with the most data points tested against CTSG, using <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> and <code class="docutils literal notranslate"><span class="pre">size()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activity_small</span><span class="p">[</span> <span class="n">df_activity_small</span><span class="p">[</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;CTSG&#39;</span> <span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;AID&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the assay identified in the above code cell, show the number of data points for each activity outcome. Use <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> and <code class="docutils literal notranslate"><span class="pre">size()</span></code>.  Alternatively, you can use <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df_activity_small[ df_activity_small[&#39;AID&#39;] == 581 ][&#39;Activity Outcome&#39;].value_counts()</span>
+<span class="n">df_activity_small</span><span class="p">[</span> <span class="n">df_activity_small</span><span class="p">[</span><span class="s1">&#39;AID&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">581</span> <span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Activity Outcome&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="quantitative-activity">
+<h4>Quantitative Activity<a class="headerlink" href="#quantitative-activity" title="Link to this heading">#</a></h4>
+<p>Now let’s look into what kind of activity values are in the <code class="docutils literal notranslate"><span class="pre">df_activity_small</span></code> data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activity_small</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Activity Name&#39;</span><span class="p">],</span> <span class="n">dropna</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The most common activity types in the data set is <code class="docutils literal notranslate"><span class="pre">IC50</span></code>, followed by <code class="docutils literal notranslate"><span class="pre">Ki</span></code>.  We will focus on these two activity types in the remaining part of this notebook.
+It is also worth mentioning that, if you use <code class="docutils literal notranslate"><span class="pre">dropna=False</span></code> (rather than <code class="docutils literal notranslate"><span class="pre">dropna=True</span></code>), you will see that more than 60 thousand data points do not have activity names.  Most of these data points without activity names correspond to the 62+ thousand inactive chemicals from the previously identified HTS assay.</p>
+<p>Let’s convert the activity values into a negative log scale.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activity_small</span><span class="p">[</span><span class="s1">&#39;p_Activity_Value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span> <span class="n">df_activity_small</span><span class="p">[</span><span class="s1">&#39;Activity Value [uM]&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that some activity data in the data frame are already in a log scale (e.g., log(1/C), pIC50, pKb, pKi).  In this notebook, we will ignore them because we are looking into IC50 and Ki values.  If we were to look into all activity types (including those already in a log scale), we would need to a different (and more complex) code.</p>
+</section>
+<section id="ic50">
+<h4>IC50<a class="headerlink" href="#ic50" title="Link to this heading">#</a></h4>
+<p>Now let’s look into IC50 values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activity_ic50</span> <span class="o">=</span> <span class="n">df_activity_small</span><span class="p">[(</span><span class="n">df_activity_small</span><span class="p">[</span><span class="s1">&#39;Activity Name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;IC50&quot;</span><span class="p">)</span> <span class="o">&amp;</span> 
+                                     <span class="p">(</span><span class="n">df_activity_small</span><span class="p">[</span><span class="s1">&#39;Activity Value [uM]&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">())</span> <span class="o">&amp;</span>
+                                     <span class="p">((</span><span class="n">df_activity_small</span><span class="p">[</span><span class="s1">&#39;Activity Qualifier&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;=&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_activity_small</span><span class="p">[</span><span class="s1">&#39;Activity Qualifier&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span> <span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The last part of the above code deals with the activity qualifiers (e.g., <code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>).  These qualifiers are crucial for correctly interpreting bioactivity data. For example, a compound with an IC50 of 1 μM has a different binding affinity from a compound with an IC50 &lt; 1 μM or IC50 &gt; 1 μM. However, without the qualifiers, they would be all indistinguishable, potentially leading to misinterpretation.  These qualifiers are provided by the assay data depositors.  When a data point does not have a qualifier, it is assumed to have the <code class="docutils literal notranslate"><span class="pre">=</span></code> qualifier.<br />
+Because we want to generate a chart for the activity values, we use only those values with the <code class="docutils literal notranslate"><span class="pre">=</span></code> qualifiers (and those with the <code class="docutils literal notranslate"><span class="pre">=</span></code> qualifers omitted), ignoring those with other qualifiers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activity_ic50</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Generate box plots that show the distribution of pIC50 values for each gene.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_activity_ic50</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;p_Activity_Value&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#sns.catplot(data=df_activity_ic50, x=&#39;p_Activity_Value&#39;, y=&#39;Gene_Symbol&#39;, kind=&quot;box&quot;)   # Alternative ways to create a chart similar to the agove one.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Generate a multipanel figure containing the histogram of pIC50 values for each gene, using seaborn’s <code class="docutils literal notranslate"><span class="pre">FacetGrid()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">df_activity_ic50</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;Gene_Symbol&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">,</span> <span class="s2">&quot;p_Activity_Value&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ki">
+<h4>Ki<a class="headerlink" href="#ki" title="Link to this heading">#</a></h4>
+<p>Now repeat the analysis, this time, for the Ki values.  First, create a new data frame called <code class="docutils literal notranslate"><span class="pre">df_activity_ki</span></code> from <code class="docutils literal notranslate"><span class="pre">df_activity_small</span></code>.  Make sure to use only the activity values with the <code class="docutils literal notranslate"><span class="pre">=</span></code> qualifiers and those with the <code class="docutils literal notranslate"><span class="pre">=</span></code> qualifers omitted, excluding those with other qualifiers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code</span>
+<span class="n">df_activity_ki</span> <span class="o">=</span> <span class="n">df_activity_small</span><span class="p">[(</span><span class="n">df_activity_small</span><span class="p">[</span><span class="s1">&#39;Activity Name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Ki&quot;</span><span class="p">)</span> <span class="o">&amp;</span> 
+                                     <span class="p">(</span><span class="n">df_activity_small</span><span class="p">[</span><span class="s1">&#39;Activity Value [uM]&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">())</span> <span class="o">&amp;</span>
+                                     <span class="p">((</span><span class="n">df_activity_small</span><span class="p">[</span><span class="s1">&#39;Activity Qualifier&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;=&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_activity_small</span><span class="p">[</span><span class="s1">&#39;Activity Qualifier&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span> <span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check the dimension of the resulting data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activity_ki</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Generate box plots that show the distribution of pKi values for each gene.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_activity_ki</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;p_Activity_Value&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Gene_Symbol&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#sns.histplot(data=df_activity_ki, x=&#39;p_Activity_Value&#39;, hue=&quot;Gene_Symbol&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Generate a multipanel figure containing the histogram of pKi values for each gene, using seaborn’s <code class="docutils literal notranslate"><span class="pre">FacetGrid()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">df_activity_ki</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;Gene_Symbol&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">,</span> <span class="s2">&quot;p_Activity_Value&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="identifying-known-drugs-from-the-tested-compounds">
+<h2>Identifying known drugs from the tested compounds<a class="headerlink" href="#identifying-known-drugs-from-the-tested-compounds" title="Link to this heading">#</a></h2>
+<p>Now let’s see if any of the tested chemicals in the data set are known drug compounds, and if yes, what they are used for. To do that, we need a list of known drugs, which will be used to compare with the chemicals in the data set. There are multiple ways to get a known drug list with their indications, but in this notebook, we are going to use the list of compounds annotated with the terms in the World Health Organization (WHO) Anatomical Therapeutic Chemical (ATC) classification (https://www.who.int/tools/atc-ddd-toolkit/atc-classification).</p>
+<section id="getting-one-page-of-the-annotation-data">
+<h3>Getting one page of the annotation data<a class="headerlink" href="#getting-one-page-of-the-annotation-data" title="Link to this heading">#</a></h3>
+<p>First, let’s get the WHO ATC annotation data from PubChem using <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/pug-view">PUG-View</a>.  Then, load the downloaded json into a dictionary called <code class="docutils literal notranslate"><span class="pre">dict_drugs</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/JSON/?source=WHO%20Anatomical%20Therapeutic%20Chemical%20(ATC)%20Classification&amp;heading_type=Compound&amp;heading=ATC%20Code&amp;page=1&quot;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">dict_drugs</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#dict_drugs    # Uncomment to see the content of the downloaded json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>PUG-View supports downloading up to 1,000 annotations at a time.  To download a data set with more than 1,000 annotations, the result will be paginated and the PUG-View request will return data for only one specified page (page 1 by default).<br />
+Therefore, whenever you download annotations through PUG-View, you should check the total number of pages for the annotatnion data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict_drugs</span><span class="p">[</span><span class="s1">&#39;Annotations&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_pages</span> <span class="o">=</span> <span class="n">dict_drugs</span><span class="p">[</span><span class="s1">&#39;Annotations&#39;</span><span class="p">][</span><span class="s1">&#39;TotalPages&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current page:&quot;</span><span class="p">,</span> <span class="n">dict_drugs</span><span class="p">[</span><span class="s1">&#39;Annotations&#39;</span><span class="p">][</span><span class="s1">&#39;Page&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of pages:&quot;</span><span class="p">,</span> <span class="n">dict_drugs</span><span class="p">[</span><span class="s1">&#39;Annotations&#39;</span><span class="p">][</span><span class="s1">&#39;TotalPages&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above PUG-View request, we downloaded the first page of the annotation data (out of six pages). Therefore, we should make six PUG-View requests to get drug information.</p>
+</section>
+<section id="extracting-the-atc-code-from-the-annotation-data">
+<h3>Extracting the ATC code from the annotation data<a class="headerlink" href="#extracting-the-atc-code-from-the-annotation-data" title="Link to this heading">#</a></h3>
+<p>The downloaded data in json format was loaded into a (somewhat complicated) dictionary.  From this dictionary, we want to extract necessary information (e.g.,drug name, drug classification, and PubChem Compound ID (CID)) and organize it in a tabular form (e.g., data frame).  The following code cells show how this task can be done.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#dict_drugs   # Uncomment if you want to check the structure of the downloaded data.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_annotations</span> <span class="o">=</span> <span class="n">dict_drugs</span><span class="p">[</span><span class="s1">&#39;Annotations&#39;</span><span class="p">][</span><span class="s1">&#39;Annotation&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">drug_atc_code</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">annotation</span> <span class="ow">in</span> <span class="n">list_annotations</span> <span class="p">:</span>
+
+    <span class="n">anid</span> <span class="o">=</span> <span class="n">annotation</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ANID&quot;</span><span class="p">)</span>            <span class="c1"># Unique ID for the annotation</span>
+    <span class="n">atc_code</span> <span class="o">=</span> <span class="n">annotation</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;SourceID&quot;</span><span class="p">)</span>    <span class="c1"># ATC code</span>
+    <span class="n">drug_name</span> <span class="o">=</span> <span class="n">annotation</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">)</span>
+    <span class="n">cids</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">value_strings</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># Get CIDs for the drug. (Note: a drug can be mapped to multiple CIDs)</span>
+    <span class="n">linked_records</span> <span class="o">=</span> <span class="n">annotation</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;LinkedRecords&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">linked_records</span> <span class="p">:</span>
+        <span class="n">cids</span> <span class="o">=</span> <span class="n">linked_records</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;CID&#39;</span><span class="p">)</span>    <span class="c1"># cids : list of CIDs</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Warning! more than one CIDs:&quot;</span><span class="p">,</span> <span class="n">anid</span><span class="p">,</span> <span class="n">atc_code</span><span class="p">,</span> <span class="n">drug_name</span><span class="p">,</span> <span class="n">cids</span><span class="p">)</span>
+
+    <span class="c1"># Get annotation data. (Note: there may be multiple items in this part).</span>
+    <span class="n">data_tree_level0</span> <span class="o">=</span> <span class="n">annotation</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">data_tree_level0</span> <span class="p">:</span>
+        <span class="k">for</span> <span class="n">node_level0</span> <span class="ow">in</span> <span class="n">data_tree_level0</span><span class="p">:</span>
+            <span class="n">value_strings_with_markup</span> <span class="o">=</span> <span class="n">node_level0</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Value&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;StringWithMarkup&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">value_string_with_markup</span> <span class="ow">in</span> <span class="n">value_strings_with_markup</span><span class="p">:</span>
+                <span class="n">value_strings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value_string_with_markup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;String&#39;</span><span class="p">))</span>
+                <span class="c1">#print(, mySourceID, myName, cids, value_string)</span>
+
+    <span class="c1"># Some rows do not have CIDs. For the CID columns of those rows, add an empty string as a spaceholder.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">cids</span><span class="p">:</span>
+        <span class="n">cids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">cid</span> <span class="ow">in</span> <span class="n">cids</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value_string</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">value_strings</span><span class="p">):</span>
+            <span class="n">drug_atc_code</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">anid</span><span class="p">,</span> <span class="n">cid</span><span class="p">,</span> <span class="n">drug_name</span><span class="p">,</span> <span class="n">atc_code</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">value_string</span><span class="p">])</span>
+        
+<span class="c1">#    if count == 10 :</span>
+<span class="c1">#        break</span>
+    
+    <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above code cell stores the drug information in a list of lists.  You can view this list of lists as a 2-D matrix, where rows correspond to individaul drugs and columns correspond to piece of information for each drug.  Let’s load <code class="docutils literal notranslate"><span class="pre">df_drug_atc</span></code> into a data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">column_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ANID&#39;</span><span class="p">,</span> <span class="s1">&#39;CID&#39;</span><span class="p">,</span> <span class="s1">&#39;Drug_Name&#39;</span><span class="p">,</span> <span class="s1">&#39;ATC_Code&#39;</span><span class="p">,</span> <span class="s1">&#39;ATC_Level&#39;</span><span class="p">,</span> <span class="s1">&#39;ATC_Description&#39;</span><span class="p">]</span>
+<span class="n">df_drug_atc_tmp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">drug_atc_code</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">column_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_atc_tmp</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="getting-all-pages-of-the-annotation-data">
+<h3>Getting all pages of the annotation data.<a class="headerlink" href="#getting-all-pages-of-the-annotation-data" title="Link to this heading">#</a></h3>
+<p>The above code cells demonstrate how to download the first page of the WHO-ATC annotation data, extract the desired drug information, and organize it in a dataframe.  Now write a code that repeat this process to get all six pages of the WHO-ATC annotation data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code here</span>
+
+<span class="n">drug_atc_code</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">total_pages</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">):</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Getting page &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">page</span><span class="p">)</span> <span class="o">+</span><span class="s2">&quot; of &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_pages</span><span class="p">))</span>
+    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/annotations/heading/JSON/?source=WHO%20Anatomical%20Therapeutic%20Chemical%20(ATC)%20Classification&amp;heading_type=Compound&amp;heading=ATC%20Code&amp;page=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">dict_drugs</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">list_annotations</span> <span class="o">=</span> <span class="n">dict_drugs</span><span class="p">[</span><span class="s1">&#39;Annotations&#39;</span><span class="p">][</span><span class="s1">&#39;Annotation&#39;</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">annotation</span> <span class="ow">in</span> <span class="n">list_annotations</span> <span class="p">:</span>
+
+        <span class="n">anid</span> <span class="o">=</span> <span class="n">annotation</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ANID&quot;</span><span class="p">)</span>            <span class="c1"># Unique ID for the annotation</span>
+        <span class="n">atc_code</span> <span class="o">=</span> <span class="n">annotation</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;SourceID&quot;</span><span class="p">)</span>    <span class="c1"># ATC code</span>
+        <span class="n">drug_name</span> <span class="o">=</span> <span class="n">annotation</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">)</span>
+        <span class="n">cids</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">value_strings</span> <span class="o">=</span> <span class="p">[]</span>
+    
+        <span class="c1"># Get CIDs for the drug. (Note: a drug can be mapped to multiple CIDs)</span>
+        <span class="n">linked_records</span> <span class="o">=</span> <span class="n">annotation</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;LinkedRecords&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">linked_records</span> <span class="p">:</span>
+            <span class="n">cids</span> <span class="o">=</span> <span class="n">linked_records</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;CID&#39;</span><span class="p">)</span>    <span class="c1"># cids : list of CIDs</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# Warning! more than one CIDs:&quot;</span><span class="p">,</span> <span class="n">anid</span><span class="p">,</span> <span class="n">atc_code</span><span class="p">,</span> <span class="n">drug_name</span><span class="p">,</span> <span class="n">cids</span><span class="p">)</span>
+
+        <span class="c1"># Get annotation data. (Note: there may be multiple items in this part).</span>
+        <span class="n">data_tree_level0</span> <span class="o">=</span> <span class="n">annotation</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">data_tree_level0</span> <span class="p">:</span>
+            <span class="k">for</span> <span class="n">node_level0</span> <span class="ow">in</span> <span class="n">data_tree_level0</span><span class="p">:</span>
+                <span class="n">value_strings_with_markup</span> <span class="o">=</span> <span class="n">node_level0</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Value&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;StringWithMarkup&#39;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">value_string_with_markup</span> <span class="ow">in</span> <span class="n">value_strings_with_markup</span><span class="p">:</span>
+                    <span class="n">value_strings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value_string_with_markup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;String&#39;</span><span class="p">))</span>
+                    <span class="c1">#print(, mySourceID, myName, cids, value_string)</span>
+
+        <span class="c1"># Some rows do not have CIDs. For the CID columns of those rows, add an empty string as a spaceholder.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">cids</span><span class="p">:</span>
+            <span class="n">cids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">cid</span> <span class="ow">in</span> <span class="n">cids</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value_string</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">value_strings</span><span class="p">):</span>
+                <span class="n">drug_atc_code</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">anid</span><span class="p">,</span> <span class="n">cid</span><span class="p">,</span> <span class="n">drug_name</span><span class="p">,</span> <span class="n">atc_code</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">value_string</span><span class="p">])</span>
+        
+<span class="c1">#        if count == 10 :</span>
+<span class="c1">#            break</span>
+    
+<span class="c1">#        count = count + 1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">column_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ANID&#39;</span><span class="p">,</span> <span class="s1">&#39;CID&#39;</span><span class="p">,</span> <span class="s1">&#39;Drug_Name&#39;</span><span class="p">,</span> <span class="s1">&#39;ATC_Code&#39;</span><span class="p">,</span> <span class="s1">&#39;ATC_Level&#39;</span><span class="p">,</span> <span class="s1">&#39;ATC_Description&#39;</span><span class="p">]</span>
+<span class="n">df_drug_atc_tmp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">drug_atc_code</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">column_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_atc_tmp</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_atc_tmp</span><span class="o">.</span><span class="n">shape</span>    <span class="c1"># Check the shape of the data frame</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_atc_tmp</span><span class="p">[</span><span class="s1">&#39;Drug_Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>    <span class="c1"># Check the number of unique drugs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_atc_tmp</span><span class="p">[</span><span class="s1">&#39;CID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>    <span class="c1"># Check the number of unique CIDs.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As explained in the <a class="reference external" href="https://www.who.int/tools/atc-ddd-toolkit/atc-classification"><strong>WHO-ATC classification web page</strong></a>, the WHO-ATC classifiction has a hierarchical structure with five levels. For this work, let’s use the middle-level nodes to classify the drugs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_drug_atc_lv2</span> <span class="o">=</span> <span class="n">df_drug_atc_tmp</span><span class="p">[</span><span class="n">df_drug_atc_tmp</span><span class="p">[</span><span class="s1">&#39;ATC_Level&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The resulting data frame (<code class="docutils literal notranslate"><span class="pre">df_drug_atc_lv2</span></code>) will be compared with the data frame containing the compounds tested against the genes involved in the RAAS pathway.</p>
+</section>
+<section id="appending-drug-information-to-the-bioactivity-data-frame">
+<h3>Appending drug information to the bioactivity data frame.<a class="headerlink" href="#appending-drug-information-to-the-bioactivity-data-frame" title="Link to this heading">#</a></h3>
+<p>Now create a new data frame by merging <code class="docutils literal notranslate"><span class="pre">df_activity_small</span></code> with <code class="docutils literal notranslate"><span class="pre">df_drug_atc_lv2</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activity_small_lv2</span> <span class="o">=</span> <span class="n">df_activity_small</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_drug_atc_lv2</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;CID&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check the first few rows of the new data set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activity_small_lv2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check how many chemicals in the data set are drugs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activity_small_lv2</span><span class="p">[</span><span class="s1">&#39;ATC_Code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are more than 700 <strong>rows</strong> annotated with WHO-ATC codes.  However, <strong>the actual number of known drugs</strong> in the data frame may be smaller because they can be appear multiple times in the <code class="docutils literal notranslate"><span class="pre">df_activity_small_lv2</span></code> data frame.  It is worth noting that a chemical can be tested multiple times in different samples and different assays.  So, we want to check the unique number of CIDs in the data frame to get the number of tested compounds that are known drugs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activity_small_lv2</span><span class="p">[</span> <span class="n">df_activity_small_lv2</span><span class="p">[</span><span class="s1">&#39;ATC_Code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span> <span class="p">][</span><span class="s1">&#39;CID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output of the above cell indicates that more than 275 drugs were tested against any of the genes involved in the RAAS pathway.  However, we don’t know how many of these known drugs actually show decent activity against the genes involved in the RAAS pathway.  While some drugs may target the genes involved in the RASS pathway, others may not. Therefore, we want to look into those with strong activity against the target genes involved in the RAAS pathway.</p>
+</section>
+<section id="identifying-known-drugs-from-submicromolar-activity">
+<h3>Identifying known drugs from submicromolar activity<a class="headerlink" href="#identifying-known-drugs-from-submicromolar-activity" title="Link to this heading">#</a></h3>
+<p>Now create a new data frame called <code class="docutils literal notranslate"><span class="pre">df_submicro_drug_lv2</span></code>, by selecting only the rows with submicromolar activities <strong>AND</strong> ATC_Code annotations from the <code class="docutils literal notranslate"><span class="pre">df_activity_small_lv2</span></code> data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_submicro_drug_lv2</span> <span class="o">=</span> <span class="n">df_activity_small_lv2</span><span class="p">[</span> <span class="p">(</span><span class="n">df_activity_small_lv2</span><span class="p">[</span><span class="s1">&#39;Activity Value [uM]&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_activity_small_lv2</span><span class="p">[</span><span class="s1">&#39;ATC_Code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">())</span> <span class="p">]</span> 
+<span class="n">df_submicro_drug_lv2</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Show the number of unique CIDs in <code class="docutils literal notranslate"><span class="pre">df_submicro_drug_lv2</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_submicro_drug_lv2</span><span class="p">[</span><span class="s1">&#39;CID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Show the list of unique CIDs, along with their drug names, ATC code, ATC Description, and the number of data points.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_submicro_drug_lv2</span><span class="p">[[</span><span class="s1">&#39;CID&#39;</span><span class="p">,</span> <span class="s1">&#39;Drug_Name&#39;</span><span class="p">,</span> <span class="s1">&#39;ATC_Code&#39;</span><span class="p">,</span> <span class="s1">&#39;ATC_Description&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Get the unique ATC_Descriptions and the number of data points associated with them, using <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_submicro_drug_lv2</span><span class="p">[</span><span class="s1">&#39;ATC_Description&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s look into a few drugs in the list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_losartan</span> <span class="o">=</span> <span class="n">df_submicro_drug_lv2</span><span class="p">[</span> <span class="n">df_submicro_drug_lv2</span><span class="p">[</span><span class="s1">&#39;Drug_Name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Losartan&#39;</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_losartan</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_losartan</span><span class="p">[</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_losartan</span><span class="p">[</span><span class="s1">&#39;Activity Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Generate boxplots that compare losartan’s activity against ATGR1 and ATGR2 in terms of IC50 and Kd</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_losartan</span><span class="p">[</span><span class="n">df_losartan</span><span class="p">[</span><span class="s1">&#39;Activity Name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;IC50&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;p_Activity_Value&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_losartan</span><span class="p">[</span><span class="n">df_losartan</span><span class="p">[</span><span class="s1">&#39;Activity Name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Kd&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;p_Activity_Value&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="o">=</span><span class="s1">&#39;IC50&#39;</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="o">=</span><span class="s1">&#39;Kd&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s look into another drug Captopril.  Create a new dataframe, called <code class="docutils literal notranslate"><span class="pre">df_captopril</span></code>, containing the rows for drug ‘Captopril’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code here</span>
+<span class="n">df_captopril</span> <span class="o">=</span> <span class="n">df_submicro_drug_lv2</span><span class="p">[</span> <span class="n">df_submicro_drug_lv2</span><span class="p">[</span><span class="s1">&#39;Drug_Name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Captopril&#39;</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check the number of data points for the gene symbols targeted by captopril.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code here</span>
+<span class="n">df_captopril</span><span class="p">[</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check the number of data points for the activity types available for captopril.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code here</span>
+<span class="n">df_captopril</span><span class="p">[</span><span class="s1">&#39;Activity Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Generate boxplots that compare captopril’s activity against ACE and REN in terms of IC50 and Ki.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code here</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_captopril</span><span class="p">[</span><span class="n">df_captopril</span><span class="p">[</span><span class="s1">&#39;Activity Name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;IC50&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;p_Activity_Value&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_captopril</span><span class="p">[</span><span class="n">df_captopril</span><span class="p">[</span><span class="s1">&#39;Activity Name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Ki&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;p_Activity_Value&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Gene_Symbol&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="o">=</span><span class="s1">&#39;IC50&#39;</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="o">=</span><span class="s1">&#39;Ki&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h2>
+<p>How many genes are involved in the RAAS pathway, based on the WikiPathways Record WP4756?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here -&gt; 7 genes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>How many compounds with ATC codes showed submicromolar activities against any gene(s) involved in the RAAS?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here -&gt; 23 compounds (CIDs)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What genes does losartan show submicromolar activity against?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here -&gt; AGTR1, AGTR2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What genes does catopril show submicromolar activity against?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here -&gt; ACE, REN</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Visit the summary pages of those compounds and read the descriptions in the box at the top.</p>
+<ul class="simple">
+<li><p>losartan (CID 3961) : https://pubchem.ncbi.nlm.nih.gov/compound/3961</p></li>
+<li><p>captopril (CID 44093) : https://pubchem.ncbi.nlm.nih.gov/compound/44093<br />
+What disease are these drugs used to treat?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here -&gt; hypertension</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Read the following article and summarize the role and clinical importance of the RAAS pathway in 50-60 words.</p>
+<p><strong>Physiology, Renin Angiotensin System</strong><br />
+By John H. Fountain, Jasleen Kaur &amp; Sarah L. Lappin<br />
+https://www.ncbi.nlm.nih.gov/books/NBK470410/</p>
+<p># Write your summary in this markdown cell:</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/modules/06-BioAssay"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="06-2-eda-protein1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exploratory Data Analysis 1: <br><br> Concordance of Thyroid Hormone Receptor Activity in Rats and Humans</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../07-QSAR-QSPR/README.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 7: Quantitative Structure Property Reationships</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-gene-list-into-a-data-frame">Loading the gene list into a data frame.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-chemicals-tested-against-the-genes">Getting chemicals tested against the genes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-chemicals-tested-against-a-single-gene">Getting chemicals tested against a single gene.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-bioactivity-data-for-all-genes">Getting bioactivity data for all genes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-descriptive-statistics-of-the-data">Getting Descriptive Statistics of the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-activity">Quantitative Activity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ic50">IC50</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ki">Ki</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-known-drugs-from-the-tested-compounds">Identifying known drugs from the tested compounds</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-one-page-of-the-annotation-data">Getting one page of the annotation data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-the-atc-code-from-the-annotation-data">Extracting the ATC code from the annotation data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-all-pages-of-the-annotation-data">Getting all pages of the annotation data.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-drug-information-to-the-bioactivity-data-frame">Appending drug information to the bioactivity data frame.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-known-drugs-from-submicromolar-activity">Identifying known drugs from submicromolar activity</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Belford
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

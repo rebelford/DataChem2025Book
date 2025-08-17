@@ -1,0 +1,804 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exploring PubChem &#8212; Data Chemistry 2025</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/oldcustom.css?v=e52fa269" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=ba2d5b83" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/modules/05-Searching-Chemical-Databases/05-01-Exploring-PubChem';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Chemical Structure Inputs for PUG-REST" href="05-02-structure-inputs.html" />
+    <link rel="prev" title="Module 5: Searching Chemical Databases" href="README.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Data Chemistry 2025 - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Data Chemistry 2025 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    2025 Data Chemistry OLCC
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-OLCC-Primer/README.html">Module 1: OLCC Primer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-1-OLCC-Primer.html">1.1 OLCC Primer</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-2-python-basics.html">1.2 Python Basics</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../01-OLCC-Primer/01-3-python-intermediate.html">1.3 Python Intermediate</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-Introduction/README.html">Module 2: Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-Introduction/02-1-PubChemDataTypes.html">PubChem Training Course</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../02-Introduction/02-2-PUG-REST-activity.html">Getting Molecular Properties through PubChem’s PUG REST Web Interface</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-Public-Chemical-Databases/README.html">Module 3: Public Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-Public-Chemical-Databases/03-01-Survey-Public-Chemical-Databases.html">Public Compound Databases</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-Chemical-Representations/README.html">Module 4: Chemical Representations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-01-introduction_chemical_representations.html">Chemical Representations and Introduction to RDKit</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-02-PubChem3D_update.html">PubChem3D</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../04-Chemical-Representations/04-03-Substructure_Searching_with_SMARTS.html">Substructure Searching with SMARTS</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Module 5: Searching Chemical Databases</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Exploring PubChem</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="05-02-structure-inputs.html">Chemical Structure Inputs for PUG-REST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-03-list-conversion.html">Intercoversion between PubChem records.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06-BioAssay/README.html">Module 6: BioAssays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-1-Bioactivity_Primer.html">PubChem Bioactivity Primer</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-2-eda-protein1.html">Exploratory Data Analysis 1: <br/><br/> Concordance of Thyroid Hormone Receptor Activity in Rats and Humans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06-BioAssay/06-3-eda-pathway.html">Exploratory Data Analysis 2:<br/><br/>Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07-QSAR-QSPR/README.html">Module 7: Quantitative Structure Property Reationships</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07-QSAR-QSPR/07-01-QSPR.html">Molecular Descriptors</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08-Molecular-Similarity/README.html">Module 8: Molecular Similarity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-1-MolSimularity.html">Fingerprint Generation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-2-MolSimularity.html">What is a bit vector?</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../08-Molecular-Similarity/08-3-MolSimularity.html">Objectives</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09-CADDD/README.html">Module 9: Computer-Aided Drug Discovery and Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09-CADDD/09-1-virtual-screening.html">Virtual Screening</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10-Machine-Learning/README.html">Module 10: Supervised ML</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10-Machine-Learning/10-01-supervised-ML.html">Machine Learning Basics</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendices/README.html">Appendices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../appendices/Pandas.html">Introduction to Pandas</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/DivCHED-CCCE/DataChemistry2025OLCC/master?urlpath=lab/tree/docs/content/modules/05-Searching-Chemical-Databases/05-01-Exploring-PubChem.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://nanohub.org/tools/datachemolcc/hub/user-redirect/git-pull?repo=https%3A//github.com/DivCHED-CCCE/DataChemistry2025OLCC&urlpath=lab/tree/DataChemistry2025OLCC/docs/content/modules/05-Searching-Chemical-Databases/05-01-Exploring-PubChem.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DivCHED-CCCE/DataChemistry2025OLCC/blob/master/docs/content/modules/05-Searching-Chemical-Databases/05-01-Exploring-PubChem.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC/issues/new?title=Issue%20on%20page%20%2Fcontent/modules/05-Searching-Chemical-Databases/05-01-Exploring-PubChem.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/modules/05-Searching-Chemical-Databases/05-01-Exploring-PubChem.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exploring PubChem</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exploring PubChem</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-overview-2025">PubChem Overview (2025)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-as-a-data-aggregator">PubChem as a Data Aggregator</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-s-landing-page">PubChem’s Landing Page</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">About</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrez">Entrez</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nlm-video-tutorials-on-pubchem">NLM Video Tutorials on PubChem</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-with-structures-iin-pubchem">Searching with Structures iin PubChem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-chemical-information-in-pubchem">Finding Chemical Information in PubChem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-links-and-citations-in-pubchem">Finding Links and Citations in PubChem</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exploring-pubchem">
+<h1>Exploring PubChem<a class="headerlink" href="#exploring-pubchem" title="Link to this heading">#</a></h1>
+<p><strong>UNDERCONSTRUCTION</strong>
+This is a non-programmatic activity designed to further your familiarity with PubChem.  It is based on the Current Protocols article <a class="reference external" href="https://currentprotocols.onlinelibrary.wiley.com/doi/10.1002/cpz1.217">Exploring Chemical Information in PubChem</a>, the 2019 Cheminformatics OLCC activities <a class="reference external" href="https://chem.libretexts.org/Courses/Intercollegiate_Courses/Cheminformatics/04%3A_Searching_Databases_for_Chemical_Information/4.01%3A_PubChem_Web_Interfaces_for_Text">4.1 PubChem Web Interface for Text</a></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pubchem-overview-2025">
+<h1>PubChem Overview (2025)<a class="headerlink" href="#pubchem-overview-2025" title="Link to this heading">#</a></h1>
+<p>The <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov">PubChem homepage</a> provides a unified search interface that allows users to explore an extensive set of interrelated chemical and biological databases. Originally centered around the three core databases—<strong><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/compounds">Compound</a></strong>, <strong><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/substances">Substance</a></strong>, and <strong><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/bioassays">BioAssays</a></strong>—PubChem has since expanded to include additional data domains such as <strong><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/genes">Genes</a></strong>, <strong><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/proteins">Proteins</a></strong>, <strong><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/pathways">Pathways</a></strong>, <strong><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/taxonomies">Taxonomies</a></strong>, <strong><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/cell-lines">Cell Lines</a></strong>, <strong><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/patents">Patents</a></strong>, <strong><a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/literature">Literature</a></strong>, and more. These additional records enable users to explore the relationships between small molecules and their biological context.</p>
+<section id="pubchem-as-a-data-aggregator">
+<h2>PubChem as a Data Aggregator<a class="headerlink" href="#pubchem-as-a-data-aggregator" title="Link to this heading">#</a></h2>
+<p>The public often has a misconception of PubChem as a data validator. PubChem is really a data aggregator and as of July 2025 there are over 1,063 sources, including government agencies, university labs, pharmaceutical companies, substance vendors, and other databases. An up-to-date list of PubChem’s data sources is available at the <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/sources">PubChem Sources page</a>. When a source contributes data it is stored as a substance or bioassay data record and assigned an substance ID (SID) or assay ID (or AID).  PubChem than uses a canonicalization technique to associate the SID with a specific chemical structure and uses that structure to associate the substance record with a compound record. So the compound record is the aggregation of the substance records uploaded from multiple data sources for a specific compound, and so doing it maintains the data provenance by linking back to the original Substance record and depositors information. If an uploaded bioassay has an associated SID, it is then connected to the compound record of the compound that SID is associated with. See the PubChem document: <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/compound-vs-substance">What is the difference between a substance and a compound in PubChem?</a></p>
+<div class="alert alert-block alert-success"> 
+<details>
+<summary>Does PubChem Validate the data uploaded by a depositor?</summary>
+<br><p>No, PubChem only validates the chemical structure and then uses that to connect the substance record with the compound record of that chemical.
+</p>
+</div>
+<p><img alt="image.png" src="../../../_images/318221c2-de26-4095-ae79-9c8ab6a614ca.png" /><br />
+Relationship showing how data sources contribute substance and bioassay data that can be connected to a compound’s data record. (<a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/compound-vs-substance">image source link</a>.)</p>
+<p>To gain an understanding of pubchem you should go to the about link on the top of the <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/">homepage</a> The left column allows you t navigate through the documentation</p>
+<p>In short, the PubChem homepage serves as a <strong>centralized hub</strong> for accessing chemical, biological, and pharmacological data linked through a chemical lens.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pubchem-s-landing-page">
+<h1>PubChem’s Landing Page<a class="headerlink" href="#pubchem-s-landing-page" title="Link to this heading">#</a></h1>
+<p>This activity will be a quick exploration of the features of PubChem’s landing page, <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/">https://pubchem.ncbi.nlm.nih.gov/</a>.</p>
+<section id="about">
+<h2>About<a class="headerlink" href="#about" title="Link to this heading">#</a></h2>
+<p>The left frame of the <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/about">About link</a> provides access to the resources in the <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/">Docs link</a> and we will systematically go over these shortly.</p>
+<section id="entrez">
+<h3>Entrez<a class="headerlink" href="#entrez" title="Link to this heading">#</a></h3>
+<p>NIH Entrez (French for “Enter”) is the search and retrieval system of the National Center for Biotechnology Information (NCBI), a division of the U.S. National Library of Medicine (NLM) of the National Institutes of Health (NIH). It is essentially an integrated search engine for accessing a wide range of interconnected databases hosted by NCBI, of which PubChem is one. Entrez is integrated throughout NCBI resources and can be accessed through the search bar on top of the NCBI landing page <a class="reference external" href="https://www.ncbi.nlm.nih.gov/">https://www.ncbi.nlm.nih.gov/</a></p>
+<p><img alt="image.png" src="../../../_images/18ebe53b-3d37-4063-81ee-578dd11da81a.png" /><br />
+Screenshot of <a class="reference external" href="https://www.ncbi.nlm.nih.gov/">https://www.ncbi.nlm.nih.gov/</a> (08/2/2025).</p>
+<p>The <a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK3837/#EntrezHelp.Access_to_the_Entrez_System">Entrez Help NCBI Help Manual</a> is a 20 minute read that goes over the Entrez Databases, how to access and search them.  A complete list of Entrez resources can be found at the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/guide/all/">All Resources link</a>. PubChem’s home page is a “unified chemical search interface” that covers all three of PubChem’s primary databases (Substance, Compound and BioAssay) and supports searches using molecular formula, and line notations like SMILES and InChIs. There is an option for text searches within Entrez from the PubChem homepage and more information is available in the <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/advanced-search-entrez">Entrez Advanced Search</a> option.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="nlm-video-tutorials-on-pubchem">
+<h1>NLM Video Tutorials on PubChem<a class="headerlink" href="#nlm-video-tutorials-on-pubchem" title="Link to this heading">#</a></h1>
+<p>The following video tutorials are part of the NLM PubChem training course and are available here for you to review.</p>
+<section id="searching-with-structures-iin-pubchem">
+<h2>Searching with Structures iin PubChem<a class="headerlink" href="#searching-with-structures-iin-pubchem" title="Link to this heading">#</a></h2>
+<p>This tutorial goes over using the PubChem Sketcher. A more comprehensive tutorial can e obtained in the <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/sketcher-help">PubChem Sketcher Help Doc</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+# this is a code cell that connects to a youtube, and you need to execute it the first time you start the kernel with shift-enter.
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/DWTvE0pXwBU?si=TOIfORcuJspPehQb&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span> <span class="na">referrerpolicy</span><span class="o">=</span><span class="s">&quot;strict-origin-when-cross-origin&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"># this is a code cell that connects to a youtube, and you need to execute it the first time you start the kernel with shift-enter.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DWTvE0pXwBU?si=TOIfORcuJspPehQb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></div>
+</div>
+</section>
+<section id="finding-chemical-information-in-pubchem">
+<h2>Finding Chemical Information in PubChem<a class="headerlink" href="#finding-chemical-information-in-pubchem" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/jZw7w9jithI?si=K9YMsxLYILAtVyGQ&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span> <span class="na">referrerpolicy</span><span class="o">=</span><span class="s">&quot;strict-origin-when-cross-origin&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/jZw7w9jithI?si=K9YMsxLYILAtVyGQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></div>
+</div>
+</section>
+<section id="finding-links-and-citations-in-pubchem">
+<h2>Finding Links and Citations in PubChem<a class="headerlink" href="#finding-links-and-citations-in-pubchem" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/jpb0XZeCd5Q?si=fmhtaZNgcF_OkNa8&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span> <span class="na">referrerpolicy</span><span class="o">=</span><span class="s">&quot;strict-origin-when-cross-origin&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/jpb0XZeCd5Q?si=fmhtaZNgcF_OkNa8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "datachem"
+        },
+        kernelOptions: {
+            name: "datachem",
+            path: "./content/modules/05-Searching-Chemical-Databases"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'datachem'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="README.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 5: Searching Chemical Databases</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="05-02-structure-inputs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chemical Structure Inputs for PUG-REST</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exploring PubChem</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-overview-2025">PubChem Overview (2025)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-as-a-data-aggregator">PubChem as a Data Aggregator</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-s-landing-page">PubChem’s Landing Page</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">About</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrez">Entrez</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nlm-video-tutorials-on-pubchem">NLM Video Tutorials on PubChem</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-with-structures-iin-pubchem">Searching with Structures iin PubChem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-chemical-information-in-pubchem">Finding Chemical Information in PubChem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-links-and-citations-in-pubchem">Finding Links and Citations in PubChem</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Belford
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
