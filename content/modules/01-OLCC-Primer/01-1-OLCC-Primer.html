@@ -591,7 +591,14 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#local-python-installation">5. Local Python Installation.</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-optional">6. VSCode (optional)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-optional">6. VSCode (optional)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-vs-code-windows-side">Step 1: Install VS Code (Windows-side)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-update-wsl-ubuntu-side">Step 2: Update WSL (Ubuntu side)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-running-vs-code-in-wsl">Step 3: Running VS Code in WSL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-extensions-in-wsl">Step 4: Extensions in WSL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-connect-github-copilot">Step 5: Connect GitHub Copilot</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -741,6 +748,114 @@ jupyter<span class="w"> </span>lab
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="vscode-optional">
 <h1>6. VSCode (optional)<a class="headerlink" href="#vscode-optional" title="Link to this heading">#</a></h1>
+<p>So far, we’ve been using <strong>Jupyter notebooks</strong> to write and run Python code. Jupyter is excellent for interactive exploration and data analysis, but not all coding projects are designed to run in a notebook environment. For larger projects, debugging, or AI-assisted workflows, it’s often helpful to use a full-featured text editor. In this course, we’ll use <strong>Visual Studio Code (VS Code)</strong>, a free editor from Microsoft that:</p>
+<ul class="simple">
+<li><p>Supports many programming languages (including Python).</p></li>
+<li><p>Integrates with Jupyter notebooks.</p></li>
+<li><p>Provides a client–server workflow with WSL (Windows Subsystem for Linux).</p></li>
+<li><p>Connects to GitHub Copilot, an AI-powered coding assistant that suggests, generates, and completes code.</p></li>
+</ul>
+<section id="step-1-install-vs-code-windows-side">
+<h2>Step 1: Install VS Code (Windows-side)<a class="headerlink" href="#step-1-install-vs-code-windows-side" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Go to the <a class="reference external" href="https://code.visualstudio.com/">VS Code download page</a> and install the <strong>64-bit Windows version</strong>.</p>
+<blockquote>
+<div><p>Do not install VS Code inside your WSL Linux system. It must be installed on Windows.</p>
+</div></blockquote>
+</li>
+<li><p>During installation, when prompted to select <strong>Additional Tasks</strong>, check the box for <strong>Add to PATH</strong>.</p>
+<ul class="simple">
+<li><p>This ensures you can launch VS Code from WSL with the command <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">.</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Install the <strong>Remote Development extension pack</strong> inside VS Code.</p>
+<ul class="simple">
+<li><p>This includes:</p>
+<ul>
+<li><p><strong>Remote – WSL</strong> (what we need)</p></li>
+<li><p>Remote – SSH</p></li>
+<li><p>Dev Containers</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><p>Only <em>Remote – WSL</em> is strictly required, but the pack makes it easier to manage other workflows later.</p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="step-2-update-wsl-ubuntu-side">
+<h2>Step 2: Update WSL (Ubuntu side)<a class="headerlink" href="#step-2-update-wsl-ubuntu-side" title="Link to this heading">#</a></h2>
+<p>Some WSL distributions may be missing libraries needed by the VS Code server. To prepare your Linux system:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>wget<span class="w"> </span>ca-certificates
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">wget</span></code>: lets Linux download files from the web.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ca-certificates</span></code>: enables secure HTTPS connections.</p></li>
+</ul>
+</section>
+<section id="step-3-running-vs-code-in-wsl">
+<h2>Step 3: Running VS Code in WSL<a class="headerlink" href="#step-3-running-vs-code-in-wsl" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Open your Ubuntu terminal.</p></li>
+<li><p>Navigate to the project folder you want to work in (your working directory).</p></li>
+<li><p>Run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>code<span class="w"> </span>.
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">.</span></code> means “open the current directory in VS Code.”</p></li>
+<li><p>If you forget the dot, VS Code will open, but not in the correct project folder.</p></li>
+</ul>
+</li>
+</ol>
+<p>When you launch this way, VS Code runs in a client–server mode:</p>
+<ul class="simple">
+<li><p>Client (UI) → menus and editor windows run on Windows.</p></li>
+<li><p>Server → Python, Git, and extensions run inside your WSL distribution.</p></li>
+</ul>
+<p>Look at the bottom-left corner of VS Code: it should say <strong>WSL: Ubuntu</strong> to confirm you’re connected correctly.</p>
+</section>
+<section id="step-4-extensions-in-wsl">
+<h2>Step 4: Extensions in WSL<a class="headerlink" href="#step-4-extensions-in-wsl" title="Link to this heading">#</a></h2>
+<p>When you click the Extensions tab in VS Code, you’ll see three sections:</p>
+<ul class="simple">
+<li><p><strong>Local</strong>: extensions installed on Windows.</p></li>
+<li><p><strong>WSL: Ubuntu - Installed</strong>: extensions installed inside your Linux distribution.</p></li>
+<li><p><strong>Recommended</strong>:</p></li>
+</ul>
+<p>For this course, make sure the following extensions are installed <strong>inside WSL</strong>:</p>
+<ul class="simple">
+<li><p><strong>Python</strong></p></li>
+<li><p><strong>Jupyter</strong></p></li>
+<li><p><strong>Remote – WSL</strong></p></li>
+<li><p><strong>GitHub Copilot</strong></p></li>
+<li><p><strong>GitHub Copilot Chat</strong></p></li>
+</ul>
+<p>If an extension is missing you can search for it in the market place</p>
+</section>
+<section id="step-5-connect-github-copilot">
+<h2>Step 5: Connect GitHub Copilot<a class="headerlink" href="#step-5-connect-github-copilot" title="Link to this heading">#</a></h2>
+<p>To enable GitHub Copilot:</p>
+<ol class="arabic simple">
+<li><p>Install the <strong>GitHub Copilot</strong> and <strong>GitHub Copilot Chat</strong> extensions if they are not already installed(see Step 4).</p></li>
+<li><p>Sign into GitHub inside VS Code when prompted.</p></li>
+<li><p>Authorize VS Code to access your Copilot subscription.</p></li>
+<li><p>Test Copilot:</p>
+<ul class="simple">
+<li><p>Open a Python file.</p></li>
+<li><p>Type a comment like:</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>     <span class="n">Create</span> <span class="n">a</span> <span class="n">function</span> <span class="n">to</span> <span class="n">calculate</span> <span class="n">the</span> <span class="n">molecular</span> <span class="n">mass</span> <span class="n">of</span> <span class="n">water</span>
+</pre></div>
+</div>
+<p><strong>Copilot should suggest code below the comment.</strong></p>
+<p>Full setup instructions: <a class="reference external" href="https://code.visualstudio.com/docs/copilot/setup">Copilot Setup Guide</a></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -837,7 +952,14 @@ jupyter<span class="w"> </span>lab
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#local-python-installation">5. Local Python Installation.</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-optional">6. VSCode (optional)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-optional">6. VSCode (optional)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-vs-code-windows-side">Step 1: Install VS Code (Windows-side)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-update-wsl-ubuntu-side">Step 2: Update WSL (Ubuntu side)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-running-vs-code-in-wsl">Step 3: Running VS Code in WSL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-extensions-in-wsl">Step 4: Extensions in WSL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-connect-github-copilot">Step 5: Connect GitHub Copilot</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
