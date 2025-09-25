@@ -737,7 +737,7 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>Aliphatic nitrogen compounds are organic molecules in which the nitrogen atom is bonded to carbon atoms in an open chain or a non-aromatic ring structure, rather than directly to an aromatic ring.</p>
+</div><p>Aliphatic nitrogen compounds are organic molecules in which the nitrogen atom is bonded to carbon atoms in an open chain or a non-aromatic ring structure, rather than directly to an aromatic ring.</p>
 <p>In SMARTS, we can distinguish between aliphatic and aromatic nitrogen atoms using specific syntax:</p>
 <ul class="simple">
 <li><p>An aliphatic nitrogen is represented as [N],</p></li>
@@ -961,7 +961,7 @@ document.write(`
 <div class="alert alert-block alert-success">
 <details>
 <summary>Why this matters</summary>
-Visualizing chemical substructures accurately is essential in cheminformatics and drug discovery. When RDKit highlights atoms and bonds based on a query, it’s easy to assume the output is always correct. But sometimes, unexpected highlights can occur due to default settings or overlapping matches.<br><br> By taking control of how atoms and bonds are highlighted, you’re not just fixing a display issue. You are learning how to verify results, debug molecular queries, and communicate chemical meaning more precisely. These are the same skills computational chemists use when developing structure-based filters, similarity searches, or pattern-based property prediction tools.<br><br> In short: <b>knowing what your code is highlighting, and why, helps you trust your results.</b><p>In many situations, we want to define a query that matches more than one type of atom. For example, suppose we want a pattern that can match both benzene and pyridine (both are six-membered aromatic rings) but with different atoms at one position. This can be accomplished in SMARTS by using a comma-separated list of atom types enclosed in square brackets. To match either a carbon or nitrogen at the final ring position, we can use the SMARTS pattern:</p>
+Visualizing chemical substructures accurately is essential in cheminformatics and drug discovery. When RDKit highlights atoms and bonds based on a query, it’s easy to assume the output is always correct. But sometimes, unexpected highlights can occur due to default settings or overlapping matches.<br><br> By taking control of how atoms and bonds are highlighted, you’re not just fixing a display issue. You are learning how to verify results, debug molecular queries, and communicate chemical meaning more precisely. These are the same skills computational chemists use when developing structure-based filters, similarity searches, or pattern-based property prediction tools.<br><br> In short: <b>knowing what your code is highlighting, and why, helps you trust your results.</b></details>div><p>In many situations, we want to define a query that matches more than one type of atom. For example, suppose we want a pattern that can match both benzene and pyridine (both are six-membered aromatic rings) but with different atoms at one position. This can be accomplished in SMARTS by using a comma-separated list of atom types enclosed in square brackets. To match either a carbon or nitrogen at the final ring position, we can use the SMARTS pattern:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1cccc</span><span class="p">[</span><span class="n">c</span><span class="p">,</span><span class="n">n</span><span class="p">]</span><span class="mi">1</span>
 </pre></div>
 </div>
@@ -1187,11 +1187,11 @@ Your code should display only the molecules that contain esters: loratidine
 <p>The canonical reference for SMARTS is the <a class="reference external" href="https://www.daylight.com/dayhtml/doc/theory/">Daylight Theory Manual</a>.
 The <a class="reference external" href="https://www.rdkit.org/docs/RDKit_Book.html">RDKit Book</a> which explain how it is implemented in RDKit</p>
 <p>Use it as a guide and any other internet resources to help you define SMARTS queries for this homework assignment.</p>
-<div class="alert alert-block alert-success">
+</div><div class="alert alert-block alert-success">
 <ol class="arabic simple">
 <li><p>The following code cell has three molecules that contain carbon oxygen bonds. Only one of them is an alcohol. A student proposed the following code to display all alcohols in the list (based on the SMILES string for an alcohol). Change the SMARTS, and rerun the cell to only return a true value for the alcohol.</p></li>
 </ol>
-<div class="cell docutils container">
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">InChiList</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;InChI=1S/C12H18BrOSe/c1-3-4-9-15(13)12-8-6-5-7-11(12)10-14(15)2/h5-8H,3-4,9-10H2,1-2H3/q+1&quot;</span><span class="p">,</span><span class="s2">&quot;InChI=1S/C7H13NO2/c1-3-8-4-2-7(1)9-5-6-10-7/h8H,1-6H2&quot;</span><span class="p">,</span><span class="s2">&quot;InChI=1S/C4H9NO/c6-4-1-2-5-3-4/h4-6H,1-3H2&quot;</span><span class="p">]</span>
 <span class="n">myMols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromInchi</span><span class="p">(</span><span class="n">inchi</span><span class="p">)</span> <span class="k">for</span> <span class="n">inchi</span> <span class="ow">in</span> <span class="n">InChiList</span><span class="p">]</span>
@@ -1205,12 +1205,31 @@ The <a class="reference external" href="https://www.rdkit.org/docs/RDKit_Book.ht
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">InChiList</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;InChI=1S/C12H18BrOSe/c1-3-4-9-15(13)12-8-6-5-7-11(12)10-14(15)2/h5-8H,3-4,9-10H2,1-2H3/q+1&quot;</span><span class="p">,</span><span class="s2">&quot;InChI=1S/C7H13NO2/c1-3-8-4-2-7(1)9-5-6-10-7/h8H,1-6H2&quot;</span><span class="p">,</span><span class="s2">&quot;InChI=1S/C4H9NO/c6-4-1-2-5-3-4/h4-6H,1-3H2&quot;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">myMols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromInchi</span><span class="p">(</span><span class="n">inchi</span><span class="p">)</span> <span class="k">for</span> <span class="n">inchi</span> <span class="ow">in</span> <span class="n">InChiList</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">alchohol_SMARTS</span> <span class="o">=</span> <span class="s2">&quot;CO&quot;</span>  <span class="c1"># incorrect SMARTS for alcohol functional group</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">alcoholquery</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">alchohol_SMARTS</span><span class="p">)</span> 
+
+<span class="nn">Cell In[1], line 2,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">InChiList</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;InChI=1S/C12H18BrOSe/c1-3-4-9-15(13)12-8-6-5-7-11(12)10-14(15)2/h5-8H,3-4,9-10H2,1-2H3/q+1&quot;</span><span class="p">,</span><span class="s2">&quot;InChI=1S/C7H13NO2/c1-3-8-4-2-7(1)9-5-6-10-7/h8H,1-6H2&quot;</span><span class="p">,</span><span class="s2">&quot;InChI=1S/C4H9NO/c6-4-1-2-5-3-4/h4-6H,1-3H2&quot;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">myMols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromInchi</span><span class="p">(</span><span class="n">inchi</span><span class="p">)</span> <span class="k">for</span> <span class="n">inchi</span> <span class="ow">in</span> <span class="n">InChiList</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">alchohol_SMARTS</span> <span class="o">=</span> <span class="s2">&quot;CO&quot;</span>  <span class="c1"># incorrect SMARTS for alcohol functional group</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">alcoholquery</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">alchohol_SMARTS</span><span class="p">)</span> 
+
+<span class="ne">NameError</span>: name &#39;Chem&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="alert alert-block alert-success">
 <ol class="arabic simple" start="2">
 <li><p>Using the following code block, write a SMARTS query to identify any molecules in <code class="docutils literal notranslate"><span class="pre">myMols</span></code> that have a positive charge.</p></li>
 </ol>
-<div class="cell docutils container">
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">positive_SMARTS</span> <span class="o">=</span> <span class="s2">&quot;Add your SMARTS here&quot;</span> 
 <span class="n">positivequery</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">positive_SMARTS</span><span class="p">)</span> 
@@ -1227,7 +1246,7 @@ The <a class="reference external" href="https://www.rdkit.org/docs/RDKit_Book.ht
 <ol class="arabic simple" start="3">
 <li><p>Change the following code cell so that it highlights any ether or dialkyl amino substructures in <code class="docutils literal notranslate"><span class="pre">myMols</span></code>.</p></li>
 </ol>
-<div class="cell docutils container">
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mySMARTS</span> <span class="o">=</span> <span class="s2">&quot;Add your SMARTS here&quot;</span> 
 
@@ -1243,7 +1262,7 @@ The <a class="reference external" href="https://www.rdkit.org/docs/RDKit_Book.ht
 <li><p>all molecules that contain a triple bond</p></li>
 <li><p>all molecules that contain heterocycles</p></li>
 </ul>
-<div class="cell docutils container">
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CIDs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">119389</span><span class="p">,</span><span class="mi">5991</span><span class="p">,</span><span class="mi">135519560</span><span class="p">,</span><span class="mi">50994057</span><span class="p">,</span><span class="mi">3016</span><span class="p">,</span><span class="mi">68617</span><span class="p">,</span><span class="mi">2764</span><span class="p">,</span><span class="mi">1983</span><span class="p">,</span><span class="mi">5288826</span><span class="p">,</span><span class="mi">5460164</span><span class="p">,</span><span class="mi">242</span><span class="p">,</span><span class="mi">5462328</span><span class="p">,</span><span class="mi">3386</span><span class="p">,</span><span class="mi">2912</span><span class="p">,</span><span class="mi">26757</span><span class="p">,</span><span class="mi">89594</span><span class="p">,</span><span class="mi">145352036</span><span class="p">]</span>
 <span class="c1"># write your code here</span>
