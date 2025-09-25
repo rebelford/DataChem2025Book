@@ -829,17 +829,6 @@ document.write(`
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># write your code here to search the molecules list for your randomly selected SMARTS pattern</span>
-
-
-<span class="c1"># KEY</span>
-<span class="n">query_mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">selected_smarts</span><span class="p">)</span>  <span class="c1"># Convert SMARTS to RDKit molecule </span>
-<span class="n">matches</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># List to store matching molecules</span>
-<span class="c1"># Perform substructure search   </span>
-<span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">molecules</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">HasSubstructMatch</span><span class="p">(</span><span class="n">query_mol</span><span class="p">):</span>  <span class="c1"># Check if the molecule contains the substructure</span>
-        <span class="n">matches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>  <span class="c1"># If it does, add it to the matches list</span>
-<span class="c1"># Visualize the matches</span>
-<span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">matches</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">legends</span><span class="o">=</span><span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span> <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -885,15 +874,6 @@ document.write(`
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># write your code here</span>
-
-<span class="c1">#key</span>
-<span class="n">mdma</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;CC(CC1=CC2=C(C=C1)OCO2)NC&#39;</span><span class="p">)</span>  <span class="c1"># Example SMILES for MDMA</span>
-<span class="n">query_smarts</span> <span class="o">=</span> <span class="s2">&quot;c1ccccc1&quot;</span>  <span class="c1"># SMARTS for benzene</span>
-<span class="n">new_query</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmarts</span><span class="p">(</span><span class="n">query_smarts</span><span class="p">)</span>  <span class="c1"># Example SMARTS for methylenedioxy group</span>
-<span class="n">mdma_matches</span> <span class="o">=</span> <span class="n">mdma</span><span class="o">.</span><span class="n">GetSubstructMatch</span><span class="p">(</span><span class="n">new_query</span><span class="p">)</span>  <span class="c1"># Get indices of matching</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MDMA matches for benzene group: </span><span class="si">{</span><span class="n">mdma_matches</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawOptions</span><span class="o">.</span><span class="n">addAtomIndices</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">mdma</span>
 </pre></div>
 </div>
 </div>
@@ -1176,13 +1156,6 @@ Your code should display only the molecules that contain esters: loratidine
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># write your code here</span>
-
-<span class="c1">#key</span>
-
-<span class="n">antihistamines_mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromInchi</span><span class="p">(</span><span class="n">inchi</span><span class="p">)</span> <span class="k">for</span> <span class="n">inchi</span> <span class="ow">in</span> <span class="n">antihistamines</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
-<span class="n">ester_smarts</span> <span class="o">=</span> <span class="s1">&#39;[C](=O)[O][C]&#39;</span>   <span class="c1"># SMARTS for ester functional group</span>
-<span class="c1"># ester_smarts = &#39;C(=O)OC&#39;        # this is a SMILES string for ester functional group, not SMARTS. It will still work but not as intended.</span>
-<span class="n">highlight_substructures_with_bonds</span><span class="p">(</span><span class="n">antihistamines_mols</span><span class="p">,</span> <span class="n">ester_smarts</span><span class="p">,</span> <span class="n">legends</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">antihistamines</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="n">molsPerRow</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
