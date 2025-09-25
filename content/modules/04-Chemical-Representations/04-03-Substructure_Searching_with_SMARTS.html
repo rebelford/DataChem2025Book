@@ -849,7 +849,7 @@ Does bromobutane contain a halogen atom? True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Selected SMARTS pattern: [OX2H]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Selected SMARTS pattern: [NX1]#[CX2]
 </pre></div>
 </div>
 </div>
@@ -3441,7 +3441,7 @@ srcdoc="&lt;html&gt;
     &lt;script&gt;
     // list.js
 var listObj = new List(&#x27;mols2grid&#x27;, {
-    valueNames: [{data: [&#x27;mols2grid-id&#x27;]}, &#x27;data-img&#x27;, &#x27;data-mols2grid-id&#x27;, &#x27;data-SMILES&#x27;, &#x27;data-mols2grid-id-copy&#x27;, {attr: &#x27;data-content&#x27;, name: &#x27;mols2grid-tooltip&#x27;}],
+    valueNames: [{data: [&#x27;mols2grid-id&#x27;]}, &#x27;data-mols2grid-id&#x27;, &#x27;data-img&#x27;, &#x27;data-SMILES&#x27;, &#x27;data-mols2grid-id-copy&#x27;, {attr: &#x27;data-content&#x27;, name: &#x27;mols2grid-tooltip&#x27;}],
     item: &#x27;&lt;div class=&quot;cell&quot; data-mols2grid-id=&quot;0&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;position-relative float-left cached_checkbox&quot;&gt;&lt;div class=&quot;data data-mols2grid-id-copy&quot;&gt;&lt;/div&gt;&lt;a tabindex=&quot;0&quot; class=&quot;data data-img mols2grid-tooltip&quot; data-toggle=&quot;popover&quot; data-content=&quot;.&quot;&gt;&lt;/a&gt;&lt;div class=&quot;data data-SMILES&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&#x27;,
     page: 15,
     pagination: {
@@ -3452,7 +3452,7 @@ var listObj = new List(&#x27;mols2grid&#x27;, {
     },
 });
 listObj.remove(&quot;mols2grid-id&quot;, &quot;0&quot;);
-listObj.add([{&quot;data-img&quot;: null, &quot;mols2grid-id&quot;: 0, &quot;data-SMILES&quot;: &quot;CN(C)CCC(c1ccc(Cl)cc1)c1ccccn1&quot;, &quot;data-mols2grid-id-copy&quot;: 0, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: CN(C)CCC(c1ccc(Cl)cc1)c1ccccn1&quot;}, {&quot;data-img&quot;: null, &quot;mols2grid-id&quot;: 1, &quot;data-SMILES&quot;: &quot;CN(C)CCOC(c1ccccc1)c1ccccc1&quot;, &quot;data-mols2grid-id-copy&quot;: 1, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: CN(C)CCOC(c1ccccc1)c1ccccc1&quot;}, {&quot;data-img&quot;: null, &quot;mols2grid-id&quot;: 2, &quot;data-SMILES&quot;: &quot;CN1CCC(=C2c3ccccc3CC(=O)c3sccc32)CC1&quot;, &quot;data-mols2grid-id-copy&quot;: 2, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: CN1CCC(=C2c3ccccc3CC(=O)c3sccc32)CC1&quot;}, {&quot;data-img&quot;: null, &quot;mols2grid-id&quot;: 3, &quot;data-SMILES&quot;: &quot;CC(CN1c2ccccc2Sc2ccccc21)N(C)C&quot;, &quot;data-mols2grid-id-copy&quot;: 3, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: CC(CN1c2ccccc2Sc2ccccc21)N(C)C&quot;}, {&quot;data-img&quot;: null, &quot;mols2grid-id&quot;: 4, &quot;data-SMILES&quot;: &quot;CC(C)(C)c1ccc(C(=O)CCCN2CCC(OC(c3ccccc3)c3ccccc3)CC2)cc1&quot;, &quot;data-mols2grid-id-copy&quot;: 4, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: CC(C)(C)c1ccc(C(=O)CCCN2CCC(OC(c3ccccc3)c3ccccc3)CC2)cc1&quot;}, {&quot;data-img&quot;: null, &quot;mols2grid-id&quot;: 5, &quot;data-SMILES&quot;: &quot;CCOC(=O)N1CCC(=C2c3ccc(Cl)cc3CCc3cccnc32)CC1&quot;, &quot;data-mols2grid-id-copy&quot;: 5, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: CCOC(=O)N1CCC(=C2c3ccc(Cl)cc3CCc3cccnc32)CC1&quot;}, {&quot;data-img&quot;: null, &quot;mols2grid-id&quot;: 6, &quot;data-SMILES&quot;: &quot;CN1CCC(=C2c3ccccc3C=Cc3ccccc32)CC1&quot;, &quot;data-mols2grid-id-copy&quot;: 6, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: CN1CCC(=C2c3ccccc3C=Cc3ccccc32)CC1&quot;}, {&quot;data-img&quot;: null, &quot;mols2grid-id&quot;: 7, &quot;data-SMILES&quot;: &quot;Cc1ccc(/C(=C\\CN2CCCC2)c2ccccn2)cc1&quot;, &quot;data-mols2grid-id-copy&quot;: 7, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: Cc1ccc(/C(=C\\CN2CCCC2)c2ccccn2)cc1&quot;}]);
+listObj.add([{&quot;mols2grid-id&quot;: 0, &quot;data-img&quot;: null, &quot;data-SMILES&quot;: &quot;CN(C)CCC(c1ccc(Cl)cc1)c1ccccn1&quot;, &quot;data-mols2grid-id-copy&quot;: 0, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: CN(C)CCC(c1ccc(Cl)cc1)c1ccccn1&quot;}, {&quot;mols2grid-id&quot;: 1, &quot;data-img&quot;: null, &quot;data-SMILES&quot;: &quot;CN(C)CCOC(c1ccccc1)c1ccccc1&quot;, &quot;data-mols2grid-id-copy&quot;: 1, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: CN(C)CCOC(c1ccccc1)c1ccccc1&quot;}, {&quot;mols2grid-id&quot;: 2, &quot;data-img&quot;: null, &quot;data-SMILES&quot;: &quot;CN1CCC(=C2c3ccccc3CC(=O)c3sccc32)CC1&quot;, &quot;data-mols2grid-id-copy&quot;: 2, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: CN1CCC(=C2c3ccccc3CC(=O)c3sccc32)CC1&quot;}, {&quot;mols2grid-id&quot;: 3, &quot;data-img&quot;: null, &quot;data-SMILES&quot;: &quot;CC(CN1c2ccccc2Sc2ccccc21)N(C)C&quot;, &quot;data-mols2grid-id-copy&quot;: 3, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: CC(CN1c2ccccc2Sc2ccccc21)N(C)C&quot;}, {&quot;mols2grid-id&quot;: 4, &quot;data-img&quot;: null, &quot;data-SMILES&quot;: &quot;CC(C)(C)c1ccc(C(=O)CCCN2CCC(OC(c3ccccc3)c3ccccc3)CC2)cc1&quot;, &quot;data-mols2grid-id-copy&quot;: 4, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: CC(C)(C)c1ccc(C(=O)CCCN2CCC(OC(c3ccccc3)c3ccccc3)CC2)cc1&quot;}, {&quot;mols2grid-id&quot;: 5, &quot;data-img&quot;: null, &quot;data-SMILES&quot;: &quot;CCOC(=O)N1CCC(=C2c3ccc(Cl)cc3CCc3cccnc32)CC1&quot;, &quot;data-mols2grid-id-copy&quot;: 5, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: CCOC(=O)N1CCC(=C2c3ccc(Cl)cc3CCc3cccnc32)CC1&quot;}, {&quot;mols2grid-id&quot;: 6, &quot;data-img&quot;: null, &quot;data-SMILES&quot;: &quot;CN1CCC(=C2c3ccccc3C=Cc3ccccc32)CC1&quot;, &quot;data-mols2grid-id-copy&quot;: 6, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: CN1CCC(=C2c3ccccc3C=Cc3ccccc32)CC1&quot;}, {&quot;mols2grid-id&quot;: 7, &quot;data-img&quot;: null, &quot;data-SMILES&quot;: &quot;Cc1ccc(/C(=C\\CN2CCCC2)c2ccccn2)cc1&quot;, &quot;data-mols2grid-id-copy&quot;: 7, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;SMILES&lt;/strong&gt;: Cc1ccc(/C(=C\\CN2CCCC2)c2ccccn2)cc1&quot;}]);
 // filter
 if (window.parent.mols2grid_lists === undefined) {
     window.parent.mols2grid_lists = {};
@@ -3899,9 +3899,6 @@ The <a class="reference external" href="https://www.rdkit.org/docs/RDKit_Book.ht
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/47b00f3f81c9330964fa9560f586c9dc683e968aa0b223d9cc939a0da47947be.svg" src="../../../_images/47b00f3f81c9330964fa9560f586c9dc683e968aa0b223d9cc939a0da47947be.svg" />
-</div>
 </div>
 <div class="alert alert-block alert-success">
 <ol class="arabic simple" start="2">
@@ -3916,29 +3913,6 @@ The <a class="reference external" href="https://www.rdkit.org/docs/RDKit_Book.ht
     <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">HasSubstructMatch</span><span class="p">(</span><span class="n">positivequery</span><span class="p">):</span>  
         <span class="n">matches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>  
 <span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">matches</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[14:27:18] SMARTS Parse Error: Failed parsing SMARTS &#39;Add&#39; for input: &#39;Add&#39;
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ArgumentError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">matches</span> <span class="o">=</span> <span class="p">[]</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">for</span> <span class="n">mol</span> <span class="ow">in</span> <span class="n">myMols</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">HasSubstructMatch</span><span class="p">(</span><span class="n">positivequery</span><span class="p">):</span>  
-<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="n">matches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>  
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">(</span><span class="n">matches</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">subImgSize</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
-
-<span class="ne">ArgumentError</span>: Python argument types in
-    <span class="n">Mol</span><span class="o">.</span><span class="n">HasSubstructMatch</span><span class="p">(</span><span class="n">Mol</span><span class="p">,</span> <span class="n">NoneType</span><span class="p">)</span>
-<span class="n">did</span> <span class="ow">not</span> <span class="n">match</span> <span class="n">C</span><span class="o">++</span> <span class="n">signature</span><span class="p">:</span>
-    <span class="n">HasSubstructMatch</span><span class="p">(</span><span class="n">RDKit</span><span class="p">::</span><span class="n">ROMol</span> <span class="bp">self</span><span class="p">,</span> <span class="n">RDKit</span><span class="p">::</span><span class="n">MolBundle</span> <span class="n">query</span><span class="p">,</span> <span class="n">RDKit</span><span class="p">::</span><span class="n">SubstructMatchParameters</span> <span class="n">params</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">HasSubstructMatch</span><span class="p">(</span><span class="n">RDKit</span><span class="p">::</span><span class="n">ROMol</span> <span class="bp">self</span><span class="p">,</span> <span class="n">RDKit</span><span class="p">::</span><span class="n">ROMol</span> <span class="n">query</span><span class="p">,</span> <span class="n">RDKit</span><span class="p">::</span><span class="n">SubstructMatchParameters</span> <span class="n">params</span><span class="p">)</span>
-    <span class="n">HasSubstructMatch</span><span class="p">(</span><span class="n">RDKit</span><span class="p">::</span><span class="n">ROMol</span> <span class="bp">self</span><span class="p">,</span> <span class="n">RDKit</span><span class="p">::</span><span class="n">MolBundle</span> <span class="n">query</span><span class="p">,</span> <span class="nb">bool</span> <span class="n">recursionPossible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">bool</span> <span class="n">useChirality</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">bool</span> <span class="n">useQueryQueryMatches</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">HasSubstructMatch</span><span class="p">(</span><span class="n">RDKit</span><span class="p">::</span><span class="n">ROMol</span> <span class="bp">self</span><span class="p">,</span> <span class="n">RDKit</span><span class="p">::</span><span class="n">ROMol</span> <span class="n">query</span><span class="p">,</span> <span class="nb">bool</span> <span class="n">recursionPossible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">bool</span> <span class="n">useChirality</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">bool</span> <span class="n">useQueryQueryMatches</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3975,6 +3949,7 @@ The <a class="reference external" href="https://www.rdkit.org/docs/RDKit_Book.ht
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="acknowledgments">
 <h1>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h1>
+<p>This notebook was developed by Ehren Bucholtz and was inspired by, borrows from and expands upon <a class="reference external" href="https://colab.research.google.com/github/PatWalters/practical_cheminformatics_tutorials/blob/main/fundamentals/SMARTS_tutorial.ipynb">An introduction to the SMILES ARbitrary Target Specification (SMARTS)</a> from Pat Walter’s <a class="reference external" href="https://github.com/PatWalters/practical_cheminformatics_tutorials?tab=readme-ov-file">Cheminformatics Tutorials Github</a>. It is granted copyright has a CC BY-NC-SA 4.0 license.</p>
 </section>
 
     <script type="text/x-thebe-config">
