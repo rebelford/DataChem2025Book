@@ -1,0 +1,1565 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction to Genes and DNA &#8212; Data Chemistry 2025</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/oldcustom.css?v=e52fa269" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ba2d5b83" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/appendices/MBP2_Genes';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Data Chemistry 2025 - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Data Chemistry 2025 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    2025 Data Chemistry OLCC
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/01-OLCC-Primer/README.html">Module 1: OLCC Primer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/01-OLCC-Primer/01-1-OLCC-Primer.html">Module 1.1: OLCC Primer</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/01-OLCC-Primer/01-2-python-basics.html">1.2 Python Basics</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/01-OLCC-Primer/01-3-python-intermediate.html">1.3 Intermediate Python</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/02-Introduction/README.html">Module 2: Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/02-Introduction/02-1-PubChemDataTypes.html">2.1 PubChem Data Types</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/02-Introduction/02-2-PUG-REST-activity.html">2.2 PUG-RESTY Activity</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/03-Public-Chemical-Databases/README.html">Module 3: Public Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/03-Public-Chemical-Databases/03-01-Survey-Public-Chemical-Databases.html">Module 1.1: Public Compound Databases</a></li>
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/04-Chemical-Representations/README.html">Module 4: Chemical Representations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/04-Chemical-Representations/04-01-introduction_chemical_representations.html">4.1 Chemical Representation and Introduction to RDKit</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/04-Chemical-Representations/04-02-PubChem3D_update.html">4.2 PubChem 3D</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/04-Chemical-Representations/04-03-Substructure_Searching_with_SMARTS.html">4.3 SMARTS Substructure Searching</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/05-Searching-Chemical-Databases/README.html">Module 5: Searching Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/05-Searching-Chemical-Databases/05-01-Exploring-PubChem.html">5.1 Exploring PubChem</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/05-Searching-Chemical-Databases/05-02-structure-inputs.html">5.2 Searching with Structures</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/05-Searching-Chemical-Databases/05-03-list-conversion.html">5.3 List Conversions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/06-BioAssay/README.html">Module 6: BioAssays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/06-BioAssay/06-1-Bioactivity_Primer.html">PubChem Bioactivity Primer</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/06-BioAssay/06-2-eda-protein1.html">Exploratory Data Analysis 1: <br/><br/> Concordance of Thyroid Hormone Receptor Activity in Rats and Humans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/06-BioAssay/06-3-eda-pathway.html">Exploratory Data Analysis 2:<br/><br/>Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/07-QSAR-QSPR/README.html">Module 7: Quantitative Structure Property Reationships</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/07-QSAR-QSPR/07-01-QSPR.html">Molecular Descriptors</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/08-Molecular-Similarity/README.html">Module 8: Molecular Similarity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/08-Molecular-Similarity/08-1-MolSimularity.html">Fingerprint Generation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/08-Molecular-Similarity/08-2-MolSimularity.html">What is a bit vector?</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/08-Molecular-Similarity/08-3-MolSimularity.html">Objectives</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/09-CADDD/README.html">Module 9: Computer-Aided Drug Discovery and Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/09-CADDD/09-1-virtual-screening.html">Virtual Screening</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/10-Machine-Learning/README.html">Module 10: Supervised ML</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/10-Machine-Learning/10-01-supervised-ML.html">Machine Learning Basics</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="README.html">Appendices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Pandas.html">Introduction to Pandas</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/DivCHED-CCCE/DataChemistry2025OLCC/master?urlpath=lab/tree/docs/content/appendices/MBP2_Genes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://nanohub.org/tools/datachemolcc/hub/user-redirect/git-pull?repo=https%3A//github.com/DivCHED-CCCE/DataChemistry2025OLCC&urlpath=lab/tree/DataChemistry2025OLCC/docs/content/appendices/MBP2_Genes.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DivCHED-CCCE/DataChemistry2025OLCC/blob/master/docs/content/appendices/MBP2_Genes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC/issues/new?title=Issue%20on%20page%20%2Fcontent/appendices/MBP2_Genes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/appendices/MBP2_Genes.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to Genes and DNA</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction to Genes and DNA</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-as-the-genetic-material">1. DNA as the Genetic Material</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-perspective">Historical Perspective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dnas-chemical-composition">DNA’s Chemical Composition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-double-helix-and-base-pairing">The Double Helix and Base Pairing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-1-rdkit-exercise">Activity 1: RDKit Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-dna-is-stable">Why DNA is Stable?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#genome-to-gene-how-dna-is-organized">2. Genome to Gene: How DNA is Organized</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-genome">The Genome</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-gene">What is a Gene?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-gene-eukaryotic-example">Anatomy of a Gene (Eukaryotic Example)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genes-as-units-of-information">Genes as Units of Information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genes-traits-and-proteins">Genes, Traits, and Proteins</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#genomics-databases-and-gene-nomenclature">3. Genomics Databases and Gene Nomenclature</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genomics-databases">Genomics Databases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-nomenclature">Gene nomenclature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-identifiers">Database identifiers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-search-blast">Sequence Search: BLAST</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genes-in-pubchem">Genes in PubChem</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#from-dna-to-rna-transcription">4. From DNA to RNA: Transcription</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-transcription">What is transcription?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-pair-mapping-dna-rna">Base Pair Mapping: DNA → RNA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-players">Key players</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-of-transcription">Steps of transcription</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#messenger-rna-mrna">Messenger RNA (mRNA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-rna-trna">Transfer RNA (tRNA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ribosomal-rna-rrna">Ribosomal RNA (rRNA)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rna-transport">RNA Transport</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna-export">mRNA export</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trna-export">tRNA export</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rrna-export">rRNA export</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regulation-of-transcription">5. Regulation of Transcription</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transcription-factors">Transcription Factors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-broad-types-of-transcription-factors">Two Broad Types of Transcription Factors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thyroid-hormone-receptor-tr">Thyroid Hormone Receptor (TR)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#relevance-of-transcription-to-disease-and-toxicology">6. Relevance of Transcription to Disease and Toxicology</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-damage-and-transcriptional-interference">1. DNA damage and transcriptional interference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toxins-that-directly-inhibit-rna-polymerase">2. Toxins that directly inhibit RNA polymerase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diseases-of-transcription-machinery">3. Diseases of transcription machinery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disruption-of-transcriptional-regulation">4. Disruption of transcriptional regulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viral-hijacking-of-transcription">5. Viral hijacking of transcription</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#activity">Activity</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-studies-chemicals-transcription-and-disease">Case Studies: Chemicals, Transcription, and Disease</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-genes-and-dna">
+<h1>Introduction to Genes and DNA<a class="headerlink" href="#introduction-to-genes-and-dna" title="Link to this heading">#</a></h1>
+<p>Life depends on the ability of cells to store, copy, and pass on information. DNA is the molecule that carries this information across generations while also directing the daily activities of the cell. It acts as a blueprint for building and maintaining life, ensuring that each new cell or offspring can pick up where the previous one left off.</p>
+<p>The blueprint is written in a chemical code of four bases, arranged in sequences that define genes. Different organisms have different sets of genes, just as each species requires unique instructions to survive and thrive. To make use of these instructions, cells first copy DNA into RNA through transcription, and then use RNA to build proteins through translation. This orderly flow of information, from DNA → RNA → Protein, is the Central Dogma of Molecular Biology, as first articulated by Francis Crick in his <a class="reference external" href="https://www.nature.com/articles/227561a0">1970 Nature article</a>, which describes the flow of genetic information in biological systems.</p>
+<p>Genes are particular stretches of DNA that contain the information to produce RNA and, ultimately, proteins—the molecular machines and structures that make cells function. To use this information, cells must first copy the relevant portion of DNA into a temporary working version called RNA in a process known as <strong>transcription</strong>.</p>
+<p>In this section, we will:</p>
+<ul class="simple">
+<li><p>Introduce the structure and role of DNA.</p></li>
+<li><p>Explain what genes are and how they are organized in DNA.</p></li>
+<li><p>Describe how cells “read” DNA through transcription.</p></li>
+</ul>
+<p>This foundation prepares us for the next step—translation—where RNA guides the synthesis of proteins. It also connects directly to how you will encounter biological information in cheminformatics. In PubChem, genes and proteins are not abstract ideas but central data types, linked to compounds, BioAssays, pathways, and even taxonomies and cell lines. Although humans are estimated to have around 20,000 “protein coding” genes, PubChem contains data from multiple species, including lab animals commonly tested in preclinical studies, annotations from multiple sources and large-scale RNA interference (RNAi) experiments, a method where small RNA molecules block specific genes from making their proteins. The result is that PubChem currently tracks over 160,000 genes and more than 250,000 proteins, alongside millions of compounds and nearly two million BioAssays (<a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/docs/statistics">PubChem Statistics</a>).</p>
+<p>Understanding transcription is therefore not only a matter of cell biology—it is also about recognizing how biological information becomes searchable, cross-referenced, and integrated with chemical data in PubChem.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="dna-as-the-genetic-material">
+<h1>1. DNA as the Genetic Material<a class="headerlink" href="#dna-as-the-genetic-material" title="Link to this heading">#</a></h1>
+<section id="historical-perspective">
+<h2>Historical Perspective<a class="headerlink" href="#historical-perspective" title="Link to this heading">#</a></h2>
+<p>The idea that DNA is the carrier of hereditary information is relatively recent in science. In the early 20th century, proteins were thought to be the most likely candidates because of their structural complexity. However, key experiments shifted this view:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Griffith%27s_experiment">Griffith’s Transformation Experiment (1928)</a>: Showed that a “transforming principle” could pass traits between bacteria.</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Avery%E2%80%93MacLeod%E2%80%93McCarty_experiment">Avery, MacLeod, and McCarty (1944)</a>: Identified DNA as that transforming principle.</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hershey%E2%80%93Chase_experiment">Hershey–Chase Experiment (1952)</a>: Confirmed that DNA, not protein, carried genetic instructions in viruses that infect bacteria.</p></li>
+</ul>
+<p>These discoveries established DNA as the hereditary material—the molecule that passes information from one generation to the next.</p>
+</section>
+<section id="dnas-chemical-composition">
+<h2>DNA’s Chemical Composition<a class="headerlink" href="#dnas-chemical-composition" title="Link to this heading">#</a></h2>
+<p>Chemists can think of DNA as a type of polymer built from repeating monomers called <strong>nucleotides</strong>. Each nucleotide has three components:</p>
+<ol class="arabic simple">
+<li><p>A sugar (D-2-deoxyribose, β-D-furanose form).</p></li>
+<li><p>A phosphate group, which links sugars together, forming the DNA backbone.</p></li>
+<li><p>A nitrogenous base, which varies among four types: thymine (T) and cytosine (C) are pyrimidines (single- ring nitrogenous bases) and adenine (A) and guanine (G) are purines (double-ring nitrogenous bases)</p></li>
+</ol>
+<p>The sequence of these bases forms the <em>code</em> of DNA. Just as changing the order of atoms in a molecule changes its properties, changing the order of bases changes the information stored.</p>
+</section>
+<section id="the-double-helix-and-base-pairing">
+<h2>The Double Helix and Base Pairing<a class="headerlink" href="#the-double-helix-and-base-pairing" title="Link to this heading">#</a></h2>
+<p>In 1953, James Watson and Francis Crick proposed the double helix structure of DNA (building on Rosalind Franklin’s X-ray diffraction data). DNA consists of two strands twisted around each other, with bases paired in the middle like rungs of a ladder.</p>
+<ul class="simple">
+<li><p>Adenine (A) pairs with Thymine (T) through two hydrogen bonds.</p></li>
+<li><p>Cytosine (C) pairs with Guanine (G) through three hydrogen bonds.</p></li>
+</ul>
+<p>This complementary base pairing allows DNA to be copied accurately during cell division, since each strand serves as a template for the other.</p>
+<p><img alt="image.png" src="../../_images/99edd147-4a5e-4181-b7e6-f3bdbaedacf8.png" /><br />
+<em>DNA base pair CC3.0 Zephyris, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:DNA_Structure%2BKey%2BLabelled.png">Wikimedia Commons</a> remixed by Belford</em></p>
+<div class="alert alert-block alert-success">
+Use an AI to print a Pandas Dataframe in the Jupyter Notebook with the following columns: Name, SMILES, Structure. The SMILES column should contain the SMILES strings for the DNA parts listed above. The Structure column should contain the corresponding RDKit molecule objects, but rendered as images.
+<p>Use the following import function and settings to render the images in a Jupyter notebook.  The smiles for the  β-D-Deoxyribofuranose is provided and you should complete the data list to cover the 4 bases and the phosphate group.</p>
+<section id="activity-1-rdkit-exercise">
+<h3>Activity 1: RDKit Exercise<a class="headerlink" href="#activity-1-rdkit-exercise" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">PandasTools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem.Draw</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPythonConsole</span>
+
+<span class="c1"># Jupyter rendering settings</span>
+<span class="n">IPythonConsole</span><span class="o">.</span><span class="n">ipython_useSVG</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">PandasTools</span><span class="o">.</span><span class="n">RenderImagesInAllDataFrames</span><span class="p">(</span><span class="n">images</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Define SMILES for DNA parts</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;β-D-Deoxyribofuranose&quot;</span><span class="p">,</span> <span class="s2">&quot;C1[C@H](O)[C@@H](CO)[C@H](O)[C@H]1&quot;</span><span class="p">),</span>  <span class="c1"># β-D-furanose</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="why-dna-is-stable">
+<h2>Why DNA is Stable?<a class="headerlink" href="#why-dna-is-stable" title="Link to this heading">#</a></h2>
+<p>DNA is remarkably well-suited for long-term information storage:</p>
+<ul class="simple">
+<li><p>Chemical stability of deoxyribose: The absence of a hydroxyl group at the 2′ position (compared to RNA’s ribose) makes DNA less prone to hydrolysis.</p></li>
+<li><p>Double-stranded structure: Protects bases from damage and provides redundancy for repair.</p></li>
+<li><p>Packaging with proteins (histones): In eukaryotes, DNA is tightly wound into chromosomes, shielding it further.</p></li>
+</ul>
+<p>Together, these features explain why DNA, and not RNA or protein, is the long-term storage medium of genetic information.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="genome-to-gene-how-dna-is-organized">
+<h1>2. Genome to Gene: How DNA is Organized<a class="headerlink" href="#genome-to-gene-how-dna-is-organized" title="Link to this heading">#</a></h1>
+<section id="the-genome">
+<h2>The Genome<a class="headerlink" href="#the-genome" title="Link to this heading">#</a></h2>
+<p>Every organism has a genome: the complete set of DNA instructions that make up its genetic material.</p>
+<ul class="simple">
+<li><p>In humans, the genome is divided into 46 chromosomes (23 pairs).</p></li>
+<li><p>Each chromosome is a long DNA molecule packaged with proteins.</p></li>
+<li><p>The genome is like a cookbook, with each chromosome as a chapter.</p></li>
+</ul>
+<p>Within that genome, the fundamental units of information are genes.</p>
+<div class="highlight-pgsql notranslate"><div class="highlight"><pre><span></span>GENOME
+│  The complete set of DNA instructions for an organism
+│  (all chromosomes together; the &quot;whole cookbook&quot;)
+│
+├── CHROMOSOME
+│    A single long DNA molecule packaged with proteins
+│    (like a &quot;chapter&quot; in the cookbook)
+│
+├──── GENE
+│     A defined segment of DNA that provides instructions
+│     for making RNA (and usually proteins)
+│     (like a single &quot;recipe&quot; in the chapter)
+│
+├────── ALLELE
+│       A variant form of a gene with slight sequence differences
+│       (like alternate versions of the recipe — e.g. with more sugar)
+│
+└──────── TRAIT
+        The observable outcome of gene expression
+        (the final dish that results from following the recipe)
+
+</pre></div>
+</div>
+</section>
+<section id="what-is-a-gene">
+<h2>What is a Gene?<a class="headerlink" href="#what-is-a-gene" title="Link to this heading">#</a></h2>
+<p>A gene is a defined segment of DNA that contains the instructions for making an RNA molecule. Sometimes the RNA itself is functional (like rRNA or tRNA), but often it serves as a template for building a protein.</p>
+<p>A gene is more than just a “protein recipe”: it’s an operational unit of information, with regions that:</p>
+<ul class="simple">
+<li><p>provide the coding blueprint,</p></li>
+<li><p>control when and where the gene is used, and</p></li>
+<li><p>signal where the process should start and stop.</p></li>
+</ul>
+</section>
+<section id="anatomy-of-a-gene-eukaryotic-example">
+<h2>Anatomy of a Gene (Eukaryotic Example)<a class="headerlink" href="#anatomy-of-a-gene-eukaryotic-example" title="Link to this heading">#</a></h2>
+<p>A typical protein-coding gene contains:</p>
+<ul class="simple">
+<li><p>Promoter region – a “landing pad” for proteins that start transcription.</p></li>
+<li><p>Exons – coding sequences that will eventually specify amino acids.</p></li>
+<li><p>Introns – noncoding regions spliced out of the RNA.</p></li>
+<li><p>Regulatory elements – sequences (sometimes far away) that control gene activity.</p></li>
+<li><p>Terminator sequence – signals the end of transcription.</p></li>
+</ul>
+</section>
+<section id="genes-as-units-of-information">
+<h2>Genes as Units of Information<a class="headerlink" href="#genes-as-units-of-information" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Each gene occupies a defined location (locus) on a chromosome.</p></li>
+<li><p>Different versions of the same gene are called alleles. They have slightly different DNA sequences, which can result in the same or different traits.</p></li>
+<li><p>The sequence of bases (A, T, G, C) in the gene encodes instructions, just like a recipe written with a four-letter alphabet.</p></li>
+</ul>
+</section>
+<section id="genes-traits-and-proteins">
+<h2>Genes, Traits, and Proteins<a class="headerlink" href="#genes-traits-and-proteins" title="Link to this heading">#</a></h2>
+<p>Genes connect to traits through proteins. For example, a gene might contain the instructions for an enzyme that helps make a pigment, which gives a flower its color. So the path is:
+<strong>DNA (gene) → RNA → Protein → Trait</strong>.
+This is the high-level framework for how genetic information becomes physical characteristics.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="genomics-databases-and-gene-nomenclature">
+<h1>3. Genomics Databases and Gene Nomenclature<a class="headerlink" href="#genomics-databases-and-gene-nomenclature" title="Link to this heading">#</a></h1>
+<section id="genomics-databases">
+<h2>Genomics Databases<a class="headerlink" href="#genomics-databases" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/gene/">NCBI Gene</a> – a curated database of <em>genes as information units</em>, including their names, identifiers (GeneID), genomic locations, and links to proteins, sequences, and literature. It’s the <em>entry point</em> for understanding a gene biologically and informatically.</p></li>
+<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/genbank/">GenBank</a> – a comprehensive <em>archive of raw nucleotide sequences</em> submitted by researchers worldwide. It’s the broad, historical record of DNA and RNA sequences, including redundancies and multiple versions.</p></li>
+<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/refseq/">RefSeq</a> – NCBI’s curated <em>reference sequence collection</em>, providing a high-quality, non-redundant set of DNA, RNA, and protein sequences linked to known genes. It’s the <em>authoritative reference</em> you use when you want a stable, reliable sequence instead of a raw submission.</p></li>
+<li><p><a class="reference external" href="https://www.ensembl.org/index.html">Ensembl</a> (EMBL-EBI, Wellcome Sanger Institute) -  Comprehensive genome browser and database, parallel to NCBI Gene. Offers detailed gene models, comparative genomics, and variant data.</p></li>
+<li><p>[UCSC Genome Browserhttps://genome.ucsc.edu/) -  Visualization-heavy genome database widely used in genetics and genomics. Great for exploring regulatory regions and annotations on top of a genome.</p></li>
+</ul>
+</section>
+<section id="gene-nomenclature">
+<h2>Gene nomenclature<a class="headerlink" href="#gene-nomenclature" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>In humans, official gene names and symbols are maintained by the <a class="reference external" href="https://www.genenames.org/">HUGO Gene Nomenclature Committee (HGNC)</a>.</p>
+<ul>
+<li><p>Each gene has a short symbol (like <em>TP53</em>) and a descriptive full name (tumor protein p53).</p></li>
+</ul>
+</li>
+<li><p>Other organisms have their own committees or conventions (for example, yeast and mouse genes use different capitalization rules).</p></li>
+<li><p>Gene symbols are often distinct from protein names: the <em>TP53</em> gene encodes the p53 protein.</p></li>
+</ul>
+</section>
+<section id="database-identifiers">
+<h2>Database identifiers<a class="headerlink" href="#database-identifiers" title="Link to this heading">#</a></h2>
+<p>Even with standardized names, synonyms and historical names remain in use. Databases rely on <em>identifiers</em> to keep things consistent:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/gene/">NCBI Gene</a> assigns a stable GeneID to each gene.</p></li>
+<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/genbank/">GenBank</a>and <a class="reference external" href="https://www.ncbi.nlm.nih.gov/refseq/">NCBI RefSeq</a> use accession numbers for sequences.</p></li>
+<li><p><a class="reference external" href="https://www.uniprot.org/">UniProt</a> assigns identifiers to protein records.</p></li>
+<li><p>These identifiers never change, even if the official gene name is updated.</p></li>
+</ul>
+</section>
+<section id="sequence-search-blast">
+<h2>Sequence Search: BLAST<a class="headerlink" href="#sequence-search-blast" title="Link to this heading">#</a></h2>
+<p>When you have an unknown DNA, RNA, or protein sequence, the most common way to identify it is to compare it against a database of known sequences. NCBI provides a tool for this called BLAST (Basic Local Alignment Search Tool).</p>
+<ul class="simple">
+<li><p>BLAST takes your query sequence and finds the most similar entries in databases like GenBank, RefSeq, or UniProt.</p></li>
+<li><p>It performs <em>local alignments</em>, which means it can detect short regions of similarity even if the full sequence is not identical.</p></li>
+<li><p>This is useful for:</p>
+<ul>
+<li><p>Identifying which gene or protein your sequence belongs to.</p></li>
+<li><p>Finding related genes in other organisms.</p></li>
+<li><p>Predicting possible function of an unknown sequence by similarity to known ones.</p></li>
+</ul>
+</li>
+</ul>
+<p>Types you might encounter:</p>
+<ul class="simple">
+<li><p>blastn – nucleotide vs. nucleotide database.</p></li>
+<li><p>blastp – protein vs. protein database.</p></li>
+<li><p>blastx / tblastn / tblastx – for translating between DNA and protein comparisons.</p></li>
+</ul>
+<p>BLAST is integrated into NCBI databases, so from a Gene or Protein record you can often launch a BLAST search to explore related sequences.</p>
+</section>
+<section id="genes-in-pubchem">
+<h2>Genes in PubChem<a class="headerlink" href="#genes-in-pubchem" title="Link to this heading">#</a></h2>
+<p>Although PubChem is first and foremost a chemical database, it is deeply connected to the genomics resources you’ve just seen. PubChem integrates biological data through the concept of <em>targets</em> — usually proteins, but ultimately encoded by genes.</p>
+<ul class="simple">
+<li><p>A PubChem BioAssay often measures how a chemical interacts with a protein (for example, whether it activates, inhibits, or binds to it).</p></li>
+<li><p>Since each protein is the product of a gene, these assays naturally connect chemicals to genes.</p></li>
+<li><p>PubChem doesn’t define the gene itself — instead, it relies on stable identifiers from NCBI Gene, RefSeq, and UniProt to cross-link chemistry with biology.</p></li>
+<li><p>In this way, PubChem serves as a <em>portal</em>: you can begin with a chemical and, through its targets, navigate into the gene, protein, and sequence records stored in NCBI and other biological databases.</p></li>
+</ul>
+<p>So when you view a gene in PubChem, you’re really seeing how it functions in a chemical and biological context — bridging the informatics of molecules (chemistry) with the informatics of sequences (biology).</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="from-dna-to-rna-transcription">
+<h1>4. From DNA to RNA: Transcription<a class="headerlink" href="#from-dna-to-rna-transcription" title="Link to this heading">#</a></h1>
+<section id="what-is-transcription">
+<h2>What is transcription?<a class="headerlink" href="#what-is-transcription" title="Link to this heading">#</a></h2>
+<p>Transcription is the process of making an RNA copy of a gene’s DNA sequence. It’s like taking a recipe out of the cookbook (the genome) and writing it on a notecard (RNA) so the kitchen (cell) can use it. The key point is that the information is the same, but the chemical form is different: DNA → RNA. It is the RNA that is used to make proteins in the process known as translation.</p>
+<p>If DNA contains all the instructions, why bother making RNA at all? The answer lies in the nature of DNA. DNA’s primary role is to serve as the stable, long-term archive of genetic information. Subjecting it to the high-traffic environment of protein synthesis would risk introducing damage or errors into the permanent record. Instead, the cell protects DNA inside the nucleus (in eukaryotes) or in compact structures (in bacteria), and makes temporary RNA copies to carry the instructions outward. RNA acts as a working copy — quick to make, quick to use, and quick to degrade — while DNA stays safe in the archive.</p>
+<section id="base-pair-mapping-dna-rna">
+<h3>Base Pair Mapping: DNA → RNA<a class="headerlink" href="#base-pair-mapping-dna-rna" title="Link to this heading">#</a></h3>
+<p>When RNA polymerase copies DNA, it reads the DNA template strand and builds a complementary RNA strand. The RNA strand is synthesized in the 5′ to 3′ direction, meaning new nucleotides are added to the 3′ end of the growing RNA chain. The RNA polymerase uses <em>complementary base-pairing rules</em>  like DNA — but with one important difference: RNA uses <strong>uracil (U)</strong> instead of <strong>thymine (T)</strong>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>DNA Base</p></th>
+<th class="head"><p>RNA Complement</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Adenine (A)</p></td>
+<td><p>Uracil (U)</p></td>
+<td><p>DNA has T, RNA uses U instead</p></td>
+</tr>
+<tr class="row-odd"><td><p>Thymine (T)</p></td>
+<td><p>Adenine (A)</p></td>
+<td><p>T only in DNA</p></td>
+</tr>
+<tr class="row-even"><td><p>Cytosine (C)</p></td>
+<td><p>Guanine (G)</p></td>
+<td><p>Same as DNA pairing</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guanine (G)</p></td>
+<td><p>Cytosine (C)</p></td>
+<td><p>Same as DNA pairing</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For example, if the DNA template strand reads:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DNA</span> <span class="n">template</span><span class="p">:</span>   <span class="mi">3</span><span class="s1">&#39; – T A C  G G A  T T C – 5&#39;</span>
+<span class="n">RNA</span> <span class="n">transcript</span><span class="p">:</span> <span class="mi">5</span><span class="s1">&#39; – A U G  C C U  A A G – 3&#39;</span>
+
+</pre></div>
+</div>
+<p>This is the <strong>mRNA codon sequence</strong> that will later be read by the ribosome during translation.</p>
+</section>
+</section>
+<section id="key-players">
+<h2>Key players<a class="headerlink" href="#key-players" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>DNA template – the source information. One strand of the DNA double helix serves as the template.</p></li>
+<li><p>RNA polymerase – the enzyme that reads DNA and builds the RNA strand.</p></li>
+<li><p>RNA molecules produced (brief preview, details later):</p>
+<ul>
+<li><p>mRNA (messenger RNA): carries protein-building instructions.</p></li>
+<li><p>tRNA (transfer RNA): brings amino acids to the ribosome.</p></li>
+<li><p>rRNA (ribosomal RNA): structural and functional part of the ribosome.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="steps-of-transcription">
+<h2>Steps of transcription<a class="headerlink" href="#steps-of-transcription" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Initiation</p>
+<ul class="simple">
+<li><p>RNA polymerase binds to the <em>promoter region</em> of the gene.</p></li>
+<li><p>The DNA double helix unwinds, exposing the template strand.</p></li>
+</ul>
+</li>
+<li><p>Elongation</p>
+<ul class="simple">
+<li><p>RNA polymerase moves along the DNA, adding complementary RNA nucleotides (A pairs with U, C pairs with G).</p></li>
+<li><p>The RNA strand grows in the 5′ → 3′ direction.</p></li>
+</ul>
+</li>
+<li><p>Termination</p>
+<ul class="simple">
+<li><p>At the end of the gene, termination signals tell RNA polymerase to stop.</p></li>
+<li><p>The completed RNA molecule is released from the DNA.</p></li>
+</ul>
+</li>
+</ol>
+<p>In eukaryotes, three main classes of RNA are generated,RNA polymerase II makes mRNA, RNA polymerase I makes most rRNA, and RNA polymerase III makes tRNA and some rRNA.</p>
+<section id="messenger-rna-mrna">
+<h3>Messenger RNA (mRNA)<a class="headerlink" href="#messenger-rna-mrna" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Transcribed from <em>protein-coding genes</em> by RNA polymerase II.</p></li>
+<li><p>In eukaryotes, the first product is a <em>pre-mRNA</em>, which must be processed before use:</p>
+<ul>
+<li><p><strong>5′ capping</strong> – adds a protective guanine cap at the start.</p></li>
+<li><p><strong>Splicing</strong> – the spliceosome removes introns and joins exons. The spliceosome is a large RNA–protein complex that removes introns — it is not a single enzyme but a molecular machine with catalytic RNA activity.</p></li>
+<li><p><strong>3′ polyadenylation</strong> – adds a poly-A tail for stability and export.</p></li>
+</ul>
+</li>
+<li><p>The result is <em>mature mRNA</em>, which leaves the nucleus and is translated into protein.</p></li>
+</ul>
+</section>
+<section id="transfer-rna-trna">
+<h3>Transfer RNA (tRNA)<a class="headerlink" href="#transfer-rna-trna" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Transcribed from <em>tRNA genes</em> by RNA polymerase III.</p></li>
+<li><p>Fold into their characteristic cloverleaf structure through base pairing.</p></li>
+<li><p>Processed by trimming and chemical modification of bases before becoming active.</p></li>
+<li><p>Function: carry amino acids to the ribosome, matching them to codons in mRNA during translation.</p></li>
+</ul>
+</section>
+<section id="ribosomal-rna-rrna">
+<h3>Ribosomal RNA (rRNA)<a class="headerlink" href="#ribosomal-rna-rrna" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Transcribed from <em>rRNA genes</em> (mostly by RNA polymerase I, except 5S rRNA by RNA polymerase III).</p></li>
+<li><p>Processed and assembled with proteins inside the nucleolus.</p></li>
+<li><p>Together with ribosomal proteins, rRNAs form the structural and catalytic core of ribosomes.</p></li>
+<li><p>Function: provide the physical platform and enzymatic activity for protein synthesis.</p></li>
+</ul>
+<p>The following <a class="reference external" href="https://www.youtube.com/watch?v=_Zyb8bpGMR0">2:45 minute Youtube</a> uploaded by Arman Hossain provides a visual overview of transcription and post-transcriptional processing occur to form mRNA.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/_Zyb8bpGMR0?si=aHXFLE96JWCHUcsa&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span> <span class="na">referrerpolicy</span><span class="o">=</span><span class="s">&quot;strict-origin-when-cross-origin&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/_Zyb8bpGMR0?si=aHXFLE96JWCHUcsa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></div>
+</div>
+</section>
+</section>
+<section id="rna-transport">
+<h2>RNA Transport<a class="headerlink" href="#rna-transport" title="Link to this heading">#</a></h2>
+<p>In eukaryotic cells, transcription and RNA processing occur inside the nucleus, but protein synthesis takes place in the cytoplasm. This means that RNAs must be transported through the <strong>nuclear envelope</strong> to reach their final destinations. Movement happens through <strong>nuclear pore complexes (NPCs)</strong>, which act like gated channels. RNAs cannot diffuse freely; they need specific proteins to guide them.</p>
+<section id="mrna-export">
+<h3>mRNA export<a class="headerlink" href="#mrna-export" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Only <em>mature</em> mRNA (with a cap, poly-A tail, and properly spliced exons) is recognized for export.</p></li>
+<li><p>Export proteins bind to the mRNA and guide it through nuclear pore complexes.</p></li>
+<li><p>Once in the cytoplasm, the export proteins are released and the mRNA is ready for translation.</p></li>
+</ul>
+</section>
+<section id="trna-export">
+<h3>tRNA export<a class="headerlink" href="#trna-export" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>After being processed and chemically modified in the nucleus, tRNAs are bound by export factors.</p></li>
+<li><p>They are transported through nuclear pores so they can participate in translation in the cytoplasm.</p></li>
+</ul>
+</section>
+<section id="rrna-export">
+<h3>rRNA export<a class="headerlink" href="#rrna-export" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ribosomal RNAs are assembled with ribosomal proteins in the <strong>nucleolus</strong> to form large and small ribosomal subunits.</p></li>
+<li><p>These subunits are exported separately through nuclear pores.</p></li>
+<li><p>Once in the cytoplasm, they come together to form complete ribosomes.</p></li>
+</ul>
+<p>With transcription complete, and RNAs processed where needed, the cell now has the instructions (mRNA) and the tools (tRNA and rRNA) ready for the next stage: protein synthesis.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="regulation-of-transcription">
+<h1>5. Regulation of Transcription<a class="headerlink" href="#regulation-of-transcription" title="Link to this heading">#</a></h1>
+<p>Cells do not transcribe DNA into RNA indiscriminately. Instead, they regulate gene expression through a class of proteins known as transcription factors. This regulation ensures that the right genes are activated or repressed in response to internal and external signals.</p>
+<section id="transcription-factors">
+<h2>Transcription Factors<a class="headerlink" href="#transcription-factors" title="Link to this heading">#</a></h2>
+<p>Transcription factors are proteins that bind to specific DNA sequences to control the transcription of genetic information from DNA to RNA. They can act as activators, enhancing transcription, or repressors, inhibiting it. By recognizing short DNA motifs in promoter or enhancer regions, they allow cells to regulate gene expression in response to signals. A common mechanism involves ligand–protein interactions: when a small-molecule ligand binds to a transcription factor, it induces a conformational change that alters the protein’s activity. In biology these ligands are often referred to as hormones, growth factors, or other signaling molecules. Broadly speaking, transcription factors fall into two main types, which we will examine next.</p>
+<section id="two-broad-types-of-transcription-factors">
+<h3>Two Broad Types of Transcription Factors<a class="headerlink" href="#two-broad-types-of-transcription-factors" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>General (or basal) transcription factors
+These are proteins required for the transcription of nearly all genes. They assemble at the promoter near the transcription start site and form a complex with RNA polymerase II, the enzyme that synthesizes messenger RNA. Because they provide the basic transcriptional machinery shared across most genes, they are referred to as basal transcription factors.</p></li>
+<li><p>Regulatory transcription factors
+Unlike general transcription factors, which are universally required for transcription, regulatory transcription factors act in a more selective and dynamic way. They control only certain genes and often change their activity in response to signals such as hormones, stress, or developmental cues. Depending on context, they may function as either activators or repressors of transcription. These factors typically bind to DNA sequences—such as enhancers, silencers, or response elements—that can be located near the gene they regulate or at more distant sites within the genome. This positioning allows them to integrate multiple signals and fine-tune gene expression in a highly specific manner.</p></li>
+</ol>
+</section>
+</section>
+<section id="thyroid-hormone-receptor-tr">
+<h2>Thyroid Hormone Receptor (TR)<a class="headerlink" href="#thyroid-hormone-receptor-tr" title="Link to this heading">#</a></h2>
+<p>The thyroid hormone receptor (TR) is a classic example of a regulatory transcription factor that functions through ligand–protein interactions. TR belongs to the nuclear hormone receptor family, a group of transcription factors that respond directly to small-molecule ligands. In the case of TR, the natural ligand is triiodothyronine (T3), a hormone derived from the thyroid gland.</p>
+<p>When TR is not bound to T3, it usually associates with co-repressor proteins, which keep target genes in an inactive state. Binding of T3 induces a conformational change in TR that releases co-repressors and allows the recruitment of co-activators. This switch converts TR from a transcriptional repressor to an activator, increasing transcription of thyroid hormone–responsive genes.</p>
+<p>Because TR directly couples the presence of a small-molecule ligand (T3) to changes in gene expression, it is an important target in pharmacology and toxicology. Many drug candidates and environmental chemicals act as ligands or ligand mimics, altering TR activity in ways that may differ between species. Exploring TR activity in both rats and humans—such as through PubChem bioassays—highlights the challenge of species concordance and provides a valuable opportunity to analyze how experimental results may or may not translate across organisms.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="relevance-of-transcription-to-disease-and-toxicology">
+<h1>6. Relevance of Transcription to Disease and Toxicology<a class="headerlink" href="#relevance-of-transcription-to-disease-and-toxicology" title="Link to this heading">#</a></h1>
+<section id="dna-damage-and-transcriptional-interference">
+<h2>1. DNA damage and transcriptional interference<a class="headerlink" href="#dna-damage-and-transcriptional-interference" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Carcinogens like benzo[a]pyrene (from cigarette smoke) form bulky DNA adducts that block RNA polymerase from reading genes correctly.</p></li>
+<li><p>UV radiation induces thymine dimers, distorting DNA and stalling transcription.</p></li>
+<li><p>Chemotherapy drugs such as cisplatin create DNA crosslinks that interfere with both replication and transcription.</p></li>
+</ul>
+</section>
+<section id="toxins-that-directly-inhibit-rna-polymerase">
+<h2>2. Toxins that directly inhibit RNA polymerase<a class="headerlink" href="#toxins-that-directly-inhibit-rna-polymerase" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>α-Amanitin</strong> (from the death cap mushroom) binds tightly to RNA polymerase II and blocks mRNA synthesis. This halts protein production and leads to cell death.</p></li>
+<li><p><strong>Actinomycin D</strong> intercalates into DNA and prevents RNA polymerase progression. It has been used as a chemotherapeutic drug.</p></li>
+</ul>
+</section>
+<section id="diseases-of-transcription-machinery">
+<h2>3. Diseases of transcription machinery<a class="headerlink" href="#diseases-of-transcription-machinery" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Mutations in transcription factors or RNA polymerase subunits can cause developmental disorders. For example, mutations in <strong>TFIIH</strong> subunits are linked to xeroderma pigmentosum (sensitivity to UV, cancer predisposition).</p></li>
+<li><p><strong>Splicing defects</strong> contribute to diseases like spinal muscular atrophy (SMA), caused by mutations in the <strong>SMN1</strong> gene required for spliceosome assembly.</p></li>
+</ul>
+</section>
+<section id="disruption-of-transcriptional-regulation">
+<h2>4. Disruption of transcriptional regulation<a class="headerlink" href="#disruption-of-transcriptional-regulation" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Many diseases arise not from damage to DNA itself, but from <strong>misregulation of transcription factors</strong>.</p>
+<ul>
+<li><p><strong>Thyroid hormone receptor (TR)</strong> is a classic example: TR normally binds the hormone triiodothyronine (T3) and regulates genes controlling metabolism, development, and growth.</p></li>
+<li><p>If TR signaling is disrupted—by mutations, environmental chemicals, or inappropriate hormone levels—the wrong genes are turned on or off.</p>
+<ul>
+<li><p><strong>Hypothyroidism</strong>: insufficient thyroid hormone leads to reduced TR-mediated transcription, causing developmental delays and metabolic disorders.</p></li>
+<li><p><strong>Endocrine disruption</strong>: some pollutants mimic or block thyroid hormones, altering TR activity in species-specific ways. This makes <strong>cross-species comparisons of TR assays</strong> crucial in toxicology.</p></li>
+</ul>
+</li>
+<li><p>Other transcription factor–related diseases include cancers driven by overactive MYC or estrogen receptor signaling.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="viral-hijacking-of-transcription">
+<h2>5. Viral hijacking of transcription<a class="headerlink" href="#viral-hijacking-of-transcription" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Viruses often manipulate host transcription to their advantage.</p>
+<ul>
+<li><p><strong>HIV</strong> encodes proteins that recruit host transcription machinery to viral genes.</p></li>
+<li><p>Other viral proteins suppress host gene expression to evade immune detection.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="activity">
+<h1>Activity<a class="headerlink" href="#activity" title="Link to this heading">#</a></h1>
+<section id="case-studies-chemicals-transcription-and-disease">
+<h2>Case Studies: Chemicals, Transcription, and Disease<a class="headerlink" href="#case-studies-chemicals-transcription-and-disease" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Example</p></th>
+<th class="head"><p>What it targets</p></th>
+<th class="head"><p>Biological effect</p></th>
+<th class="head"><p>Relevance</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>α-Amanitin</strong> (toxin from the death cap mushroom <em>Amanita phalloides</em>)</p></td>
+<td><p>RNA polymerase II</p></td>
+<td><p>Blocks mRNA synthesis → no protein production</p></td>
+<td><p>Deadly hepatotoxin; classic example of a small molecule that directly stops transcription</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Cisplatin</strong> (anticancer drug)</p></td>
+<td><p>DNA (crosslinking)</p></td>
+<td><p>Prevents DNA from being unwound and transcribed</p></td>
+<td><p>Used in chemotherapy; exploits transcription interference to kill rapidly dividing cells</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Actinomycin D</strong> (antibiotic/anticancer agent)</p></td>
+<td><p>DNA (intercalation)</p></td>
+<td><p>Stops RNA polymerase movement</p></td>
+<td><p>Historically important drug, still used in pediatric cancer therapy</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Nusinersen</strong> (Spinraza®, therapeutic oligonucleotide)</p></td>
+<td><p>RNA splicing machinery (SMN2 gene)</p></td>
+<td><p>Corrects splicing defect in spinal muscular atrophy (SMA)</p></td>
+<td><p>FDA-approved drug that shows how targeting RNA processing can treat disease</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdkit.Chem</span><span class="w"> </span><span class="kn">import</span> <span class="n">Draw</span>
+
+<span class="n">cid</span> <span class="o">=</span> <span class="mi">457193</span>  <span class="c1"># D-ACTINOMYCIN</span>
+
+<span class="c1"># Ask PubChem for the *new* property names</span>
+<span class="n">url</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/</span><span class="si">{</span><span class="n">cid</span><span class="si">}</span><span class="s2">/property/&quot;</span>
+    <span class="s2">&quot;IUPACName,MolecularFormula,MolecularWeight,SMILES,ConnectivitySMILES/JSON&quot;</span>
+<span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">props</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;PropertyTable&quot;</span><span class="p">][</span><span class="s2">&quot;Properties&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Actinomycin D (CID:&quot;</span><span class="p">,</span> <span class="n">cid</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IUPAC Name:&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;IUPACName&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Molecular Formula:&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;MolecularFormula&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Molecular Weight:&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;MolecularWeight&quot;</span><span class="p">))</span>
+
+<span class="c1"># New names:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SMILES (isomeric):&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;SMILES&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connectivity SMILES (no stereo):&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ConnectivitySMILES&quot;</span><span class="p">))</span>
+
+<span class="c1"># Draw from isomeric SMILES if present, else fall back</span>
+<span class="n">smi</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;SMILES&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">props</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ConnectivitySMILES&quot;</span><span class="p">)</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smi</span><span class="p">)</span> <span class="k">if</span> <span class="n">smi</span> <span class="k">else</span> <span class="kc">None</span>
+<span class="k">if</span> <span class="n">mol</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Draw</span><span class="o">.</span><span class="n">MolToImage</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">)))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No SMILES returned to render.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Actinomycin D (CID: 457193 )
+IUPAC Name: 2-amino-4,6-dimethyl-3-oxo-1-N,9-N-bis[(3R,6S,7R,10S,16S)-7,11,14-trimethyl-2,5,9,12,15-pentaoxo-3,10-di(propan-2-yl)-8-oxa-1,4,11,14-tetrazabicyclo[14.3.0]nonadecan-6-yl]phenoxazine-1,9-dicarboxamide
+Molecular Formula: C62H86N12O16
+Molecular Weight: 1255.4
+SMILES (isomeric): C[C@@H]1[C@@H](C(=O)N[C@@H](C(=O)N2CCC[C@H]2C(=O)N(CC(=O)N([C@H](C(=O)O1)C(C)C)C)C)C(C)C)NC(=O)C3=C4C(=C(C=C3)C)OC5=C(C(=O)C(=C(C5=N4)C(=O)N[C@H]6[C@H](OC(=O)[C@@H](N(C(=O)CN(C(=O)[C@@H]7CCCN7C(=O)[C@H](NC6=O)C(C)C)C)C)C(C)C)C)N)C
+Connectivity SMILES (no stereo): CC1C(C(=O)NC(C(=O)N2CCCC2C(=O)N(CC(=O)N(C(C(=O)O1)C(C)C)C)C)C(C)C)NC(=O)C3=C4C(=C(C=C3)C)OC5=C(C(=O)C(=C(C5=N4)C(=O)NC6C(OC(=O)C(N(C(=O)CN(C(=O)C7CCCN7C(=O)C(NC6=O)C(C)C)C)C)C(C)C)C)N)C
+</pre></div>
+</div>
+<img alt="../../_images/af2223f87274d46874c9e1926dd570393a367a223dc9bf2ba13260a0316a71c2.png" src="../../_images/af2223f87274d46874c9e1926dd570393a367a223dc9bf2ba13260a0316a71c2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">cid</span> <span class="o">=</span> 	<span class="mi">457193</span>  <span class="c1"># D-Actinomycin</span>
+
+<span class="c1"># Step 1: Get linked assay IDs</span>
+<span class="n">aids_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/</span><span class="si">{</span><span class="n">cid</span><span class="si">}</span><span class="s2">/aids/JSON&quot;</span>
+<span class="n">aids_resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">aids_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="n">aids</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">if</span> <span class="s2">&quot;InformationList&quot;</span> <span class="ow">in</span> <span class="n">aids_resp</span><span class="p">:</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="n">aids_resp</span><span class="p">[</span><span class="s2">&quot;InformationList&quot;</span><span class="p">][</span><span class="s2">&quot;Information&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;AID&quot;</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">:</span>
+            <span class="n">aids</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;AID&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">aids</span><span class="p">)</span><span class="si">}</span><span class="s2"> assays for CID </span><span class="si">{</span><span class="n">cid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Step 2: Fetch metadata for the first few assays</span>
+<span class="k">for</span> <span class="n">aid</span> <span class="ow">in</span> <span class="n">aids</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>
+    <span class="n">assay_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/</span><span class="si">{</span><span class="n">aid</span><span class="si">}</span><span class="s2">/description/JSON&quot;</span>
+    <span class="n">assay_resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">assay_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="s2">&quot;AssayDescription&quot;</span> <span class="ow">in</span> <span class="n">assay_resp</span><span class="p">:</span>
+        <span class="n">desc</span> <span class="o">=</span> <span class="n">assay_resp</span><span class="p">[</span><span class="s2">&quot;AssayDescription&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">desc</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;No name&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AID </span><span class="si">{</span><span class="n">aid</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Link: https://pubchem.ncbi.nlm.nih.gov/bioassay/</span><span class="si">{</span><span class="n">aid</span><span class="si">}</span><span class="s2">#cid=</span><span class="si">{</span><span class="n">cid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 1465 assays for CID 457193
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span><span class="o">,</span><span class="w"> </span><span class="nn">io</span><span class="o">,</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span><span class="o">,</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_dyads_for_cid</span><span class="p">(</span><span class="n">cid</span><span class="p">,</span> <span class="n">aids</span><span class="p">,</span> <span class="n">max_assays</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a DataFrame of AID–SID dyads for a given CID across selected AIDs.</span>
+<span class="sd">    Ensures SID and AID are integers so the Dyad URLs work.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">aid</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">aids</span><span class="p">[:</span><span class="n">max_assays</span><span class="p">],</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/</span><span class="si">{</span><span class="n">aid</span><span class="si">}</span><span class="s2">/record/CSV&quot;</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">resp</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+        
+        <span class="c1"># Look for CID and SID columns</span>
+        <span class="n">cid_col</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;PUBCHEM_CID&quot;</span><span class="p">,</span><span class="s2">&quot;CID&quot;</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">sid_col</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;PUBCHEM_SID&quot;</span><span class="p">,</span><span class="s2">&quot;SID&quot;</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">cid_col</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">sid_col</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="c1"># Ensure integer types (not floats with .0)</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">cid_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cid_col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;Int64&quot;</span><span class="p">)</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">sid_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">sid_col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;Int64&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Keep only rows matching this CID</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">cid_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">cid</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">sid</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="n">sid_col</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+            <span class="n">sid</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sid</span><span class="p">)</span>
+            <span class="n">dyad_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/bioassay/</span><span class="si">{</span><span class="n">aid</span><span class="si">}</span><span class="s2">#sid=</span><span class="si">{</span><span class="n">sid</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">aid</span><span class="p">),</span> <span class="n">sid</span><span class="p">,</span> <span class="n">dyad_url</span><span class="p">))</span>
+        
+        <span class="c1"># Throttle every 5 requests to stay under PubChem’s rate limits</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;AID&quot;</span><span class="p">,</span> <span class="s2">&quot;SID&quot;</span><span class="p">,</span> <span class="s2">&quot;DyadURL&quot;</span><span class="p">])</span>
+
+
+<span class="c1"># === Example usage ===</span>
+<span class="n">cid</span> <span class="o">=</span> <span class="mi">457193</span>  <span class="c1"># D-Actinomycin</span>
+<span class="c1"># &#39;aids&#39; should be your earlier list of assay IDs</span>
+<span class="n">subset_aids</span> <span class="o">=</span> <span class="n">aids</span><span class="p">[</span><span class="mi">1454</span><span class="p">:]</span>   <span class="c1"># just the first 10 to test</span>
+
+<span class="n">dyad_df</span> <span class="o">=</span> <span class="n">get_dyads_for_cid</span><span class="p">(</span><span class="n">cid</span><span class="p">,</span> <span class="n">subset_aids</span><span class="p">,</span> <span class="n">max_assays</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Show full URLs (no truncation)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.max_colwidth&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="c1">#display(dyad_df)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">make_clickable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;&lt;a href=&quot;</span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s1">&quot; target=&quot;_blank&quot;&gt;</span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s1">&lt;/a&gt;&#39;</span>
+
+<span class="n">dyad_df_style</span> <span class="o">=</span> <span class="n">dyad_df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">format</span><span class="p">({</span><span class="s2">&quot;DyadURL&quot;</span><span class="p">:</span> <span class="n">make_clickable</span><span class="p">})</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">dyad_df_style</span><span class="o">.</span><span class="n">to_html</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_8a8aa">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_8a8aa_level0_col0" class="col_heading level0 col0" >AID</th>
+      <th id="T_8a8aa_level0_col1" class="col_heading level0 col1" >SID</th>
+      <th id="T_8a8aa_level0_col2" class="col_heading level0 col2" >DyadURL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_8a8aa_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_8a8aa_row0_col0" class="data row0 col0" >2061100</td>
+      <td id="T_8a8aa_row0_col1" class="data row0 col1" >144209680</td>
+      <td id="T_8a8aa_row0_col2" class="data row0 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061100#sid=144209680" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061100#sid=144209680</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_8a8aa_row1_col0" class="data row1 col0" >2061100</td>
+      <td id="T_8a8aa_row1_col1" class="data row1 col1" >170464668</td>
+      <td id="T_8a8aa_row1_col2" class="data row1 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061100#sid=170464668" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061100#sid=170464668</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_8a8aa_row2_col0" class="data row2 col0" >2061101</td>
+      <td id="T_8a8aa_row2_col1" class="data row2 col1" >170464668</td>
+      <td id="T_8a8aa_row2_col2" class="data row2 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061101#sid=170464668" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061101#sid=170464668</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_8a8aa_row3_col0" class="data row3 col0" >2061101</td>
+      <td id="T_8a8aa_row3_col1" class="data row3 col1" >144209680</td>
+      <td id="T_8a8aa_row3_col2" class="data row3 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061101#sid=144209680" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061101#sid=144209680</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_8a8aa_row4_col0" class="data row4 col0" >2061102</td>
+      <td id="T_8a8aa_row4_col1" class="data row4 col1" >144209680</td>
+      <td id="T_8a8aa_row4_col2" class="data row4 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061102#sid=144209680" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061102#sid=144209680</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_8a8aa_row5_col0" class="data row5 col0" >2061102</td>
+      <td id="T_8a8aa_row5_col1" class="data row5 col1" >170464668</td>
+      <td id="T_8a8aa_row5_col2" class="data row5 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061102#sid=170464668" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061102#sid=170464668</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_8a8aa_row6_col0" class="data row6 col0" >2061103</td>
+      <td id="T_8a8aa_row6_col1" class="data row6 col1" >144209680</td>
+      <td id="T_8a8aa_row6_col2" class="data row6 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061103#sid=144209680" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061103#sid=144209680</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_8a8aa_row7_col0" class="data row7 col0" >2061103</td>
+      <td id="T_8a8aa_row7_col1" class="data row7 col1" >170464668</td>
+      <td id="T_8a8aa_row7_col2" class="data row7 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061103#sid=170464668" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061103#sid=170464668</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_8a8aa_row8_col0" class="data row8 col0" >2061104</td>
+      <td id="T_8a8aa_row8_col1" class="data row8 col1" >144209680</td>
+      <td id="T_8a8aa_row8_col2" class="data row8 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061104#sid=144209680" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061104#sid=144209680</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_8a8aa_row9_col0" class="data row9 col0" >2061104</td>
+      <td id="T_8a8aa_row9_col1" class="data row9 col1" >170464668</td>
+      <td id="T_8a8aa_row9_col2" class="data row9 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061104#sid=170464668" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061104#sid=170464668</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row10" class="row_heading level0 row10" >10</th>
+      <td id="T_8a8aa_row10_col0" class="data row10 col0" >2061105</td>
+      <td id="T_8a8aa_row10_col1" class="data row10 col1" >144209680</td>
+      <td id="T_8a8aa_row10_col2" class="data row10 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061105#sid=144209680" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061105#sid=144209680</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row11" class="row_heading level0 row11" >11</th>
+      <td id="T_8a8aa_row11_col0" class="data row11 col0" >2061105</td>
+      <td id="T_8a8aa_row11_col1" class="data row11 col1" >170464668</td>
+      <td id="T_8a8aa_row11_col2" class="data row11 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061105#sid=170464668" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061105#sid=170464668</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row12" class="row_heading level0 row12" >12</th>
+      <td id="T_8a8aa_row12_col0" class="data row12 col0" >2061106</td>
+      <td id="T_8a8aa_row12_col1" class="data row12 col1" >144209680</td>
+      <td id="T_8a8aa_row12_col2" class="data row12 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061106#sid=144209680" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061106#sid=144209680</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row13" class="row_heading level0 row13" >13</th>
+      <td id="T_8a8aa_row13_col0" class="data row13 col0" >2061106</td>
+      <td id="T_8a8aa_row13_col1" class="data row13 col1" >170464668</td>
+      <td id="T_8a8aa_row13_col2" class="data row13 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061106#sid=170464668" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061106#sid=170464668</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row14" class="row_heading level0 row14" >14</th>
+      <td id="T_8a8aa_row14_col0" class="data row14 col0" >2061107</td>
+      <td id="T_8a8aa_row14_col1" class="data row14 col1" >144209680</td>
+      <td id="T_8a8aa_row14_col2" class="data row14 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061107#sid=144209680" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061107#sid=144209680</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row15" class="row_heading level0 row15" >15</th>
+      <td id="T_8a8aa_row15_col0" class="data row15 col0" >2061107</td>
+      <td id="T_8a8aa_row15_col1" class="data row15 col1" >170464668</td>
+      <td id="T_8a8aa_row15_col2" class="data row15 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061107#sid=170464668" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061107#sid=170464668</a></td>
+    </tr>
+    <tr>
+      <th id="T_8a8aa_level0_row16" class="row_heading level0 row16" >16</th>
+      <td id="T_8a8aa_row16_col0" class="data row16 col0" >2061328</td>
+      <td id="T_8a8aa_row16_col1" class="data row16 col1" >604348</td>
+      <td id="T_8a8aa_row16_col2" class="data row16 col2" ><a href="https://pubchem.ncbi.nlm.nih.gov/bioassay/2061328#sid=604348" target="_blank">https://pubchem.ncbi.nlm.nih.gov/bioassay/2061328#sid=604348</a></td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "nbi"
+        },
+        kernelOptions: {
+            name: "nbi",
+            path: "./content/appendices"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'nbi'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction to Genes and DNA</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-as-the-genetic-material">1. DNA as the Genetic Material</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-perspective">Historical Perspective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dnas-chemical-composition">DNA’s Chemical Composition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-double-helix-and-base-pairing">The Double Helix and Base Pairing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-1-rdkit-exercise">Activity 1: RDKit Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-dna-is-stable">Why DNA is Stable?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#genome-to-gene-how-dna-is-organized">2. Genome to Gene: How DNA is Organized</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-genome">The Genome</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-gene">What is a Gene?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-gene-eukaryotic-example">Anatomy of a Gene (Eukaryotic Example)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genes-as-units-of-information">Genes as Units of Information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genes-traits-and-proteins">Genes, Traits, and Proteins</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#genomics-databases-and-gene-nomenclature">3. Genomics Databases and Gene Nomenclature</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genomics-databases">Genomics Databases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-nomenclature">Gene nomenclature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-identifiers">Database identifiers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-search-blast">Sequence Search: BLAST</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genes-in-pubchem">Genes in PubChem</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#from-dna-to-rna-transcription">4. From DNA to RNA: Transcription</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-transcription">What is transcription?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-pair-mapping-dna-rna">Base Pair Mapping: DNA → RNA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-players">Key players</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-of-transcription">Steps of transcription</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#messenger-rna-mrna">Messenger RNA (mRNA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-rna-trna">Transfer RNA (tRNA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ribosomal-rna-rrna">Ribosomal RNA (rRNA)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rna-transport">RNA Transport</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna-export">mRNA export</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trna-export">tRNA export</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rrna-export">rRNA export</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regulation-of-transcription">5. Regulation of Transcription</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transcription-factors">Transcription Factors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-broad-types-of-transcription-factors">Two Broad Types of Transcription Factors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thyroid-hormone-receptor-tr">Thyroid Hormone Receptor (TR)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#relevance-of-transcription-to-disease-and-toxicology">6. Relevance of Transcription to Disease and Toxicology</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-damage-and-transcriptional-interference">1. DNA damage and transcriptional interference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toxins-that-directly-inhibit-rna-polymerase">2. Toxins that directly inhibit RNA polymerase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diseases-of-transcription-machinery">3. Diseases of transcription machinery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disruption-of-transcriptional-regulation">4. Disruption of transcriptional regulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viral-hijacking-of-transcription">5. Viral hijacking of transcription</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#activity">Activity</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-studies-chemicals-transcription-and-disease">Case Studies: Chemicals, Transcription, and Disease</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Belford
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

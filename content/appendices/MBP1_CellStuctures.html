@@ -1,0 +1,1145 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Molecular Biology Primer for Cheminformatics &#8212; Data Chemistry 2025</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/oldcustom.css?v=e52fa269" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ba2d5b83" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/appendices/MBP1_CellStuctures';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Data Chemistry 2025 - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Data Chemistry 2025 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    2025 Data Chemistry OLCC
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/01-OLCC-Primer/README.html">Module 1: OLCC Primer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/01-OLCC-Primer/01-1-OLCC-Primer.html">Module 1.1: OLCC Primer</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/01-OLCC-Primer/01-2-python-basics.html">1.2 Python Basics</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/01-OLCC-Primer/01-3-python-intermediate.html">1.3 Intermediate Python</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/02-Introduction/README.html">Module 2: Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/02-Introduction/02-1-PubChemDataTypes.html">2.1 PubChem Data Types</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/02-Introduction/02-2-PUG-REST-activity.html">2.2 PUG-RESTY Activity</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/03-Public-Chemical-Databases/README.html">Module 3: Public Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/03-Public-Chemical-Databases/03-01-Survey-Public-Chemical-Databases.html">Module 1.1: Public Compound Databases</a></li>
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/04-Chemical-Representations/README.html">Module 4: Chemical Representations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/04-Chemical-Representations/04-01-introduction_chemical_representations.html">4.1 Chemical Representation and Introduction to RDKit</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/04-Chemical-Representations/04-02-PubChem3D_update.html">4.2 PubChem 3D</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/04-Chemical-Representations/04-03-Substructure_Searching_with_SMARTS.html">4.3 SMARTS Substructure Searching</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/05-Searching-Chemical-Databases/README.html">Module 5: Searching Chemical Databases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/05-Searching-Chemical-Databases/05-01-Exploring-PubChem.html">5.1 Exploring PubChem</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/05-Searching-Chemical-Databases/05-02-structure-inputs.html">5.2 Searching with Structures</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/05-Searching-Chemical-Databases/05-03-list-conversion.html">5.3 List Conversions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/06-BioAssay/README.html">Module 6: BioAssays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/06-BioAssay/06-1-Bioactivity_Primer.html">PubChem Bioactivity Primer</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/06-BioAssay/06-2-eda-protein1.html">Exploratory Data Analysis 1: <br/><br/> Concordance of Thyroid Hormone Receptor Activity in Rats and Humans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/06-BioAssay/06-3-eda-pathway.html">Exploratory Data Analysis 2:<br/><br/>Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/07-QSAR-QSPR/README.html">Module 7: Quantitative Structure Property Reationships</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/07-QSAR-QSPR/07-01-QSPR.html">Molecular Descriptors</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/08-Molecular-Similarity/README.html">Module 8: Molecular Similarity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/08-Molecular-Similarity/08-1-MolSimularity.html">Fingerprint Generation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/08-Molecular-Similarity/08-2-MolSimularity.html">What is a bit vector?</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../modules/08-Molecular-Similarity/08-3-MolSimularity.html">Objectives</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/09-CADDD/README.html">Module 9: Computer-Aided Drug Discovery and Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/09-CADDD/09-1-virtual-screening.html">Virtual Screening</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/10-Machine-Learning/README.html">Module 10: Supervised ML</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/10-Machine-Learning/10-01-supervised-ML.html">Machine Learning Basics</a></li>
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="README.html">Appendices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Pandas.html">Introduction to Pandas</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/DivCHED-CCCE/DataChemistry2025OLCC/master?urlpath=lab/tree/docs/content/appendices/MBP1_CellStuctures.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://nanohub.org/tools/datachemolcc/hub/user-redirect/git-pull?repo=https%3A//github.com/DivCHED-CCCE/DataChemistry2025OLCC&urlpath=lab/tree/DataChemistry2025OLCC/docs/content/appendices/MBP1_CellStuctures.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DivCHED-CCCE/DataChemistry2025OLCC/blob/master/docs/content/appendices/MBP1_CellStuctures.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DivCHED-CCCE/DataChemistry2025OLCC/issues/new?title=Issue%20on%20page%20%2Fcontent/appendices/MBP1_CellStuctures.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/appendices/MBP1_CellStuctures.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Molecular Biology Primer for Cheminformatics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Molecular Biology Primer for Cheminformatics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-of-a-cell">Parts of a Cell:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-plasma-membrane">Cell (Plasma) Membrane:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-types-of-membranes">Other Types of Membranes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-descriptors-and-membrane-relevance">PubChem Descriptors and Membrane Relevance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cytoplasm">Cytoplasm:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cytoskeleton">Cytoskeleton:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-beyond-structure">Functions Beyond Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relevance-to-pubchem-data">Relevance to PubChem Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endoplasmic-reticulum-er">Endoplasmic Reticulum (ER):</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#golgi-apparatus">Golgi Apparatus:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lysosomes-and-peroxisomes">Lysosomes and Peroxisomes:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lysosomes">Lysosomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peroxisomes">Peroxisomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-differences-between-lysosomes-and-peroxisomes">Key Differences Between Lysosomes and Peroxisomes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mitochondria">Mitochondria:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-transport-chain-etc">Electron Transport Chain (ETC)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relevance-to-pubchem">Relevance to PubChem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nucleus">Nucleus:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transcription">Transcription:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ribosomes">Ribosomes:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#translation">Translation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vacuoles">Vacuoles:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vesicles">Vesicles:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-rna-and-protein-synthesis"><strong>Part III: RNA and Protein Synthesis</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-proteinsthe-workhorses"><strong>Part IV: Proteins—The Workhorses</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-v-linking-biology-to-pubchem-data"><strong>Part V: Linking Biology to PubChem Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-vi-beyond-the-basics"><strong>Part VI: Beyond the Basics</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="molecular-biology-primer-for-cheminformatics">
+<h1>Molecular Biology Primer for Cheminformatics<a class="headerlink" href="#molecular-biology-primer-for-cheminformatics" title="Link to this heading">#</a></h1>
+<p><strong>Cells as the basic unit of life:</strong>  Cells are the fundamental building blocks of all living organisms. They are the smallest units that can carry out all life processes. There are two basic types of cells, eukaryotic and prokaryotic. Eukaryotic cells have a nucleus and membrane-bound organelles, while prokaryotic cells do not.  Understanding cells is crucial for understanding how life functions at a molecular level.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="parts-of-a-cell">
+<h1>Parts of a Cell:<a class="headerlink" href="#parts-of-a-cell" title="Link to this heading">#</a></h1>
+<section id="cell-plasma-membrane">
+<h2>Cell (Plasma) Membrane:<a class="headerlink" href="#cell-plasma-membrane" title="Link to this heading">#</a></h2>
+<p>A protective barrier that surrounds the cell, separating the cytoplasm from the rest of the world and  controlling the movement of substances in and out of the cell.</p>
+<p><img alt="image.png" src="../../_images/9dff439c-300b-41bb-b5fd-39190f2d25b7.png" /></p>
+<p><em>Cell membrane image, derivative work, Belford, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Cell_membrane_detailed_diagram_4.svg">Dhattfield</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Cell_membrane_detailed_diagram_3.svg">Marian Ruiz</a>, cc-by-sa-3.0, via Wikimedia Commons</em></p>
+<p>The membrane is a bilayer of two back-to-back sheets (leaflets) of phsopholipids, which have hydrophilic (water-attracting) heads and hydrophobic (water-repelling) tails. This results in two regions, a hydrophobic core and hydrophilic surfaces. The hydrophobic core acts as a barrier to most water-soluble substances, while allowing lipid-soluble substances to pass through. This results in the fluid mosaic model of the membrane, where proteins are embedded, and can function as channels, receptors, or enzymes, facilitating communication and transport across the membrane. The external layer is called the outer leaflet and the internal layer is called the inner leaflet. The outer leaflet faces the extracellular region (outside the cell) and the inner leaflet faces the cytoplasm (inside the cell).</p>
+<ul class="simple">
+<li><p>How small molecules interact with the bilayer depends on their size, charge, and polarity.</p>
+<ul>
+<li><p>Hydrophobic (nonpolar lipophilic) molecules can easily pass through the lipid bilayer.</p></li>
+<li><p>Hydrophilic (polar) molecules and ions require specific transport proteins to cross the membrane.</p></li>
+<li><p>Large molecules, such as proteins and nucleic acids, cannot pass through the membrane without assistance from vesicles or other transport mechanisms.</p></li>
+</ul>
+</li>
+</ul>
+<section id="other-types-of-membranes">
+<h3>Other Types of Membranes<a class="headerlink" href="#other-types-of-membranes" title="Link to this heading">#</a></h3>
+<p>Many eukaryotic organelles are enclosed by membranes, which compartmentalize distinct chemical environments within the cell. Some organelles are surrounded by a single bilayer membrane, while others (notably mitochondria and chloroplasts) have double membranes. These double-membrane organelles are unique because they retain small, prokaryote-like genomes, a legacy of their endosymbiotic origins: they are thought to have evolved from free-living prokaryotes that were engulfed by ancestral eukaryotic cells. It should be noted that some organelles, like ribosomes, the cytoskeleton and centrosomes, are not membrane-bound, but are still considered organelles due to their specialized functions within the cell.</p>
+<p><strong>Examples of membrane-bound organelles include:</strong></p>
+<ul class="simple">
+<li><p>Nuclear Envelope: double membrane surrounding the nucleus; has nuclear pores.</p></li>
+<li><p>Endoplasmic Reticulum (ER): membrane network for protein/lipid synthesis.</p></li>
+<li><p>Golgi Apparatus: stacked membranes for modifying and sorting proteins.</p></li>
+<li><p>Mitochondria: double membrane; inner membrane highly folded (cristae) with proteins for respiration and ATP synthesis.</p></li>
+<li><p>Chloroplasts (plants/algae): triple membrane system (outer, inner, and thylakoid membranes) for photosynthesis.</p></li>
+<li><p>Lysosomes, Peroxisomes, Endosomes: single membranes enclosing digestive/oxidative enzymes.</p></li>
+<li><p>Transport Vesicles: small membrane “bubbles” that shuttle cargo.</p></li>
+</ul>
+</section>
+<section id="pubchem-descriptors-and-membrane-relevance">
+<h3>PubChem Descriptors and Membrane Relevance<a class="headerlink" href="#pubchem-descriptors-and-membrane-relevance" title="Link to this heading">#</a></h3>
+<p>The following are some common descriptors from PubChem that are relevant to understanding how small molecules interact with cell membranes and their biological relevance. These descriptors help predict a molecule’s behavior in biological systems, including its ability to cross membranes, interact with proteins, and its overall pharmacokinetic properties.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>PubChem Property</strong></p></th>
+<th class="head"><p><strong>What It Measures</strong></p></th>
+<th class="head"><p><strong>Membrane / Biological Relevance</strong></p></th>
+<th class="head"><p><strong>Rule of Thumb</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>XLogP (logP)</strong></p></td>
+<td><p>Predicted partition coefficient (octanol vs. water). Higher = more lipophilic.</p></td>
+<td><p>Determines whether a molecule prefers the lipid bilayer (hydrophobic core) or aqueous environment.</p></td>
+<td><p>- <strong>High logP (&gt;3)</strong> → Lipid-soluble, crosses membranes easily.<br>- <strong>Low logP (&lt;0)</strong> → Water-soluble, needs transporters.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>TPSA (Topological Polar Surface Area)</strong></p></td>
+<td><p>Total polar surface area from oxygen/nitrogen atoms and attached hydrogens.</p></td>
+<td><p>Predicts hydrogen bonding and solubility in water vs. lipid. Strongly affects passive diffusion.</p></td>
+<td><p>- <strong>Low TPSA (&lt;90 Å²)</strong> → Likely permeable.<br>- <strong>High TPSA (&gt;140 Å²)</strong> → Poor permeability, often needs a transporter.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>H-Bond Donor Count</strong></p></td>
+<td><p>Number of –OH or –NH groups that can donate H-bonds.</p></td>
+<td><p>High donor count → stronger interaction with water, less likely to pass through hydrophobic bilayer.</p></td>
+<td><p>&gt;5 donors often reduces membrane permeability.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>H-Bond Acceptor Count</strong></p></td>
+<td><p>Number of electronegative atoms (O, N, etc.) that can accept H-bonds.</p></td>
+<td><p>Similar to donor count: too many acceptors → molecule is “stuck” in aqueous phase.</p></td>
+<td><p>&gt;10 acceptors often reduces permeability.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Molecular Weight (MW)</strong></p></td>
+<td><p>Size of the molecule in Daltons.</p></td>
+<td><p>Larger molecules have more difficulty diffusing through the membrane without assistance.</p></td>
+<td><p>Passive diffusion usually limited to MW &lt; 500 Da (Lipinski’s Rule of 5).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Rotatable Bond Count</strong></p></td>
+<td><p>Flexibility of the molecule.</p></td>
+<td><p>High flexibility decreases the likelihood of fitting neatly into lipid bilayers or binding sites.</p></td>
+<td><p>&lt;10 rotatable bonds favored for oral drugs.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Formal Charge</strong></p></td>
+<td><p>Net charge of the molecule.</p></td>
+<td><p>Charged molecules interact poorly with hydrophobic bilayer, usually need ion channels or transport proteins.</p></td>
+<td><p>Neutral or zwitterionic molecules cross membranes more easily.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="cytoplasm">
+<h2>Cytoplasm:<a class="headerlink" href="#cytoplasm" title="Link to this heading">#</a></h2>
+<p>The jelly-like substance within the cell membrane, where organelles are suspended.</p>
+<ul class="simple">
+<li><p>Mostly water (70%+) but not “just water.”</p></li>
+<li><p>Contains:</p>
+<ul>
+<li><p>Salts and ions (Na⁺, K⁺, Ca²⁺, Cl⁻, Mg²⁺, etc.) → maintain charge balance, signaling.</p></li>
+<li><p>Metabolites and small molecules** (glucose, ATP, amino acids, nucleotides).</p></li>
+<li><p>Proteins (enzymes, structural proteins, signaling proteins).</p></li>
+<li><p>Macromolecular crowding: high concentrations of proteins/nucleic acids give cytoplasm gel-like properties.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="cytoskeleton">
+<h2>Cytoskeleton:<a class="headerlink" href="#cytoskeleton" title="Link to this heading">#</a></h2>
+<p>A dynamic network of fibers (protein filaments) that provides structural support and shape to the cell, and aids in movement. The cytoskeleton is not just a “cell skeleton” but a complex, dynamic structure that plays many roles in cell function.</p>
+<p>The cytoskeleton is composed of three main types of filaments:</p>
+<ul class="simple">
+<li><p>Microtubules: Hollow tubes made of tubulin dimers; provide rigidity and tracks for intracellular transport.</p></li>
+<li><p>Intermediate Filaments: Rope-like fibers made of various proteins (e.g., keratin, vimentin); provide tensile strength and mechanical support.</p></li>
+<li><p>Actin Filaments (Microfilaments): Thin, flexible fibers made of actin monomers; involved in cell shape, motility, and muscle contraction.</p></li>
+</ul>
+<section id="functions-beyond-structure">
+<h3>Functions Beyond Structure<a class="headerlink" href="#functions-beyond-structure" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Intracellular transport: motor proteins (dynein, kinesin, myosin) carry cargo along filaments.</p></li>
+<li><p>Cell signaling: cytoskeleton interacts with receptors and signaling pathways.</p></li>
+<li><p>Endocytosis: process of bringing substances into the cell by engulfing them in membrane-bound vesicles. The cytoskeleton plays a crucial role in this process by providing the necessary structure and movement for vesicle formation and transport.</p></li>
+<li><p>Exocytosis: the process of exporting substances out of the cell by vesicle fusion with the plasma membrane. The cytoskeleton helps in the movement and fusion of these vesicles.</p></li>
+<li><p>Division: microtubules form the spindle that separates chromosomes.</p></li>
+</ul>
+</section>
+<section id="relevance-to-pubchem-data">
+<h3>Relevance to PubChem Data<a class="headerlink" href="#relevance-to-pubchem-data" title="Link to this heading">#</a></h3>
+<p>Many bioassays in PubChem target the cytoskeleton indirectly, because:</p>
+<ol class="arabic simple">
+<li><p>Microtubule-targeting drugs (anticancer agents like paclitaxel, vinblastine) are heavily studied. PubChem has assays testing compound effects on tubulin polymerization/depolymerization.</p></li>
+<li><p>Actin dynamics are critical for infection biology and motility assays. Some PubChem assays look at actin-targeting compounds (cytochalasins).</p></li>
+<li><p>Signal transduction pathways (e.g., Rho GTPases regulating actin) often appear in PubChem bioassays; cytoskeletal rearrangements are the downstream readout.</p></li>
+<li><p>Cell morphology-based assays: high-content screening in PubChem often measures changes in cell shape or division, which are cytoskeleton-dependent.</p></li>
+</ol>
+<p>Descriptors like XLogP, TPSA, H-bond counts matter here too — they help predict whether small molecules can cross membranes to reach cytoskeletal proteins in the cytoplasm.</p>
+</section>
+</section>
+<section id="endoplasmic-reticulum-er">
+<h2>Endoplasmic Reticulum (ER):<a class="headerlink" href="#endoplasmic-reticulum-er" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>A network of membranes (flattened sacs and tubules) extending from the nuclear envelope into the cytoplasm. Built from same phospholipid bilayer as the cell membrane.</p></li>
+<li><p>Divided into two forms (continuous but functionally distinct):</p>
+<ul>
+<li><p>Rough ER: studded with ribosomes.</p></li>
+<li><p>Smooth ER: lacks ribosomes, more tubular in shape.</p></li>
+</ul>
+</li>
+</ul>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Rough ER (RER)</p>
+<ul>
+<li><p>Protein synthesis &amp; folding: Ribosomes on its surface translate mRNA into proteins destined for secretion, membranes, or organelles.</p></li>
+<li><p>Quality control: Misfolded proteins are targeted for degradation (ER-associated degradation, ERAD).</p></li>
+<li><p>Chemical relevance: Many PubChem assays test compounds for effects on protein folding (e.g., inhibitors of chaperone proteins like BiP/GRP78).</p></li>
+</ul>
+</li>
+<li><p><strong>Smooth ER</strong></p>
+<ul>
+<li><p>Lipid synthesis: Synthesizes phospholipids, cholesterol, and steroid hormones.</p></li>
+<li><p>Detoxification: Contains enzymes that metabolize drugs and toxins (e.g., cytochrome P450 family).</p></li>
+<li><p>Calcium storage: Regulates intracellular calcium levels, important for signaling pathways.</p></li>
+</ul>
+</li>
+</ul>
+<p>Drug metabolism: Many PubChem assays involve compounds that affect ER function, especially in drug metabolism and toxicity studies.</p>
+</section>
+</section>
+<section id="golgi-apparatus">
+<h2>Golgi Apparatus:<a class="headerlink" href="#golgi-apparatus" title="Link to this heading">#</a></h2>
+<p>An organelle that handles post-translational processing, packaging, and trafficking.</p>
+<ul class="simple">
+<li><p>Post translatational packaging (building a linear chains of amino acids - raw proteins) from mRNA includes protein modifications such as glycosylation, phosphorylation, and sulfation. These modifications are crucial for the function of many proteins, including those that serve as drug targets (e.g., receptors, enzymes).</p></li>
+<li><p>Packaging refers to loading proteins into vesicles for transport to their final destinations, such as the cell membrane, lysosomes, or secretion outside the cell.</p></li>
+<li><p>Trafficking involves the movement of these vesicles along the cytoskeletal to their target locations.</p></li>
+</ul>
+<p>Although the Golgi apparatus is not directly represented in PubChem, its functions are critical for understanding how proteins are modified and processed before they interact with small molecules. Many bioassays in PubChem involve proteins that have been modified by the Golgi, such as glycoproteins or phosphorylated proteins.</p>
+</section>
+<section id="lysosomes-and-peroxisomes">
+<h2>Lysosomes and Peroxisomes:<a class="headerlink" href="#lysosomes-and-peroxisomes" title="Link to this heading">#</a></h2>
+<p>Vesicle-like metabolic compartments that play roles in detoxification and recycling. Involved in catabolic processes, breaking down macromolecules into smaller components that can be reused or expelled from the cell. The lysosome breaks down macromolecules like proteins, lipids, and carbohydrates using hydrolytic enzymes. Peroxisomes are involved in lipid metabolism and detoxification of harmful substances, such as hydrogen peroxide.</p>
+<section id="lysosomes">
+<h3>Lysosomes<a class="headerlink" href="#lysosomes" title="Link to this heading">#</a></h3>
+<p>Membrane-bound organelles containing hydrolytic enzymes that digest macromolecules, old organelles, and pathogens. They are often referred to as the “stomach” of the cell. Enzymes within lysosomes are active at acidic pH, which is maintained by proton pumps in the lysosomal membrane. Enzymes inlcude proteases, lipases, nucleaases and glycosidases.</p>
+</section>
+<section id="peroxisomes">
+<h3>Peroxisomes<a class="headerlink" href="#peroxisomes" title="Link to this heading">#</a></h3>
+<p>Membrane-bound organelles that contain enzymes for lipid metabolism, reactive oxygen control and detoxification. They are involved in the breakdown of fatty acids through beta-oxidation, producing acetyl-CoA and hydrogen peroxide (H₂O₂) as byproducts. Peroxisomes also contain catalase, an enzyme that converts hydrogen peroxide into water and oxygen, preventing oxidative damage to the cell.</p>
+</section>
+<section id="key-differences-between-lysosomes-and-peroxisomes">
+<h3>Key Differences Between Lysosomes and Peroxisomes<a class="headerlink" href="#key-differences-between-lysosomes-and-peroxisomes" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p><strong>Lysosomes</strong></p></th>
+<th class="head"><p><strong>Peroxisomes</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Contents</strong></p></td>
+<td><p><strong>Hydrolytic enzymes</strong> (proteases, lipases, nucleases, glycosidases).</p></td>
+<td><p><strong>Oxidative enzymes</strong> (oxidases, catalase).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Optimal conditions</strong></p></td>
+<td><p>Acidic (pH ~4.5–5.0, maintained by proton pumps).</p></td>
+<td><p>Neutral pH (~7.0), but high oxidative environment (H₂O₂ produced/destroyed).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Main function</strong></p></td>
+<td><p>Digest macromolecules and organelles (autophagy, immune defense).</p></td>
+<td><p>Break down fatty acids, detoxify peroxides, synthesize plasmalogens.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Waste products</strong></p></td>
+<td><p>Simple monomers: amino acids, sugars, nucleotides, fatty acids → recycled.</p></td>
+<td><p>H₂O₂ as a byproduct → decomposed by catalase into H₂O + O₂.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Metabolic tie-ins</strong></p></td>
+<td><p>Recycling macromolecules into building blocks for biosynthesis.</p></td>
+<td><p>Lipid metabolism, energy metabolism (fatty acid β-oxidation).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Disease link</strong></p></td>
+<td><p>Lysosomal storage diseases (e.g., Gaucher, Tay–Sachs).</p></td>
+<td><p>Peroxisomal disorders (e.g., Zellweger syndrome, adrenoleukodystrophy).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Drug relevance</strong></p></td>
+<td><p>Small molecules may accumulate in lysosomes; inhibitors target lysosomal enzymes.</p></td>
+<td><p>Drugs can affect oxidative stress or PPAR-regulated peroxisome proliferation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="mitochondria">
+<h2>Mitochondria:<a class="headerlink" href="#mitochondria" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The powerhouse of the cell, generating energy through cellular respiration. The mitochondria are double-membrane organelles, with an outer membrane that is smooth and permeable to small molecules, and an inner membrane that is highly folded into structures called cristae, which increase the surface area for chemical reactions. The space between the two membranes is called the intermembrane space, while the innermost compartment is called the mitochondrial matrix. Within the matrix, there are enzymes for the citric acid cycle (Krebs cycle) and the electron transport chain, which are crucial for ATP production. Mitochondria also contain their own DNA (mtDNA), which is circular and resembles bacterial DNA, supporting the endosymbiotic theory of their origin. Within the intermembrane space, there are also proteins involved in the electron transport chain, which is responsible for ATP production through oxidative phosphorylation.</p></li>
+</ul>
+<section id="electron-transport-chain-etc">
+<h3>Electron Transport Chain (ETC)<a class="headerlink" href="#electron-transport-chain-etc" title="Link to this heading">#</a></h3>
+<p>The electron transport chain (ETC) is a series of protein complexes and other molecules embedded in the inner mitochondrial membrane. It plays a crucial role in cellular respiration by transferring electrons from electron donors (NADH and FADH₂) to oxygen, the final electron acceptor. This process generates a proton gradient across the inner membrane, which drives ATP synthesis through ATP synthase.</p>
+</section>
+<section id="relevance-to-pubchem">
+<h3>Relevance to PubChem<a class="headerlink" href="#relevance-to-pubchem" title="Link to this heading">#</a></h3>
+<p>Mitochondria are central in many bioassays, especially in toxicology, cancer biology, and metabolism research:</p>
+<ul class="simple">
+<li><p>ETC inhibitors: classic drugs/toxins (rotenone, antimycin, oligomycin) target specific complexes. Assays measure oxygen consumption or ATP levels.</p></li>
+<li><p>Mitochondrial membrane potential: fluorescent dyes track how compounds affect proton gradients.</p></li>
+<li><p>ROS assays: compounds tested for mitochondrial oxidative stress.</p></li>
+<li><p>Mitochondrial toxicity: many antibiotics, antivirals, and cancer drugs have side effects on mitochondria (due to bacterial ancestry).</p></li>
+<li><p>Apoptosis assays: mitochondrial release of cytochrome c is often used as a readout for pro-apoptotic compounds.</p></li>
+<li><p>Mitochondrial DNA: some assays look at how compounds affect mtDNA replication or transcription.</p></li>
+</ul>
+</section>
+</section>
+<section id="nucleus">
+<h2>Nucleus:<a class="headerlink" href="#nucleus" title="Link to this heading">#</a></h2>
+<p>The nucleus is the defining feature of eukaryotic cells, separating them from prokaryotes. It serves as the repository and control center for genetic information, housing the cell’s DNA in a protected environment. Surrounded by a double membrane called the nuclear envelope, the nucleus maintains a distinct chemical environment that allows DNA to be stored, replicated, and transcribed into RNA without interference from cytoplasmic processes. Nuclear pores in the envelope act as selective gateways, regulating the flow of proteins, RNAs, and small molecules in and out of the nucleus.</p>
+<p>Inside, the DNA is packaged with proteins into a material called chromatin, which can be loosely or tightly packed depending on whether genes are active or silenced. The nucleus also contains the nucleolus, a prominent non-membrane structure where ribosomal RNA is made and ribosome components are assembled. Together, these features make the nucleus the cell’s command center, coordinating when and how genetic information is expressed.</p>
+<p>From a biomedical perspective, the nucleus is one of the most important organelles in drug discovery and toxicology. Many compounds affect nuclear processes: some bind directly to DNA, others alter chromatin structure through epigenetic mechanisms, and still others act on nuclear receptors, proteins that regulate transcription in response to hormones and small molecules.</p>
+<section id="transcription">
+<h3>Transcription:<a class="headerlink" href="#transcription" title="Link to this heading">#</a></h3>
+<p>Transcription is the process by which the genetic instructions stored in DNA are copied into RNA. It is the first major step in the expression of genes, serving as the bridge between the long-term storage of genetic information in the nucleus and the short-lived working copies (RNAs) that guide protein synthesis in the cytoplasm.</p>
+<p>In eukaryotic cells, transcription takes place inside the nucleus, where DNA is housed. The enzyme RNA polymerase reads a DNA template strand and builds a complementary RNA strand. Depending on the gene, this RNA may become:</p>
+<ul class="simple">
+<li><p><strong>mRNA (messenger RNA):</strong> carries the genetic code for making proteins. After processing, mature mRNA exits the nucleus through nuclear pores and enters the cytoplasm, where ribosomes read its sequence during translation.</p></li>
+<li><p><strong>rRNA (ribosomal RNA):</strong> a structural and catalytic component of ribosomes. rRNAs are exported from the nucleus but remain bound up in ribosomal subunits, not translated like mRNAs.</p></li>
+<li><p><strong>tRNA (transfer RNA):</strong> delivers amino acids to the ribosome during translation. After transcription and processing, tRNAs are exported to the cytoplasm where they are “charged” with amino acids.</p></li>
+</ul>
+<p>Together, mRNA, rRNA, and tRNA make protein synthesis possible. The mRNA provides the genetic instructions, acting as the blueprint. The rRNA, as part of the ribosome, is the catalytic machine that reads the mRNA and links amino acids. The tRNAs serve as adaptors, matching each codon on the mRNA with the correct amino acid and delivering it to the ribosome. None of these RNAs can do the job alone — only by working together does the cell successfully translate genetic information into functional proteins.</p>
+</section>
+</section>
+<section id="ribosomes">
+<h2>Ribosomes:<a class="headerlink" href="#ribosomes" title="Link to this heading">#</a></h2>
+<p>The ribosome is the universal protein factory of the cell, found in both prokaryotes and eukaryotes. Unlike most organelles, ribosomes are not surrounded by a membrane but are instead large complexes of <strong>ribosomal RNA (rRNA)</strong> and proteins. Their job is to read the genetic instructions carried by <strong>messenger RNA (mRNA)</strong> and translate those instructions into chains of amino acids, which then fold into functional proteins. Because every process in the cell depends on proteins, ribosomes are central to life itself.</p>
+<p>In eukaryotes, ribosomes are first assembled in the nucleolus of the nucleus and then exported into the cytoplasm, where they become active. They occur in two forms: free ribosomes, which float in the cytoplasm and produce proteins for use inside the cell, and bound ribosomes, which attach to the surface of the rough endoplasmic reticulum (RER) to synthesize proteins that will be secreted, embedded in membranes, or sent to organelles. Structurally, the two populations of ribosomes are identical and derived from the same genetic material; what differs is where they dock during protein synthesis.</p>
+<p>Ribosomes consist of two unequal subunits — one large and one small — each built from a specific combination of rRNA molecules and proteins. In prokaryotes, the complete ribosome is known as a 70S particle (30S small subunit + 50S large subunit), while in eukaryotes it is an 80S particle (40S small subunit + 60S large subunit). This difference is medically important because many antibiotics selectively target bacterial ribosomes without harming eukaryotic ribosomes</p>
+<section id="translation">
+<h3>Translation<a class="headerlink" href="#translation" title="Link to this heading">#</a></h3>
+<p>Translation is the process by which the genetic code carried by messenger RNA (mRNA) is decoded to synthesize proteins. It occurs in the cytoplasm, where ribosomes read the mRNA sequence and assemble amino acids into a polypeptide chain according to the instructions encoded in the mRNA. This process is essential for gene expression and is tightly regulated to ensure that proteins are produced at the right time and in the right amounts. There are three main stages of translation: initiation, elongation, and termination.</p>
+<ol class="arabic simple">
+<li><p>Initiation – The ribosome (made partly of rRNA) assembles on the mRNA and finds the starting point. The first tRNA brings in the amino acid methionine to begin the protein chain.</p></li>
+<li><p>Elongation – The ribosome’s rRNA machinery reads the mRNA codons in order. Each new codon is matched by a tRNA, which delivers the correct amino acid. The ribosome links the amino acids together, forming a growing chain.</p></li>
+<li><p>Termination** – When the ribosome encounters a “stop” signal on the mRNA, no tRNA matches. Instead, the ribosome releases the finished protein, and its subunits separate, ready for the next round.</p></li>
+</ol>
+<hr class="docutils" />
+<p>…TO BE CONTINUED…</p>
+</section>
+</section>
+<section id="vacuoles">
+<h2>Vacuoles:<a class="headerlink" href="#vacuoles" title="Link to this heading">#</a></h2>
+<p>Storage organelles that can hold various substances, including nutrients and waste products.</p>
+</section>
+<section id="vesicles">
+<h2>Vesicles:<a class="headerlink" href="#vesicles" title="Link to this heading">#</a></h2>
+<p>small membrane-bound sacs that transport materials within the cell.</p>
+<hr class="docutils" />
+<section id="part-iii-rna-and-protein-synthesis">
+<h3><strong>Part III: RNA and Protein Synthesis</strong><a class="headerlink" href="#part-iii-rna-and-protein-synthesis" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="6">
+<li><p><strong>The Genetic Code</strong></p>
+<ul class="simple">
+<li><p>Codons and amino acids</p></li>
+<li><p>Anticodons and translation</p></li>
+<li><p>Universality and degeneracy of the code</p></li>
+</ul>
+</li>
+<li><p><strong>Translation: From RNA to Protein</strong></p>
+<ul class="simple">
+<li><p>Ribosomes as molecular machines</p></li>
+<li><p>Initiation, elongation, termination</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+</section>
+<section id="part-iv-proteinsthe-workhorses">
+<h3><strong>Part IV: Proteins—The Workhorses</strong><a class="headerlink" href="#part-iv-proteinsthe-workhorses" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="8">
+<li><p><strong>What is a Protein?</strong></p>
+<ul class="simple">
+<li><p>Amino acids and peptide bonds</p></li>
+<li><p>Primary, secondary, tertiary, quaternary structure</p></li>
+</ul>
+</li>
+<li><p><strong>Protein Function</strong></p>
+<ul class="simple">
+<li><p>Enzymes, receptors, structural proteins, transport proteins</p></li>
+<li><p>How protein shape determines function</p></li>
+</ul>
+</li>
+<li><p><strong>Proteins in Data</strong></p>
+<ul class="simple">
+<li><p>Protein identifiers (accession numbers, UniProt IDs, PubChem Protein records)</p></li>
+<li><p>Domains, motifs, active sites</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+</section>
+<section id="part-v-linking-biology-to-pubchem-data">
+<h3><strong>Part V: Linking Biology to PubChem Data</strong><a class="headerlink" href="#part-v-linking-biology-to-pubchem-data" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="11">
+<li><p><strong>Genes and Proteins in Databases</strong></p>
+<ul class="simple">
+<li><p>What you’ll see in PubChem (CIDs, SIDs, assays, accessions)</p></li>
+<li><p>Protein targets, pathways, gene links</p></li>
+<li><p>qHTS and high-throughput data</p></li>
+</ul>
+</li>
+<li><p><strong>Small Molecules Meet Proteins</strong></p>
+<ul class="simple">
+<li><p>Ligand–receptor binding</p></li>
+<li><p>Bioassays as “experiments in a database”</p></li>
+<li><p>Why computer scientists care (drug discovery, systems biology, cheminformatics)</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+</section>
+<section id="part-vi-beyond-the-basics">
+<h3><strong>Part VI: Beyond the Basics</strong><a class="headerlink" href="#part-vi-beyond-the-basics" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="13">
+<li><p><strong>Systems Biology Perspective</strong></p>
+<ul class="simple">
+<li><p>From molecules to pathways</p></li>
+<li><p>Networks of interactions (protein–protein, protein–compound)</p></li>
+</ul>
+</li>
+<li><p><strong>Case Studies with PubChem</strong></p>
+<ul class="simple">
+<li><p>Walkthrough of a gene → protein → bioassay data trail</p></li>
+<li><p>Example: thyroid receptor assays</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "nbi"
+        },
+        kernelOptions: {
+            name: "nbi",
+            path: "./content/appendices"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'nbi'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Molecular Biology Primer for Cheminformatics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#parts-of-a-cell">Parts of a Cell:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-plasma-membrane">Cell (Plasma) Membrane:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-types-of-membranes">Other Types of Membranes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-descriptors-and-membrane-relevance">PubChem Descriptors and Membrane Relevance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cytoplasm">Cytoplasm:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cytoskeleton">Cytoskeleton:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-beyond-structure">Functions Beyond Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relevance-to-pubchem-data">Relevance to PubChem Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endoplasmic-reticulum-er">Endoplasmic Reticulum (ER):</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#golgi-apparatus">Golgi Apparatus:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lysosomes-and-peroxisomes">Lysosomes and Peroxisomes:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lysosomes">Lysosomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peroxisomes">Peroxisomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-differences-between-lysosomes-and-peroxisomes">Key Differences Between Lysosomes and Peroxisomes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mitochondria">Mitochondria:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-transport-chain-etc">Electron Transport Chain (ETC)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relevance-to-pubchem">Relevance to PubChem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nucleus">Nucleus:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transcription">Transcription:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ribosomes">Ribosomes:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#translation">Translation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vacuoles">Vacuoles:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vesicles">Vesicles:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-rna-and-protein-synthesis"><strong>Part III: RNA and Protein Synthesis</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-proteinsthe-workhorses"><strong>Part IV: Proteins—The Workhorses</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-v-linking-biology-to-pubchem-data"><strong>Part V: Linking Biology to PubChem Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-vi-beyond-the-basics"><strong>Part VI: Beyond the Basics</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Belford
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
