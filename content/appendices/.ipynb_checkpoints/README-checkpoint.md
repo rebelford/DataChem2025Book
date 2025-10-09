@@ -2,6 +2,6 @@
 
 # Appendices
 
-- {doc}`Pandas <appendices/Pandas>`
-- {doc}`Molecular biology Primer: Cell Structures <appendices/MBP1_CellStuctures>`
-- {doc}`Molecular biology Primer: Genes <appendices/MBP2_Genes>`
+- {doc}`../appendices/Pandas` — Pandas
+- {doc}`../appendices/MBP1_CellStuctures` —  Molecular biology Primer: Cell Structures
+- {doc}`../appendices/MBP2_Genes` — Molecular biology Primer: Genes
