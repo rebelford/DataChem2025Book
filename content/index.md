@@ -54,3 +54,7 @@ Welcome to the 2025 Data Chemistry OLCC Jupyter Book.  This site is under constr
 
 ## Appendices
 - {doc}`appendices/Pandas` - Pandas
+- {doc}`appendices/MBP1_CellStuctures` - Molecular Biology Primer: Cell Structures
+- {doc}`appendices/MBP2-Gene` - Molecular Biology Primer: Genes
+- 
+- 

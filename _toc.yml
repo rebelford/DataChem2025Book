@@ -55,3 +55,5 @@ chapters:
 - file: content/appendices/README
   sections:
     - file: content/appendices/Pandas
+    - file: content/appendices/MBP1_CellStuctures
+    - file: content/appendices/MBP2_Genes
