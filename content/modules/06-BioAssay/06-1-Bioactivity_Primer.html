@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>PubChem Bioactivity Primer &#8212; Data Chemistry 2025</title>
+    <title>6.1 Bioactivity Primer &#8212; Data Chemistry 2025</title>
   
   
   
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/modules/06-BioAssay/06-1-Bioactivity_Primer';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Exploratory Data Analysis 1: Concordance of Thyroid Hormone Receptor Activity in Rats and Humans" href="06-2-eda-protein1.html" />
+    <link rel="next" title="6.1 Exploratory Data Analysis - Protein" href="06-2-eda-protein.html" />
     <link rel="prev" title="Module 6: BioAssays" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -246,9 +246,16 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Module 6: BioAssays</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">PubChem Bioactivity Primer</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.1 Bioactivity Primer</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="06-2-eda-protein1.html">Exploratory Data Analysis 1: <br/><br/> Concordance of Thyroid Hormone Receptor Activity in Rats and Humans</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="06-2-eda-protein.html">6.1 Exploratory Data Analysis - Protein</a></li>
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="06-3-eda-pathway.html">Exploratory Data Analysis 2:<br/><br/>Chemical Modulation of Renin-Angiotensin-Aldosterone system (RAAS)</a></li>
 </ul>
 </details></li>
@@ -559,7 +566,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>PubChem Bioactivity Primer</h1>
+    <h1>6.1 Bioactivity Primer</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -569,13 +576,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">PubChem Bioactivity Primer</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-summary-page">Protein Summary Page</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bioassays">BioAssays</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-of-ec50-and-full-agonism">Illustration of EC<sub>50</sub> and Full Agonism</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-of-ec50-and-partial-agonism">Illustration of EC<sub>50</sub> and Partial Agonism</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6.1 Bioactivity Primer</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-bioactivity-primer">PubChem Bioactivity Primer</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-summary-page">Protein Summary Page</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">Definitions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bioassays">BioAssays</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-of-ec50-and-full-agonism">Illustration of EC<sub>50</sub> and Full Agonism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-of-ec50-and-partial-agonism">Illustration of EC<sub>50</sub> and Partial Agonism</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgment">Acknowledgment</a></li>
@@ -591,18 +598,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pubchem-bioactivity-primer">
+  <section class="tex2jax_ignore mathjax_ignore" id="bioactivity-primer">
+<span id="modules-06-bioassay-06-1-bioactivity-primer"></span><h1>6.1 Bioactivity Primer<a class="headerlink" href="#bioactivity-primer" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pubchem-bioactivity-primer">
 <h1>PubChem Bioactivity Primer<a class="headerlink" href="#pubchem-bioactivity-primer" title="Link to this heading">#</a></h1>
 <div class="alert alert-block alert-info">
-<Strong>Objectives</strong>
+<h1>Objectives</h1>
 <ul class="simple">
 <li><p>Explore PubChem Protein and Bioassay data</p></li>
 <li><p>Distinguish between types of bioactivity data</p></li>
 </ul>
-<p>In the first bioactivity notebook, you will be exploring potential drug candidates for the thyroid hormone receptor in both human and rat models. Before we get into the code and activity, we are going to take a closer look at the PubChem protein summary and bioassay record pages. This will allow you to make sense of the data we are looking at and gain a deeper appreciation of the cheminformatics workflows we will be completing over the next few activities.</p>
-<section id="protein-summary-page">
-<h2>Protein Summary Page<a class="headerlink" href="#protein-summary-page" title="Link to this heading">#</a></h2>
-<p>Our first protein of interest is <a class="reference external" href="https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2020.00331/full">thyroid hormone receptor beta (THRβ)</a>. As a hormone receptor, it is found deep inside cells and binds to hormones like T3 and T4. When T3 or T4 bind to THRβ, a conformational change in the receptor results and either activates or supresses gene involved in regulation of metabolism, growth and development. This receptor is found is many organs, with high activity in the liver, kidney, and brain. There is great interest in this receptor becuase targeting it may result in novel drugs that can treat conditions like hypercholesterolemia (high cholesterol) or fatty liver disease by altering metabolism. One important aspect of drug development is selectivity toward the β receptor, because the α receptor is found in the heart and can have serious side effects.</p>
+</div><p>In the first bioactivity notebook, you will be exploring potential drug candidates for the thyroid hormone receptor in both human and rat models. Before we get into the code and activity, we are going to take a closer look at the PubChem protein summary and bioassay record pages. This will allow you to make sense of the data we are looking at and gain a deeper appreciation of the cheminformatics workflows we will be completing over the next few activities.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="protein-summary-page">
+<h1>Protein Summary Page<a class="headerlink" href="#protein-summary-page" title="Link to this heading">#</a></h1>
+<p>Our first protein of interest is <a class="reference external" href="https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2020.00331/full">thyroid hormone receptor beta (THRβ)</a>. As a hormone receptor, it is found deep inside cells and binds to hormones like T3 and T4. When T3 or T4 bind to THRβ, a conformational change in the receptor results that either activates or supresses genes involved in the regulation of metabolism, growth and development. This receptor is found in many organs, with high activity in the liver, kidney, and brain. There is great interest in this receptor because targeting it may result in novel drugs that can treat conditions like hypercholesterolemia (high cholesterol) or fatty liver disease by altering metabolism. One important aspect of drug development is selectivity toward the β receptor, because the α receptor is found in the heart and can have serious side effects.</p>
 <p>We are going to focus on two PubChem protein summary pages for accessions <code class="docutils literal notranslate"><span class="pre">NP_001257783</span></code> and <code class="docutils literal notranslate"><span class="pre">P10828</span></code>.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">NP_001257783</span></code> https://pubchem.ncbi.nlm.nih.gov/protein/NP_001257783</p></li>
@@ -622,14 +633,15 @@ document.write(`
 </li>
 <li><p>How many bioassays are associated with this protein (Section 4) of <code class="docutils literal notranslate"><span class="pre">NP_001257783</span></code>?</p></li>
 </ul>
-<p>A ligand is any molecule that binds to a specific site on a protein. When a ligand binds, it can change the protein’s activity by enhancing (activating) or diminishing (deactivating) its function. Ligands can be endogenous (from within) or exogenous (from outside). The naturally occuring molecules that bind to the target are “endogenous ligands” and molecules that come from other sources (natural or synthetic) are “exogenous ligands.”</p>
+</div><p>A ligand is any molecule that binds to a specific site on a protein. When a ligand binds, it can change the protein’s activity by enhancing (activating) or diminishing (deactivating) its function. Ligands can be endogenous (from within) or exogenous (from outside). The naturally occuring molecules that bind to the target are “endogenous ligands” and molecules that come from other sources (natural or synthetic) are “exogenous ligands.”</p>
 <p>Let’s explore the THRβ record in Norway rat in more detail. The protein summary also contains a list of chemicals (potential ligands) <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/protein/NP_001257783#section=Sequence-Similar-Proteins:~:text=3.1%20Tested%20Compounds">section 3.1 (tested compounds)</a> that have been tested in bioassays for activity at each protein. Section 3.1 is a table that contains the structure, activity, activity type, activity value and PubChem CID for each tested molecule.</p>
 <p>The bioactivity data is obtained from large-scale high-throughput screening (HTS) initiatives where millions of molecules are tested against a target and the results are compiled and uploaded to the database.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="definitions">
+<h1>Definitions<a class="headerlink" href="#definitions" title="Link to this heading">#</a></h1>
 <div class="alert alert-block alert-info">
-<strong>Definitions</strong>
-<ul class="simple">
-<li><p><strong>Activity</strong>: This is the outcome of a test.</p></li>
-</ul>
+<h2>Activity</h2>
+- **Activity**: This is the outcome of a test. 
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Category</p></th>
@@ -655,9 +667,8 @@ document.write(`
 </tbody>
 </table>
 </div>
-<ul class="simple">
-<li><p><strong>Activity Type</strong>: Describes the type of biological assay performed and the way compound activity is measured.</p></li>
-</ul>
+<h2>Activity Type</h2>
+**Activity Type**: Describes the type of biological assay performed and the way compound activity is measured.
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Category</p></th>
@@ -687,7 +698,7 @@ document.write(`
 <li><p><strong>Activity Value, µM</strong>: This is the numerical value reported from a bioassay that describes how potent the tested compound is against the biological target. This is typically expressed as µM units, which reflects the concentration of the compound required to produce a specific level of activity. This is often linked with the IC<sub>50</sub>, EC<sub>50</sub>, or potency/AC<sub>50</sub> values. The lower the number the better. Molecules that have high affinity for the target will have activity values in the subnanomolar range (0.0001 µM or lower).</p></li>
 <li><p><strong>Compound CID</strong>: PubChem’s compound identifier for a unique chemical structure.</p></li>
 </ul>
-<p>In the top right hand corner of the <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/protein/NP_001257783#section=Sequence-Similar-Proteins:~:text=3.1%20Tested%20Compounds">tested compounds table</a> you can sort by activity or by Activity Value.</p>
+</div><p>In the top right hand corner of the <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/protein/NP_001257783#section=Sequence-Similar-Proteins:~:text=3.1%20Tested%20Compounds">tested compounds table</a> you can sort by activity or by Activity Value.</p>
 <div class="alert alert-block alert-warning">
 <p><strong>Exploration of the <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/protein/NP_001257783#section=Sequence-Similar-Proteins:~:text=3.1%20Tested%20Compounds">tested compounds table</a></strong></p>
 <ul class="simple">
@@ -701,9 +712,9 @@ document.write(`
 </ul>
 </li>
 </ul>
-</section>
-<section id="bioassays">
-<h2>BioAssays<a class="headerlink" href="#bioassays" title="Link to this heading">#</a></h2>
+</div></section>
+<section class="tex2jax_ignore mathjax_ignore" id="bioassays">
+<h1>BioAssays<a class="headerlink" href="#bioassays" title="Link to this heading">#</a></h1>
 <p>Depositors can provide descriptions and test results which is found in the bioassay section. In the previous exploration section, you found that there were 3 bioassay IDs (AID) associated with the protein. To understand how to interpret the data we need some more definitions.</p>
 <p>Click on the following link to go to <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/protein/NP_001257783#section=BioAssays:~:text=4-,BioAssays,-3%20items">Section 4 BioAssays</a> for this protein.</p>
 <p>There are 4 ways that assay outcome data are defined.</p>
@@ -801,10 +812,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/d6a102915b55168fd68f9c73e608b07844b046c3017109d38beefd085fca2835.png" src="../../../_images/d6a102915b55168fd68f9c73e608b07844b046c3017109d38beefd085fca2835.png" />
+</div>
 </div>
 <p>The dose response curve above shows that the full agonist results in a 100% of maximum effect, the partial agonist has a 50% maximal effect, the antagonist has no effect (remains at baseline), and the inverse agonist dereases baseline effect by 30%.</p>
 <section id="illustration-of-ec50-and-full-agonism">
-<h3>Illustration of EC<sub>50</sub> and Full Agonism<a class="headerlink" href="#illustration-of-ec50-and-full-agonism" title="Link to this heading">#</a></h3>
+<h2>Illustration of EC<sub>50</sub> and Full Agonism<a class="headerlink" href="#illustration-of-ec50-and-full-agonism" title="Link to this heading">#</a></h2>
 <p>The following code block generates a plot of a hypothetical dose response curve analogous to what may be seen in a qHTS screen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -861,11 +875,14 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/965afb46056bf74232828bbdf7b6494b3a6bb544d00cb7f7526f3d40a4d02d62.png" src="../../../_images/965afb46056bf74232828bbdf7b6494b3a6bb544d00cb7f7526f3d40a4d02d62.png" />
+</div>
 </div>
 <p>Notice that these are both agonists resulting in 100% maximal biological response. The solid blue curve has a lower EC<sub>50</sub> than the dashed blue curve, meaning it is more potent as it takes a 0.01 µM concentration to elicit a 50% maximal response. There is a 10-fold difference in potency between the two molecules, but both are full agonists resulting in 100% biological response.</p>
 </section>
 <section id="illustration-of-ec50-and-partial-agonism">
-<h3>Illustration of EC<sub>50</sub> and Partial Agonism<a class="headerlink" href="#illustration-of-ec50-and-partial-agonism" title="Link to this heading">#</a></h3>
+<h2>Illustration of EC<sub>50</sub> and Partial Agonism<a class="headerlink" href="#illustration-of-ec50-and-partial-agonism" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generated with ChatGPT Model 5 on 8/15/2025</span>
@@ -913,15 +930,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/08c110763b81a180f3d1d278afcedab877d0842471774b2a4995e3b84bce82f6.png" src="../../../_images/08c110763b81a180f3d1d278afcedab877d0842471774b2a4995e3b84bce82f6.png" />
+</div>
 </div>
 <div class="alert alert-block alert-warning">
-<p><strong>Check your Understanding</strong></p>
+<h1>Check your Understanding</h1>
 <p>By only looking at the above graph:</p>
 <ul class="simple">
 <li><p>Identify which partial agonist is more potent than the full agonist (solid orange or dashed)?</p></li>
 <li><p>Determine the EC<sub>50</sub> values for each partial agonist.</p></li>
 </ul>
-<p>Go back to <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/protein/NP_001257783#section=BioAssays:~:text=4-,BioAssays,-3%20items">Section 4 BioAssays</a> and let’s click on the links for each bioassay. First we will look at <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/bioassay/743066">Bioassay AID 743066</a>.</p>
+</div><p>Go back to <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/protein/NP_001257783#section=BioAssays:~:text=4-,BioAssays,-3%20items">Section 4 BioAssays</a> and let’s click on the links for each bioassay. First we will look at <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/bioassay/743066">Bioassay AID 743066</a>.</p>
 <p>On this page is a description of the assay and its protocol. In this bioassay, cells will turn on a luciferase pathway and light up when the thyroid pathway is activated. The positive control is T3, the endogenous ligand, and the negative control is DMSO, a common solvent used for dissolving compounds in these tests. After incubation, a luciferase reagent is added and the light output is measured.</p>
 <p>If a compound is an <strong>agonist</strong>, it should increase lumininescence. A full agonist will give the same light intensity, and a partial agonist will give lower intensity. The amount of compound needed is the measure of potency. If it is inactive, the signal will look like DMSO. The key aspect of this test is that T3 defines what activation looks like and agonists mimic T3 in the test, while non-agonists do not.</p>
 <div class="alert alert-block alert-warning">
@@ -950,7 +970,7 @@ document.write(`
 </table>
 </div>
 <p>Classify A–D as a partial agonist, full agonist, or inactive, and comment on potency where relevant. Briefly justify each choice.</p>
-<p>Now, let’s look at <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/bioassay/743065">Bioassay AID 743065</a>. In this bioassay, cells carrying the same luciferase gets the test compound or DMSO first. Then a fixed dose of 1 nM T3 is added to the cells and incubated for 24 hours. Then two different tests are administered. The first is to determine if the cells are still viable. If the cells are dead, they will not activate when the luciferase reagent is added and look the same as if antagonized. After cells are shown to be viable, antagonist activity can be determined. If the T3-induced light is decreased, the compound is an antagonist. If the light is the same as the T3 in vehicle, it is inactive. If the cells are dead, the molecule is determined to be cytotoxic.</p>
+ </div><p>Now, let’s look at <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/bioassay/743065">Bioassay AID 743065</a>. In this bioassay, cells carrying the same luciferase gets the test compound or DMSO first. Then a fixed dose of 1 nM T3 is added to the cells and incubated for 24 hours. Then two different tests are administered. The first is to determine if the cells are still viable. If the cells are dead, they will not activate when the luciferase reagent is added and look the same as if antagonized. After cells are shown to be viable, antagonist activity can be determined. If the T3-induced light is decreased, the compound is an antagonist. If the light is the same as the T3 in vehicle, it is inactive. If the cells are dead, the molecule is determined to be cytotoxic.</p>
 <div class="alert alert-block alert-warning">
 <p><strong>Check your Understanding: Antagonist-mode with viability control (T3 added at 1 nM)</strong></p>
 <p>In this assay, T3 + vehicle gives high light (activation). You test three compounds (each co-applied with 1 nM T3) and measure luminescence and cell viability:</p>
@@ -978,7 +998,7 @@ document.write(`
 </table>
 </div>
 <p>Classify X, Y, and Z as antagonist, inactive, or cytotoxic, and explain your reasoning using both luminescence and viability data.</p>
-<p>Go back to <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/protein/NP_001257783#section=BioAssays:~:text=4-,BioAssays,-3%20items">Section 4 BioAssays</a> and search for PubChem CID 5803. Click on any of the activity values or structure images that result from the search. This will take you to a new page that is the bioactivity dyad page indicating that these two pages are linked in some way.</p>
+ </div><p>Go back to <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/protein/NP_001257783#section=BioAssays:~:text=4-,BioAssays,-3%20items">Section 4 BioAssays</a> and search for PubChem CID 5803. Click on any of the activity values or structure images that result from the search. This will take you to a new page that is the bioactivity dyad page indicating that these two pages are linked in some way.</p>
 <p>Look at <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/protein/NP_001257783#cid=5803&amp;amp;section=Bioactivities:~:text=PubChem-,2%20Bioactivities,-6%20items">Section 2: Bioactivities</a></p>
 <p>Identify the rows in the column that are associated with BioAssay AID 743066 and BioAssay AID 743065.</p>
 <div class="alert alert-block alert-warning">
@@ -988,12 +1008,11 @@ document.write(`
 <li><p>Is CID 5803 active or inactive in BioAssay AID 743065?</p></li>
 <li><p>Is CID 5803 and agonist or an antagonist of the thyroid receptor signalling pathway?</p></li>
 </ul>
- <div class="alert alert-block alert-success">
-      <H1><center>Homework</center></H1>
+</div> <div class="alert alert-block alert-success">
+      <H1>Homework</H1>
 <p>At the beginning of this notebook, it was suggested that molecules that are active for thyroid hormone receptor α can have serious side effects.</p>
 <p>Explore the <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/protein/NP_001257783#cid=5803&amp;amp;section=Related-Bioactivities:~:text=PubChem-,3%20Related%20Bioactivities,-3.1%20Similar%20Proteins">Related Bioactivities</a> section and similar proteins that CID 5803 was tested in. Is CID 5803 selective for THRβ protein, or should there be concern moving forward if this molecule was further developed?</p>
-</section>
-</section>
+</div></section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="acknowledgment">
 <h1>Acknowledgment<a class="headerlink" href="#acknowledgment" title="Link to this heading">#</a></h1>
@@ -1040,11 +1059,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="06-2-eda-protein1.html"
+       href="06-2-eda-protein.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exploratory Data Analysis 1: <br><br> Concordance of Thyroid Hormone Receptor Activity in Rats and Humans</p>
+        <p class="prev-next-title">6.1 Exploratory Data Analysis - Protein</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1064,13 +1083,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">PubChem Bioactivity Primer</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-summary-page">Protein Summary Page</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bioassays">BioAssays</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-of-ec50-and-full-agonism">Illustration of EC<sub>50</sub> and Full Agonism</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-of-ec50-and-partial-agonism">Illustration of EC<sub>50</sub> and Partial Agonism</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6.1 Bioactivity Primer</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pubchem-bioactivity-primer">PubChem Bioactivity Primer</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-summary-page">Protein Summary Page</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">Definitions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bioassays">BioAssays</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-of-ec50-and-full-agonism">Illustration of EC<sub>50</sub> and Full Agonism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-of-ec50-and-partial-agonism">Illustration of EC<sub>50</sub> and Partial Agonism</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgment">Acknowledgment</a></li>
