@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. What SMARTS is &#8212; Data Chemistry 2025</title>
+    <title>SMARTS Primer &#8212; Data Chemistry 2025</title>
   
   
   
@@ -62,6 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/appendices/SMARTS_Primer';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Introduction to Genes and DNA" href="MBP2_Genes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -181,7 +180,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../modules/01-OLCC-Primer/README.html">Module 1: OLCC Primer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../modules/01-OLCC-Primer/01-1-OLCC-Primer.html">Module 1.1: OLCC Primer</a></li>
 
@@ -300,13 +299,19 @@
 
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="README.html">Appendices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Appendices</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Pandas.html">Introduction to Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MBP1_CellStuctures.html">Molecular Biology Primer for Cheminformatics</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="MBP2_Genes.html">Introduction to Genes and DNA</a></li>
 
 
+
+
+
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">SMARTS Primer</a></li>
 
 
 
@@ -566,7 +571,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1. What SMARTS is</h1>
+    <h1>SMARTS Primer</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -576,7 +581,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. What SMARTS is</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">SMARTS Primer</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-smarts-is">1. What SMARTS is</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-anatomy-of-a-smarts-string">2. The “anatomy” of a SMARTS string</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-atom-expressions">a. Atom Expressions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-bond-expressions">b. Bond Expressions</a></li>
@@ -615,12 +623,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="what-smarts-is">
-<h1>1. What SMARTS is<a class="headerlink" href="#what-smarts-is" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="smarts-primer">
+<span id="appendices"></span><h1>SMARTS Primer<a class="headerlink" href="#smarts-primer" title="Link to this heading">#</a></h1>
+<section id="what-smarts-is">
+<h2>1. What SMARTS is<a class="headerlink" href="#what-smarts-is" title="Link to this heading">#</a></h2>
 <p><strong>SMARTS</strong> = <em>SMiles ARbitrary Target Specification</em>.
 It extends the SMILES syntax so you can <strong>search for patterns</strong> (substructures) inside molecules instead of describing a single, fully defined molecule.</p>
 <p>A SMILES string → describes <em>one</em> molecule.
 A SMARTS pattern → describes <em>all</em> molecules that match that pattern</p>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-anatomy-of-a-smarts-string">
 <h1>2. The “anatomy” of a SMARTS string<a class="headerlink" href="#the-anatomy-of-a-smarts-string" title="Link to this heading">#</a></h1>
@@ -1621,6 +1632,15 @@ aniline: c1ccccc1N
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="MBP2_Genes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to Genes and DNA</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -1637,7 +1657,10 @@ aniline: c1ccccc1N
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. What SMARTS is</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">SMARTS Primer</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-smarts-is">1. What SMARTS is</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-anatomy-of-a-smarts-string">2. The “anatomy” of a SMARTS string</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-atom-expressions">a. Atom Expressions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-bond-expressions">b. Bond Expressions</a></li>
