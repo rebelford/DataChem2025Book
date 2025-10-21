@@ -62,7 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/appendices/SMARTS_Primer';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Introduction to Genes and DNA" href="MBP2_Genes.html" />
+    <link rel="next" title="Introduction to Pandas" href="Pandas.html" />
+    <link rel="prev" title="Introduction to RNA and Protein Synthesis" href="MBP3_RNA.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -300,7 +301,6 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Appendices</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Pandas.html">Introduction to Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MBP1_CellStuctures.html">Molecular Biology Primer for Cheminformatics</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="MBP2_Genes.html">Introduction to Genes and DNA</a></li>
@@ -311,12 +311,18 @@
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="MBP3_RNA.html">Introduction to RNA and Protein Synthesis</a></li>
+
+
+
+
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">SMARTS Primer</a></li>
 
 
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="Pandas.html">Introduction to Pandas</a></li>
 </ul>
 </details></li>
 </ul>
@@ -1389,7 +1395,7 @@ aniline: c1ccccc1N
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "2559fb2c45054540858dd947da3565a9", "version_major": 2, "version_minor": 0}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.smarts_lab(smarts_pattern)&gt;
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "dc65b76c634648abb8f599028e9e66a8", "version_major": 2, "version_minor": 0}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.smarts_lab(smarts_pattern)&gt;
 </pre></div>
 </div>
 </div>
@@ -1552,14 +1558,26 @@ aniline: c1ccccc1N
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Selected amino acids: [&#39;Glu&#39;, &#39;Ser&#39;, &#39;Leu&#39;, &#39;Gly&#39;, &#39;Ile&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Selected amino acids: [&#39;Asp&#39;, &#39;His&#39;, &#39;Ile&#39;, &#39;Gly&#39;, &#39;Cys&#39;]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[14:03:30] mapped atoms in the reactants were not mapped in the products.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[17:34:20] Can&#39;t kekulize mol.  Unkekulized atoms: 4 5 6 7 8
+[17:34:20] mapped atoms in the reactants were not mapped in the products.
   unmapped numbers are: 2 
 </pre></div>
 </div>
-<img alt="../../_images/b27a7e31fe62bfc7af53a8467264be6ba954a40cb52cd58441167eb10a45a57d.png" src="../../_images/b27a7e31fe62bfc7af53a8467264be6ba954a40cb52cd58441167eb10a45a57d.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">48</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="n">peptide</span> <span class="o">=</span> <span class="n">mols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">for</span> <span class="n">next_mol</span> <span class="ow">in</span> <span class="n">mols</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+<span class="ne">---&gt; </span><span class="mi">48</span>     <span class="n">prod</span> <span class="o">=</span> <span class="n">rxn</span><span class="o">.</span><span class="n">RunReactants</span><span class="p">((</span><span class="n">peptide</span><span class="p">,</span> <span class="n">next_mol</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">peptide</span> <span class="o">=</span> <span class="n">prod</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># take first product</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="n">Chem</span><span class="o">.</span><span class="n">SanitizeMol</span><span class="p">(</span><span class="n">peptide</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: reaction called with None reactants
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1633,13 +1651,22 @@ aniline: c1ccccc1N
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="MBP2_Genes.html"
+       href="MBP3_RNA.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction to Genes and DNA</p>
+        <p class="prev-next-title">Introduction to RNA and Protein Synthesis</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="Pandas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to Pandas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
