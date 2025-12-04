@@ -46,7 +46,7 @@ chapters:
 
 - file: content/modules/09-CADDD/README
   sections:
-    - file: content/modules/09-CADDD/09-1-virtual-screening
+    - file: content/modules/09-CADDD/09-02-virtual-screening
   
 - file: content/modules/10-Machine-Learning/README
   sections:
