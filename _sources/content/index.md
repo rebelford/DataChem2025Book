@@ -45,7 +45,7 @@ Welcome to the 2025 Data Chemistry OLCC Jupyter Book.  This site is under constr
 
 
 ## Module 9: Computer Aided Drug Discovery and Design
-- {doc}`modules/09-CADDD/09-1-virtual-screening` — Virtual  Screening  
+- {doc}`modules/09-CADDD/09-02-virtual-screening` — Virtual  Screening  
 
 
 ## Module 10: Machine Learning Activity
