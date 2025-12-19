@@ -45,6 +45,8 @@ html:
   use_repository_button: true
   extra_css:
     - _static/custom.css
+  extra_footer: |
+    <script async src="https://hypothes.is/embed.js"></script>
 
 
 launch_buttons:
